@@ -6,7 +6,8 @@
 		 Some enemies start at 1000 HP and switch to a custom death animation/NPC
 		 when dropping below a certain value, ignoring the "run event on death" condition.
 		 Set to 0 (or negative?) to have them either die immediately like normal entities or otherwise run
-		 their event on death. *NOTE: Colons are abit unusual I'll have to actually spend effort turning them regular enemies.
+		 their event on death (set their health with NPC.tbl like a normal enemy) 
+		 *NOTE: Colons are abit unusual I'll have to actually spend effort turning them regular enemies.
 		</field>
 	<panel>
 	<panel>
