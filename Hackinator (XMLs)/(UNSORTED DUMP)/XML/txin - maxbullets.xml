@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Max Bullet Adjustments">
+	<panel>
+		<field type="info">
+			Allows the modification of all bullet limits in the game. 
+			These are bullet limits before the weapon caps out, meaning all weapons are able to fire when the bullet limit is reached, but not when it is exceeded.
+			Keep in mind, the engine itself limits the amount of available bullets to 64, so there's no point increasing any individual bullet limit past that.
+		</field>
+		<field type="data" offset="0x41F590">
+			3C 00
+		</field>
+		<field type="data" offset="0x41E817">
+			3C 00
+		</field>
+		<field type="data" offset="0x41E82A">
+			3C 00
+		</field>
+		<field type="data" offset="0x41E8E3">
+			3C 00
+		</field>
+		<field type="data" offset="0x41E8F6">
+			3C 00
+		</field>
+		<field type="data" offset="0x41EB7C">
+			3C 00
+		</field>
+		<field type="data" offset="0x41EB8A">
+			3C 00
+		</field>
+	</panel>
+	<panel title="Customize">
+		<field type="label">Max Snake bullets</field>
+		<field type="label">Max Polar Star bullets</field>
+		<field type="label">Max Fireball bullets (1)</field>
+		<field type="label">Max Fireball bullets (2)</field>
+		<field type="label">Max Fireball bullets (3)</field>
+		<field type="label">Max Machine Gun bullets</field>
+		<field type="label">Max Missile Launcher bullets (1)</field>
+		<field type="label">Max Missile Explosion bullets (1)</field>
+		<field type="label">Max Missile Launcher bullets (2)</field>
+		<field type="label">Max Missile Explosion bullets (2)</field>
+		<field type="label">Max Missile Launcher bullets (3)</field>
+		<field type="label">Max Missile Explosion bullets (3)</field>
+		<field type="label">Max Super Missile Launcher bullets (1)</field>
+		<field type="label">Max Super Missile Explosion bullets (1)</field>
+		<field type="label">Max Super Missile Launcher bullets (2)</field>
+		<field type="label">Max Super Missile Explosion bullets (2)</field>
+		<field type="label">Max Super Missile Launcher bullets (3)</field>
+		<field type="label">Max Super Missile Explosion bullets (3)</field>
+		<field type="label">Max Bubbler bullets (1)</field>
+		<field type="label">Max Bubbler bullets (2)</field>
+		<field type="label">Max Blade bullets</field>
+		<field type="label">Max Nemesis bullets</field>
+		<field type="label">Max Spur bullets (1)</field>
+		<field type="label">Max Spur bullets (2)</field>
+			
+		<field type="text" size="1" offset="0x41DC15" col="1"></field>
+		<field type="text" size="1" offset="0x41DEA5"></field>
+		<field type="text" size="1" offset="0x41E13C"></field>
+		<field type="text" size="1" offset="0x41E159"></field>
+		<field type="text" size="1" offset="0x41E176"></field>
+		<field type="text" size="1" offset="0x41E3E2"></field>
+		<field type="text" size="1" offset="0x41E818">0</field>
+		<field type="text" size="1" offset="0x41E82B">0</field>
+		<field type="text" size="1" offset="0x41E841"></field>
+		<field type="text" size="1" offset="0x41E855"></field>
+		<field type="text" size="1" offset="0x41E86B"></field>
+		<field type="text" size="1" offset="0x41E87F"></field>
+		<field type="text" size="1" offset="0x41E8E4">0</field>
+		<field type="text" size="1" offset="0x41E8F7">0</field>
+		<field type="text" size="1" offset="0x41E90D"></field>
+		<field type="text" size="1" offset="0x41E921"></field>
+		<field type="text" size="1" offset="0x41E937"></field>
+		<field type="text" size="1" offset="0x41E94B"></field>
+		<field type="text" size="1" offset="0x41EFDF"></field>
+		<field type="text" size="1" offset="0x41F28F"></field>
+		<field type="text" size="1" offset="0x41F591">0</field>
+		<field type="text" size="1" offset="0x41F755"></field>
+		<field type="text" size="1" offset="0x41FB8D">0</field>
+		<field type="text" size="1" offset="0x41FB8B">0</field>
+	</panel>
+</hack>

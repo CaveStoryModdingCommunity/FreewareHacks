@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Player auto health increase/decrease">
+	<panel>
+		<field type="info">
+			Causes the player to gain or lose health while the designated flag is set.
+			Set "Amount" to a negative number for health drain, and positive for autoheal.
+			Will kill the player when health depletes fully.
+		</field>
+		<field type="data" offset="0x40ABAD">
+			C9 C3 CC CC CC
+		</field>
+		<field type="data" offset="0x4156C0">
+			C8 2C 00 00 F6 05 38 E6 49 00 02 0F 85 97 0D 00 00 E8 2A 65 07 00 9B
+		</field>
+		<field type="data" offset="0x48BC00">
+			55 89 E5 68 64 00 00 00 E8 23 2D F8 FF 69 C0 01
+			00 00 00 BA EC 3F 49 00 FF 02 81 3A 80 00 00 00
+			7C 13 83 22 00 66 01 05 CC E6 49 00 7F 07 6A 01
+			E8 DB DC F8 FF C9 C3
+		</field>
+	</panel>
+	<panel title="Customize">
+		<field type="label">Flag</field>
+		<field type="label">Delay</field>
+		<field type="label">Amount</field>
+			
+		<field type="text" size="4" offset="0x48BC04" col="1">900</field>
+		<field type="text" size="4" offset="0x48BC1C">100</field>
+		<field type="text" size="4" offset="0x48BC0F">1</field>
+	</panel>
+</hack>

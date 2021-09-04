@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Polar Star Trail">
+	<panel>
+		<field type="info">
+			Causes the Polar Star bullets to have a trail that uses the sprites of the sparkles from Quote's headbonk animation.
+			The random velocity assigned to the sparks is calculated based on a 256-sided polygon (So basically almost a circle)
+			The sparks' velocity decreases by 1/64 every frame, which causes the slowdown effect.
+			This also gives it a soft cap on vertical velocity from falling.
+		</field>
+		<field type="data" offset="0x4047B0">
+			C8 00 00 00 8B 4D 08 FF 41 4C 8B 41 4C 3B 41 54
+			7E 1E C7 41 0C 00 00 00 00 6A 00 6A 03 FF 71 14
+			FF 71 10 E8 B8 64 00 00 83 C4 10 E9 CD 00 00 00
+			83 79 28 00 75 6C C7 41 28 01 00 00 00 8B 41 38
+			83 F8 03 77 5D FF 24 85 AF 48 40 00 C7 41 18 00
+			F0 FF FF EB 33 C7 41 1C 00 F0 FF FF EB 10 C7 41
+			18 00 10 00 00 EB 21 C7 41 1C 00 10 00 00 68 58
+			02 00 00 68 A8 FD FF FF E8 23 AB 00 00 83 C4 08
+			8B 4D 08 90 90 90 EB 26 68 2C 01 00 00 68 D4 FE
+			FF FF E8 09 AB 00 00 83 C4 08 8B 4D 08 90 90 90
+			EB 0C 8B 41 18 01 41 10 8B 41 1C 01 41 14 8B 45
+			0C 83 F8 01 74 07 83 F8 02 74 09 EB 13 B8 80 00
+			00 00 EB 05 B8 A0 00 00 00 BA 20 00 00 00 EB 0A
+			B8 80 00 00 00 BA 30 00 00 00 83 79 38 01 74 08
+			83 79 38 03 74 02 EB 03 83 C0 10 89 51 40 83 C2
+			10 89 51 48 89 41 3C 83 C0 10 89 41 44 EB 10 FC
+			47 40 00 05 48 40 00 0E 48 40 00 17 48 40 00 8B
+			7D 08 29 C9 51 51 6A FF 6A 7F 6A 80 E8 7F AA 00
+			00 50 E8 D9 0F 02 00 93 E8 E3 0F 02 00 D1 F8 D1
+			FB 83 C4 0C 53 50 FF 47 28 8B 47 28 6A 03 99 59
+			F7 F9 4A 7D 10 FF 77 14 FF 77 10 68 4F 01 00 00
+			E8 CB A6 06 00 C9 C3 6B 47 10 3F 6B 5F 14 3F C1
+			F8 06 C1 FB 06 01 47 08 01 5F 0C 89 47 10 89 5F
+			14 83 47 14 30 6A 13 8F 47 34 6A 3A 8F 47 54 6A
+			1B 8F 47 58 6A 3D 8F 47 5C 6A 1E 8F 47 60 FF 47
+			64 6A 60 5A 8D 72 7F 56 52 E8 02 AA 00 00 39 47
+			64 7C 03 83 27 00 56 6A 00 E8 F2 A9 00 00 3B 47
+			64 7D 04 83 67 60 00 83 7F 64 01 75 12 6A 06 58
+			6A 06 5B C1 F8 09 C1 FB 09 01 47 08 01 5F 0C C9
+			C3
+		</field>
+		<field type="data" offset="0x469430">
+			C8 34 00 00 8B 7D 08 83 65 D0 00 6A 10 58 89 45
+			D4 89 45 D8 6A 20 8F 45 DC 89 45 E0 89 45 E4 83
+			7F 4C FF 0F 84 AE B4 F9 FF
+		</field>
+	</panel>
+	<panel title="Customize: Physics">
+		<field type="label">Spawn Delay</field>
+		<field type="label">Gravity</field>
+		<field type="label">Duration</field>
+		<field type="label">OffsetX</field>
+		<field type="label">OffsetY</field>
+			
+		<field type="text" size="1" offset="0x4048ED" col="1">3</field>
+		<field type="text" size="1" offset="0x404924">48</field>
+		<field type="text" size="1" offset="0x404942">96</field>
+		<field type="text" size="1" offset="0x40496E">6</field>
+		<field type="text" size="1" offset="0x404971">6</field>
+	</panel>
+</hack>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="HEX PATCH">
+	<panel>
+		<panel title="Description">
+		</panel>
+		<field type="info">
+			Hack to replace missile launcher with a grenade launcher
+		</field>
+		<panel title="Data">
+		</panel>
+		<panel>
+			<field type="data" offset="0x4055a0" col="0">
+				55 89 E5 8B 7D 08 8B 4F 28 E3 78 83 47 1C 60 6B 47 18 7F 6B 5F 
+				1C 7F C1 F8 07 C1 FB 07 01 47 10 01 5F 14 89 47 18 89 5F 1C D9 
+				EE DD 5F 3C 6A 10 8F 47 44 6A 10 8F 47 48 8B 0F E3 3F 6A 01 FF 
+				77 14 FF 77 10 8B 47 04 04 03 50 E8 91 E9 FF FF B8 54 E6 49 00 
+				DB 47 10 DA 20 D8 C8 DB 47 14 DA 60 04 D8 C8 DE C1 D9 FA DF 3C 
+				E4 58 3D 00 40 00 00 73 07 6A 02 E8 F7 42 01 00 EB 47 80 7F 5D 
+				01 7C BB C9 C3 31 C0 B4 01 89 47 5C 8B 47 38 34 02 C1 F0 06 50 
+				E8 78 02 02 00 93 E8 82 02 02 00 C1 F0 02 C1 F3 02 B9 6C E6 49 
+				00 03 01 03 59 04 81 EB 00 03 00 00 89 47 18 89 5F 1C FF 47 28 
+				E9 49 FF FF FF 83 67 0C 00 C9 C3
+			</field>
+		</panel>
+	</panel>
+</hack>

@@ -1,0 +1,6 @@
+0x410DFD
+80
+0x4116C9
+80
+
+^hex patch to fix orgmaker's bug where it stops playing when you switch to another audio playing program

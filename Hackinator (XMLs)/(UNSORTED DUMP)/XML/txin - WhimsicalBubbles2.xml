@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="WhimsicalBubbles+">
+	<panel>
+		<field type="info">
+			If flag 7007 is set, the Bubbler will additionally fire shots from Whimsical Stars circling around Quote.
+			Requires the "WeaponUpgradeSetup.xml" hack installed.
+		</field>
+		<field type="data" offset="0x41A15B">
+			55 89 E5 BB 57 1B 00 00 6A 07 E8 D6 9A FE FF 83
+			F8 38 77 2C 6A 01 68 80 00 00 00 E8 F5 CA FF FF
+			A1 10 E2 49 00 23 05 14 36 49 00 74 15 6A 01 E8
+			11 7E FE FF 48 7D 14 6A 01 6A 25 E8 A5 64 00 00
+			EB 11 6A 01 E8 7C 7E FE FF EB 08 53 E8 E4 46 FF
+			FF EB 06 53 E8 2C 47 FF FF C6 05 CE E6 49 00 03
+			C9 C3 6A 00 68 80 00 00 00 E8 A7 CA FF FF 58 58
+			C3
+		</field>
+		<field type="data" offset="0x41FF9C">
+			6B 05 68 9C 49 00 14 8B 98 CC 9B 49 00 68 5F 1B
+			00 00 E8 7D E9 FE FF 48 74 14 83 FB 01 74 08 53
+			E8 BF F2 FF FF EB 44 E8 08 F0 FF FF EB 3D 53 E8
+			8B A1 FF FF 6A 01 58 48 5B 74 DF EB 2E CC CC CC
+			CC CC CC CC CC CC CC
+		</field>
+		<field type="data" offset="0x42126E">
+			68 57 1B 00 00 E8 B8 D6 FE FF 6B C0 1B 6A 2D 5B
+			99 29 C3 BE 40 E6 49 00 8B 4E 04 E3 04 6A 01 EB
+			0F 8B 4E 08 E3 04 6A 03 EB 06 8B 0E E3 03 6A 02
+			5A 89 D6 6B 15 68 9C 49 00 14 03 9A CC 9B 49 00
+			83 FB 2D 7D 0D A1 10 E2 49 00 23 05 14 36 49 00
+			75 05 6A 2D 5B EB 09 6A 01 6A 30 E8 72 F3 FF FF
+			90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
+			90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
+			90 90 90 90 90 90 90 90
+		</field>
+		<field type="data" offset="0x42136D">
+			56 6B 15 CC 58 4A 00 44 81 C2 10 58 4A 00 FF 32
+			FF 72 FC 53 90 90 90 90 90 90 90 90 90 90 90 90
+			90 90 90 90
+		</field>
+		<field type="data" offset="0x41FE7F">
+			FF 05 4C 55 4A 00 E8 33 A3 FF FF D9 D0
+		</field>
+	</panel>
+	<panel title="Customize: TSC flag">
+		<field type="label">Max on-screen bullets (Note the bullet limit of 64)</field>
+		<field type="label">Ammo consumption</field>
+		<field type="label">Ammo recharge</field>
+		<field type="label">Star amount (Max = 3)</field>
+		<field type="label">Includes regular bubbler shots (0 or 1)</field>
+		
+		<field type="text" size="1" offset="0x41A16C" col="1">56</field>
+		<field type="text" size="1" offset="0x41A189">1</field>
+		<field type="text" size="1" offset="0x41A19E">1</field>
+		<field type="text" size="1" offset="0x41A1BA">3</field>
+		<field type="text" size="1" offset="0x41FFD1">1</field>
+	</panel>
+</hack>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="The Regenerating Fireball" author="GabrielTFS">
+	<panel>
+		<field type="label">Fireball</field>
+		<field type="info">
+			Make it so the Fireball regenerates a bullet after a specified delay. You will need to set the ammo limit properly, however, otherwise this will not work properly. This also makes it so that running out of fireball ammo doesn't result in having your weapon reset to the first one. Completely and utterly incompatible with any hacks that change the fireball code or repurpose the machine gun reload timer
+		</field>
+
+		<field type="data" offset="0x41E110">
+57 56 50 8B 44 24 10 83 F8 03 74 24 83 F8 02 74
+39 83 F8 01 75 49 83 EC 0C 6A 03 E8 10 5B FE FF
+83 C4 10 83 F8 01 0F 8F AD 00 00 00 6A 07 EB 2E
+83 EC 0C 6A 03 E8 F6 5A FE FF 83 C4 10 83 F8 03
+0F 8F 93 00 00 00 6A 09 EB 14 83 EC 0C 6A 03 E8
+DC 5A FE FF 83 C4 10 83 F8 02 7F 7D 6A 08 5E A1
+14 E2 49 00 85 05 14 36 49 00 74 42 83 EC 0C 6A
+01 E8 1A 3E FE FF 83 C4 10 85 C0 74 5C 83 3D 44
+E6 49 00 00 74 5B 83 3D 40 E6 49 00 00 A1 54 E6
+49 00 0F 84 87 00 00 00 05 00 08 00 00 BF 00 F0
+FF FF 8B 0D 58 E6 49 00 01 F9 6A 01 EB 5F A1 54
+55 4A 00 8D 48 01 89 0D 54 55 4A 00 3D 78 56 34
+12 7C 16 83 25 54 55 4A 00 00 83 EC 0C 6A 01 E8
+3C 3E FE FF E9 CC 00 00 00 83 C4 04 E9 C7 00 00
+00 83 3D 48 E6 49 00 00 8B 0D 40 E6 49 00 A1 54
+E6 49 00 74 40 85 C9 74 66 05 00 08 00 00 BF 00
+10 00 00 8B 0D 58 E6 49 00 01 F9 6A 03 51 50 56
+E8 5B 5D FE FF 83 C4 10 B8 00 08 00 00 EB 64 05
+00 F8 FF FF BF 00 F0 FF FF 8B 0D 58 E6 49 00 01
+F9 6A 01 EB 3E 85 C9 74 72 05 00 0C 00 00 BF 00
+04 00 00 8B 0D 58 E6 49 00 01 F9 6A 02 51 50 56
+E8 1B 5D FE FF 83 C4 10 B8 00 18 00 00 EB 24 05
+00 F8 FF FF BF 00 10 00 00 8B 0D 58 E6 49 00 01
+F9 6A 03 51 50 56 E8 F5 5C FE FF 83 C4 10 B8 00
+F8 FF FF 03 05 54 E6 49 00 03 3D 58 E6 49 00 6A
+00 6A 03 57 50 E8 E6 C9 FE FF 58 59 6A 01 6A 22
+E8 8B 23 00 00 83 C4 14 5E 5F C3 05 00 F4 FF FF
+BF 00 04 00 00 8B 0D 58 E6 49 00 01 F9 6A 00 51
+50 56 E8 A9 5C FE FF 83 C4 10 B8 00 E8 FF FF EB
+B2
+		</field>
+		<field type = "label">Reload timer (in frames) (default: 0x12345678, you need to change this)</field>
+		<field type="text" size="4" offset="0x41E1CD" />
+	</panel>
+</hack>

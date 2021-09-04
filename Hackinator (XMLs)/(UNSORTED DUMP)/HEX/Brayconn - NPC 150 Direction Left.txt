@@ -1,0 +1,4 @@
+Simple patch to make direction 10 and above (instead of 11 and above) work on npc Quote. That way you can have him teleport to the player's position and face left.
+
+0x445921
+7C

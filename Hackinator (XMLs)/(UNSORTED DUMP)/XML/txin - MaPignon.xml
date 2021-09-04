@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="MaPignon">
+	<panel>
+		<panel title="Info">
+		</panel>
+		<field type="info" col="0">
+			Allows modifying Ma Pignon's hardcoded values.
+		</field>
+		<panel title="Customize" col="0">
+		</panel>
+		<panel>
+			<panel title="Main Boss" col="0">
+				<field type="label">Base Damage</field>
+				<field type="label">Charge Attack Damage</field>
+				<field type="label">Falling Attack Damage</field>
+				<field type="label">Jump Attack Damage</field>
+				<field type="label">Clone Attack Damage</field>
+				<field type="label">Inactive Damage</field>
+				<field type="label">Left Dash Speed</field>
+				<field type="label">Right Dash Speed</field>
+				<field type="label">Super Jump Speed</field>
+				<field type="label">Fall Acceleration</field>
+					
+				<field type="text" size="4" offset="0x4651B2" col="1"></field>
+				<field type="text" size="4" offset="0x4654C7"></field>
+				<field type="text" size="4" offset="0x465627"></field>
+				<field type="text" size="4" offset="0x465785"></field>
+				<field type="text" size="4" offset="0x4658B9"></field>
+				<field type="text" size="4" offset="0x465906"></field>
+				<field type="text" size="4" offset="0x465699"></field>
+				<field type="text" size="4" offset="0x4656A5"></field>
+				<field type="text" size="4" offset="0x465739"></field>
+				<field type="text" size="1" offset="0x465921"></field>
+			</panel>
+			<panel title="Separate Attacks" col="1">
+				<field type="label">Rocks Summon Delay (Lower = More)</field>
+				<field type="label">Rock NPC ID</field>
+				<field type="label">Rock Damage</field>
+				<field type="label">Rock Fall Speed (Soft Cap)</field>
+				<field type="label">Rock Fall Speed (Hard Cap)</field>
+				<field type="label">Clones Summon Delay (Lower = More)</field>
+				<field type="label">Clone NPC ID</field>
+				<field type="label">Clone Damage</field>
+					
+				<field type="text" size="4" offset="0x4655A3" col="1"></field>
+				<field type="text" size="4" offset="0x4655D3"></field>
+				<field type="text" size="4" offset="0x465F0A"></field>
+				<field type="text" size="4" offset="0x465D8A"></field>
+				<field type="text" size="4" offset="0x465D96"></field>
+				<field type="text" size="4" offset="0x465838"></field>
+				<field type="text" size="4" offset="0x465865"></field>
+				<field type="text" size="4" offset="0x46605B">3</field>
+			</panel>
+		</panel>
+		<panel title="Data" col="0">
+		</panel>
+		<panel>
+			<field type="data" offset="0x466055">
+				C7 80 A4 00 00 00
+			</field>
+			<field type="data" offset="0x466060" col="1">
+				80
+			</field>
+		</panel>
+	</panel>
+</hack>

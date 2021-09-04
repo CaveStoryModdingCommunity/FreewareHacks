@@ -1,0 +1,10 @@
+0x46FFa2
+ 
+7D 31 8B 45 FC 69 C0 AC 00 00 00 0F B6 88 20 62
+4A 00 81 E1 80 00 00 00 74 14 8B 55 FC 69 D2 AC
+00 00 00 8B 82 50 62 4A 00 3B 45 08 74 0E FF 45
+FC EB C6 81 7D FC 00 02 00 00 74 7D 8B 55 FC 69
+D2 AC 00 00 00 8B 45 0C BB 94 62 4A 00 3D E8 03
+00 00 7C 08 2D E8 03 00 00 83 EB 04 89 04 13 90
+Setting <ANP to 1000 or higher makes it write to npc.directive instead of npc.scriptstate. Incredibly useful for custom NPCS where you want multiple instances with variants while keeping access to all other features.
+For example setting <ANPXXXX:1004:0000 Sets npc.directive to 4.

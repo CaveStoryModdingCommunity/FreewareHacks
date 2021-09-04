@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Customized Text Colour change by TSC">
+	<panel>
+		<panel title="Description">
+		</panel>
+		<field type="info">
+			This hack replaces the 2nd FAC command.
+			Also takes 1 DWORD value at 0x494FFC and a few bytes at the end of the code segment (48BFE0)
+			The new command is TXC (TeXt Colour) followed by 8 digits as the operand.
+			The 8 digits represent a decimal value that is converted into hexadecimal for the colour of text, in the order of Blue-Green-Red.
+			For example, TXC00000255 will change text colour to red, TXC16777215 white, TXC00065535 for yellow, TXC16711680 blue.
+			Will affect all text in-game, including MSG, MS2, MS3, TUR, MNA, as well as the text on the inventory and map system.
+			Text colour is NOT saved, so reloading a save file or dying will preserve the text colours. Recommended to reset the text colours upon dying and also in the intro map.
+		</field>
+		<panel title="Data">
+		</panel>
+		<panel>
+			<field type="data" offset="0x40D219" col="0">
+				E8 C2 ED 07 00
+			</field>
+			<field type="data" offset="0x40D2A4" col="1">
+				E8 37 ED 07 00
+			</field>
+			<field type="data" offset="0x414219" col="2">
+				E8 C2 7D 07 00
+			</field>
+			<field type="data" offset="0x414385" col="3">
+				E8 56 7C 07 00
+			</field>
+			<field type="data" offset="0x421DE9" col="4">
+				E8 F2 A1 06 00
+			</field>
+			<field type="data" offset="0x4253AD" col="0">
+				E8 2E 6C 06 00
+			</field>
+			<field type="data" offset="0x42549A" col="1">
+				E8 41 6B 06 00
+			</field>
+			<field type="data" offset="0x4257C9" col="2">
+				E8 12 68 06 00
+			</field>
+			<field type="data" offset="0x48BFE0" col="3">
+				58 FF 35 FC 4F 49 00 FF E0
+			</field>
+			<field type="data" offset="0x494FFC" col="4">
+				FF FF FF
+			</field>
+		</panel>
+		<field type="data" offset="0x424E28">
+			A1 D8 5A 4A 00 90 03 05 E0 5A 4A 00 0F BE 50 01
+			83 FA 46 75 72 A1 D8 5A 4A 00 90 03 05 E0 5A 4A
+			00 0F BE 50 02 83 FA 41 75 5D A1 D8 5A 4A 00 03
+			05 E0 5A 4A 00 0F BE 48 03 83 F9 43 75 49 8B 15
+			E0 5A 4A 00 83 C2 04 52 E8 8B CA FF FF 83 C4 04
+			89 45 DC 0F BE 45 DC 39 05 0C 5B 4A 00 74 14 0F
+			BE 4D DC 89 0D 0C 5B 4A 00 C7 05 10 5B 4A 00 00
+			68 00 00 8B 15 E0 5A 4A 00 83 C2 08 89 15 E0 5A
+			4A 00 E9 F8 03 00 00 81 38 3C 54 58 43 75 4A 83
+			05 E0 5A 4A 00 04 FF 35 E0 5A 4A 00 E8 37 CA FF
+			FF 59 50 83 05 E0 5A 4A 00 04 FF 35 E0 5A 4A 00
+			E8 23 CA FF FF 59 59 69 C9 10 27 00 00 01 C8 A3
+			FC 4F 49 00 83 05 E0 5A 4A 00 04 E9 D3 D6 FF FF
+			58 FF 35 FC 4F 49 00 FF E0 66 D9 D0 65 66 D9 D0
+			65 66 D9 D0 65 66 D9 D0 65 66 D9 D0 65 66 D9 D0
+			65 66 D9 D0 65 66 D9 D0 65 66 D9 D0 65 66 D9 D0
+			65 66 D9 D0 65 66 D9 D0 66 D9 D0
+		</field>
+	</panel>
+</hack>

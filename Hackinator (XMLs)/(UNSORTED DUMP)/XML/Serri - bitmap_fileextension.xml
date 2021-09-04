@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Bitmap File Extensions" author="Serri">
+
+<panel>
+
+<panel>
+<field type="info">
+This hack now changes the file extension in the bitmaps to whatever 3-character name you want it to be. Be wary of possible conflicts if you rename them to something typically read by other programs.
+</field>
+<field type="info" col="1">
+WARNING: Booster's Lab is designed to automatically rename modified bitmap files back to .bmp. To avoid frustration, keep backups of the modified bitmaps inside your data folder prior to reapplying the hack.
+</field>
+</panel>
+
+<panel title="Set all textboxes to the same value">
+<field type="text" size="4" offset="0x48c285"/>
+<field type="text" size="4" offset="0x48c309"/>
+<field type="text" size="4" offset="0x48c32d"/>
+</panel>
+<field type="label">Convert the ASCII for the new file extension to hexadecimal, and then convert to decimal.</field>
+<field type="label">This hack WILL require manual file renaming after applying the hack.</field>
+<field type = "label">   ‍   </field>
+<field type="label">IMPORTANT TIP:</field>
+<field type="label">Place the hex in reverse first, and then convert to decimal.</field>
+<field type="label">Here's an example for the .bmp extension:</field>
+<field type="label">p m b . = 70 6D 62 2E = 1886216750</field>
+
+</panel>
+
+</hack>

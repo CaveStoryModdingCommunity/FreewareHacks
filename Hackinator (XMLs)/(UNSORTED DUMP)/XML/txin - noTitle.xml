@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Remove Title Screen">
+	<panel>
+		<field type="info">
+			Set value to:
+			3 to remove title screen,
+			2 for default title screen,
+			1 to make the game stuck on intro screen,
+			0 to make the game close after intro screen,
+			-1 to make the game freeze after intro screen.
+		</field>
+	</panel>
+	<panel title="Customize">
+		<field type="label">Value</field>
+		<field type="text" size="4" offset="0x40f99e" col="1"></field>
+	</panel>
+</hack>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Inventory LV Removal" author="Stornix">
+	<panel>
+		<field type="info">
+			Remove all mentions of "LV" from the inventory.
+		</field>
+		<field type="data" offset="0x419E27">
+			6A 14
+		</field>
+		<field type="data" offset="0x419E48">
+			6A 1C
+		</field>
+		<field type="data" offset="0x419E98">
+			83 C1 1D
+		</field>
+		<field type="data" offset="0x41A1B0">
+			6A 14
+		</field>
+	</panel>
+</hack>

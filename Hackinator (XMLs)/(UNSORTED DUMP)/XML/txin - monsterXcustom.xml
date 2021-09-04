@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Monster X customisations">
+	<panel>
+		<field type="info">
+			Allows easy modification of most useful monster X variables.
+		</field>
+	</panel>
+	<panel title="Customize">
+		<field type="label">Initial Position X</field>
+		<field type="label">Position X after BOA</field>
+		<field type="label">Position Y after BOA</field>
+		<field type="label">Fish Missile fire delay</field>
+		<field type="label">Fish Missile fire rate offset (for each launcher)</field>
+		<field type="label">Main Health</field>
+		<field type="label">Turret Health</field>
+		<field type="label">Turret Projectile</field>
+		<field type="label">Turret Randomness Right</field>
+		<field type="label">Turret Randomness Left</field>
+		<field type="label">Turret Projectile Count</field>
+		<field type="label">Turret Fire Sound</field>
+		
+		<field type="text" size="4" offset="0x47E807" col="1"></field>
+		<field type="text" size="4" offset="0x47E834"></field>
+		<field type="text" size="4" offset="0x47E83E"></field>
+		<field type="text" size="4" offset="0x48020E"></field>
+		<field type="text" size="1" offset="0x480132"></field>
+		<field type="text" size="4" offset="0x47E816"></field>
+		<field type="text" size="4" offset="0x47E918"></field>
+		<field type="text" size="4" offset="0x48079C"></field>
+		<field type="text" size="1" offset="0x480735"></field>
+		<field type="text" size="1" offset="0x480737"></field>
+		<field type="text" size="4" offset="0x4807BA"></field>
+		<field type="text" size="1" offset="0x4807AB"></field>
+	</panel>
+</hack>

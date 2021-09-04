@@ -1,0 +1,10 @@
+0x440B43
+F0
+
+0x440B6B
+F0
+
+Shoutouts to @Lethrys (CSMC Librarian) who realized that the Machine Gun Level 3 trail was cut off when shooting down. This patch fixes it.
+
+
+

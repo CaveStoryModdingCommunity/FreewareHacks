@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Extra Missile Drop Condition">
+	<panel>
+		<field type="info">
+			Causes missiles to drop from enemies if flag X is set.
+		</field>
+		<field type="data" offset="0x46F430">
+			C8 38 00 00 6A 38 6A 00 8D 45 C8 50 E8 EF 18 01
+			00 68 88 0E 00 00 E8 E5 F4 F9 FF 48 74 7A EB 0F
+			CC CC CC CC
+		</field>
+	</panel>
+	<panel title="Customize">
+		<field type="label">Flag</field>
+			
+		<field type="text" size="4" offset="0x46F442" col="1">3720</field>
+	</panel>
+</hack>

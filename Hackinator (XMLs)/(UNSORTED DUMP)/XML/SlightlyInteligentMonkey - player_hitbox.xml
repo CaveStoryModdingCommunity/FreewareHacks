@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="player hitbox">
+	<panel>
+	<field type="info">
+		Allows you to change the players initial hitbox (vanilla doesn't change the hitbox during the game)
+	</field>
+	
+	<field type="data" offset="0x417E40">
+		55 89 e5 83 ec 34 a1 54 e6 49 00 c1 f8 0d 89 45
+		f8 a1 58 e6 49 00 c1 f8 0d 89 45 fc c7 45 d4 01
+		00 00 00 c7 45 d0 00 00 00 00 c7 45 d8 00 00 00
+		00 c7 45 dc 01 00 00 00 c7 45 ec 00 00 00 00 c7
+		45 f0 01 00 00 00 c7 45 f4 01 00 00 00 c7 45 e8
+		00 00 00 00 8b 15 80 e6 49 00 a1 88 e6 49 00 29
+		d0 c1 e8 0d 40 89 45 cc 8b 15 7c e6 49 00 a1 84
+		e6 49 00 29 d0 c1 e8 0d 40 89 45 ce 8b 45 fc 2b
+		45 cc 89 45 e4 8b 45 f8 2b 45 ce 89 45 e8 ff 45
+		e4 8b 45 fc 03 45 cc 39 45 e4 0f 8f fd 04 00 00
+		ff 45 e8 8b 45 f8 03 45 ce 39 45 e8 7f d7 ff 75
+		e4 ff 75 e8 e8 a7 ba ff ff 83 c4 08 0f b6 d0 83
+		ea 02 81 fa a1 00 00 00 0f 87 ca 04 00 00 0f b6
+		82 79 84 41 00 ff 24 85 fd 83 41 00 ff 75 e4 ff
+		75 e8 e8 09 ef ff ff 83 c4 08 0b 05 3c e6 49 00
+		a3 3c e6 49 00 e9 9e 04 00 00 ff 75 e4 ff 75 e8
+		e8 8b f2 ff ff 83 c4 08 0b 05 3c e6 49 00 a3 3c
+		e6 49 00 e9 80 04 00 00 ff 75 e4 ff 75 e8 e8 7d
+		f3 ff ff 83 c4 08 0b 05 3c e6 49 00 a3 3c e6 49
+		00 e9 62 04 00 00 ff 75 e4 ff 75 e8 e8 6f f4 ff
+		ff 83 c4 08 0b 05 3c e6 49 00 a3 3c e6 49 00 e9
+		44 04 00 00 8b 45 fc ff 75 e4 ff 75 e8 e8 5e f5
+		ff ff 83 c4 08 0b 05 3c e6 49 00 a3 3c e6 49 00
+		e9 23 04 00 00 ff 75 e4 ff 75 e8 e8 50 f6 ff ff
+		83 c4 08 0b 05 3c e6 49 00 a3 3c e6 49 00 e9 05
+		04 00 00 ff 75 e4 ff 75 e8 e8 42 f7 ff ff 83 c4
+		08 0b 05 3c e6 49 00 a3 3c e6 49 00 e9 e7 03 00
+		00 ff 75 e4 ff 75 e8 e8 34 f8 ff ff 83 c4 08 0b
+		05 3c e6 49 00 a3 3c e6 49 00 e9 c9 03 00 00 ff
+		75 e4 ff 75 e8 e8 26 f9 ff ff 83 c4 08 0b 05 3c
+		e6 49 00 a3 3c e6 49 00 e9 ab 03 00 00 ff 75 e4
+		ff 75 e8 e8 a8 fa ff ff 83 c4 08 0b 05 3c e6 49
+		00 a3 3c e6 49 00 e9 8d 03 00 00 ff 75 e4 ff 75
+		e8 e8 1a fb ff ff 83 c4 08 0b 05 3c e6 49 00 a3
+		3c e6 49 00 e9 6f 03 00 00 ff 75 e4 ff 75 e8 e8
+		8c fb ff ff 83 c4 08 0b 05 3c e6 49 00 a3 3c e6
+		49 00 e9 51 03 00 00 ff 75 e4 ff 75 e8 e8 fe fb
+		ff ff 83 c4 08 0b 05 3c e6 49 00 a3 3c e6 49 00
+		e9 33 03 00 00 ff 75 e4 ff 75 e8 e8 70 fc ff ff
+		83 c4 08 0b 05 3c e6 49 00 a3 3c e6 49 00 e9 15
+		03 00 00 ff 75 e4 ff 75 e8 e8 e2 fc ff ff 83 c4
+		08 0b 05 3c e6 49 00 a3 3c e6 49 00 e9 f7 02 00
+		00 ff 75 e4 ff 75 e8 e8 64 f9 ff ff 83 c4 08 0b
+		05 3c e6 49 00 a3 3c e6 49 00 e9 d9 02 00 00 ff
+		75 e4 ff 75 e8 e8 46 f9 ff ff 83 c4 08 0b 05 3c
+		e6 49 00 a3 3c e6 49 00 e9 bb 02 00 00 ff 75 e4
+		ff 75 e8 e8 08 ed ff ff 83 c4 08 0b 05 3c e6 49
+		00 a3 3c e6 49 00 ff 75 e4 ff 75 e8 e8 0f f9 ff
+		ff 83 c4 08 0b 05 3c e6 49 00 a3 3c e6 49 00 e9
+		84 02 00 00 ff 75 e4 ff 75 e8 e8 71 f0 ff ff 83
+		c4 08 0b 05 3c e6 49 00 a3 3c e6 49 00 ff 75 e4
+		ff 75 e8 e8 d8 f8 ff ff 83 c4 08 0b 05 3c e6 49
+		00 a3 3c e6 49 00 e9 4d 02 00 00 ff 75 e4 ff 75
+		e8 e8 4a f1 ff ff 83 c4 08 0b 05 3c e6 49 00 a3
+		3c e6 49 00 ff 75 e4 ff 75 e8 e8 a1 f8 ff ff 83
+		c4 08 0b 05 3c e6 49 00 a3 3c e6 49 00 e9 16 02
+		00 00 ff 75 e4 ff 75 e8 e8 23 f2 ff ff 83 c4 08
+		0b 05 3c e6 49 00 a3 3c e6 49 00 ff 75 e4 ff 75
+		e8 e8 6a f8 ff ff 83 c4 08 0b 05 3c e6 49 00 a3
+		3c e6 49 00 e9 df 01 00 00 ff 75 e4 ff 75 e8 e8
+		fc f2 ff ff 83 c4 08 0b 05 3c e6 49 00 a3 3c e6
+		49 00 ff 75 e4 ff 75 e8 e8 33 f8 ff ff 83 c4 08
+		0b 05 3c e6 49 00 a3 3c e6 49 00 e9 a8 01 00 00
+		ff 75 e4 ff 75 e8 e8 d5 f3 ff ff 83 c4 08 0b 05
+		3c e6 49 00 ff 75 e4 ff 75 e8 e8 01 f8 ff ff 83
+		c4 08 0b 05 3c e6 49 00 a3 3c e6 49 00 e9 76 01
+		00 00 ff 75 e4 ff 75 e8 e8 b3 f4 ff ff 83 c4 08
+		0b 05 3c e6 49 00 a3 3c e6 49 00 ff 75 e4 ff 75
+		e8 e8 ca f7 ff ff 83 c4 08 0b 05 3c e6 49 00 a3
+		3c e6 49 00 e9 3f 01 00 00 ff 75 e4 ff 75 e8 e8
+		8c f5 ff ff 83 c4 08 0b 05 3c e6 49 00 a3 3c e6
+		49 00 ff 75 e4 ff 75 e8 e8 93 f7 ff ff 83 c4 08
+		0b 05 3c e6 49 00 a3 3c e6 49 00 e9 08 01 00 00
+		ff 75 e4 ff 75 e8 e8 65 f6 ff ff 83 c4 08 0b 05
+		3c e6 49 00 a3 3c e6 49 00 ff 75 e4 ff 75 e8 e8
+		5c f7 ff ff 83 c4 08 0b 05 3c e6 49 00 a3 3c e6
+		49 00 e9 d1 00 00 00 ff 75 e4 ff 75 e8 e8 ee f8
+		ff ff 83 c4 08 0b 05 3c e6 49 00 a3 3c e6 49 00
+		ff 75 e4 ff 75 e8 e8 25 f7 ff ff 83 c4 08 0b 05
+		3c e6 49 00 a3 3c e6 49 00 e9 9a 00 00 00 ff 75
+		e4 ff 75 e8 e8 47 f9 ff ff 83 c4 08 0b 05 3c e6
+		49 00 a3 3c e6 49 00 ff 75 e4 ff 75 e8 e8 ee f6
+		ff ff 83 c4 08 0b 05 3c e6 49 00 a3 3c e6 49 00
+		eb 66 ff 75 e4 ff 75 e8 e8 a3 f9 ff ff 83 c4 08
+		0b 05 3c e6 49 00 a3 3c e6 49 00 ff 75 e4 ff 75
+		e8 e8 ba f6 ff ff 83 c4 08 0b 05 3c e6 49 00 a3
+		3c e6 49 00 eb 32 ff 75 e4 ff 75 e8 e8 ff f9 ff
+		ff 83 c4 08 0b 05 3c e6 49 00 a3 3c e6 49 00 ff
+		75 e4 ff 75 e8 e8 86 f6 ff ff 83 c4 08 0b 05 3c
+		e6 49 00 a3 3c e6 49 00 e9 03 fb ff ff a1 90 9c
+		49 00 05 00 08 00 00 39 05 58 e6 49 00 7e 0a 81
+		0d 3c e6 49 00 00 01 00 00 89 ec 5d c3 e1 80 41
+		00 1c 7f 41 00 2d 80 41 00 3a 7f 41 00 58 7f 41
+		00 76 7f 41 00 94 7f 41 00 b5 7f 41 00 d3 7f 41
+		00 f1 7f 41 00 0f 80 41 00 ff 80 41 00 1d 81 41
+		00 4b 80 41 00 54 81 41 00 8b 81 41 00 c2 81 41
+		00 f9 81 41 00 30 82 41 00 62 82 41 00 99 82 41
+		00 d0 82 41 00 69 80 41 00 87 80 41 00 a5 80 41
+		00 c3 80 41 00 07 83 41 00 3e 83 41 00 72 83 41
+		00 a6 83 41 00 d8 83 41 00 00 1e 1e 01 1e 1e 1e
+		1e 1e 1e 1e 1e 1e 1e 1e 1e 1e 1e 1e 1e 1e 1e 1e
+		1e 1e 1e 1e 1e 1e 1e 1e 1e 1e 1e 1e 1e 1e 1e 1e
+		1e 1e 1e 1e 1e 1e 1e 1e 1e 1e 1e 1e 1e 1e 1e 1e
+		1e 1e 1e 1e 1e 1e 1e 1e 01 02 01 1e 1e 01 1e 1e
+		1e 1e 1e 1e 1e 1e 1e 03 04 05 06 07 08 09 0a 1e
+		1e 1e 1e 1e 1e 1e 1e 0b 0c 0d 1e 1e 1e 1e 1e 1e
+		1e 1e 1e 1e 1e 1e 1e 0e 0f 10 11 12 13 14 15 1e
+		1e 1e 1e 1e 1e 1e 1e 16 17 18 19 1e 1e 1e 1e 1e
+		1e 1e 1e 1e 1e 1e 1e 1e 1e 1e 1e 1e 1e 1e 1e 1e
+		1e 1e 1e 1e 1e 1e 1e 1a 1b 1c 1d
+	</field>
+	
+	<panel title="hitbox">
+		<field type = "label">Hitbox is in coordinates instead of pixels</field>
+		<field type = "label">Default coords per pixel is 512 (default is 4096 top/bottom, 2560 left/right)</field>
+		<field type = "label">Hitbox Left</field>
+		<field type = "text" size = "4" offset = "0x414BBA" />
+		<field type = "label">Hitbox Top</field>
+		<field type = "text" size = "4" offset = "0x414BB0" />
+		<field type = "label">Hitbox Right</field>
+		<field type = "text" size = "4" offset = "0x414BA6" />
+		<field type = "label">Hitbox Bottom</field>
+		<field type = "text" size = "4" offset = "0x414BC4" />
+	</panel>
+	<panel title = "this is the hitbox used for non-solid npcs">
+		<field type = "label">I suggest changing the values below to the same thing.</field>
+		<field type = "label">The reason for duplicates is because there are two different checks used depending on the npc's direction</field>
+		<field type = "label">The values are inn 512ths of a pixel (default is 1024)</field>
+		<field type = "label">non-solid Left</field>
+		<field type = "text" size = "4" offset = "0x418B3E" />
+		<field type = "label">non-solid Top</field>
+		<field type = "text" size = "4" offset = "0x418B7C" />
+		<field type = "label">non-solid Right</field>
+		<field type = "text" size = "4" offset = "0x418B24" />
+		<field type = "label">non-solid Bottom</field>
+		<field type = "text" size = "4" offset = "0x418B5D" />
+		
+		<field type = "label">non-solid Left</field>
+		<field type = "text" size = "4" offset = "0x418BBE" />
+		<field type = "label">non-solid Top</field>
+		<field type = "text" size = "4" offset = "0x418BF7" />
+		<field type = "label">non-solid Right</field>
+		<field type = "text" size = "4" offset = "0x418B9F" />
+		<field type = "label">non-solid Bottom</field>
+		<field type = "text" size = "4" offset = "0x418BDA" />
+	</panel>
+	
+	</panel>
+</hack>

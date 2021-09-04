@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Swimming">
+	<panel>
+		<field type="info">
+			Allows midair jumping underwater, when a specified TSC flag is set.
+		</field>
+		<field type="data" offset="0x415BC7">
+			BF 80 E6 49 00 8B 47 BC 83 7F 68 00 7F 05 F6 C4
+			01 75 0F A8 18 75 04 A8 20 74 2C F6 C4 20 75 27
+			EB 0E 68 00 10 00 00 E8 3D 8D FF FF 48 75 18 9B
+		</field>
+	</panel>
+	<panel title="Customize">
+		<field type="label">Flag</field>
+			
+		<field type="text" size="4" offset="0x415BEA" col="1">4096</field>
+	</panel>
+</hack>
