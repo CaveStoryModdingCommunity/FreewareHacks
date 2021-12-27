@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Water Droplet Physics">
+	<panel>
+		<field type = "label">Snow X velocity min bound [1 byte]</field>
+        <field type = "label">should make this 4 bytes tbh</field>
+		<field type="text" size="1" offset="0x4366E7"/>
+        
+        <field type = "label">Snow X velocity max bound [4 bytes]</field>
+		<field type="text" size="4" offset="0x4366E2"/>
+        
+        <field type = "label">Snow Y velocity min bound [4 bytes]</field>
+		<field type="text" size="4" offset="0x4366FD"/>
+        
+        <field type = "label">Snow Y velocity max bound [4 bytes]</field>
+		<field type="text" size="4" offset="0x4366F8"/>
+        
+        <field type = "label">Snow lifetime (Ticks)</field>
+		<field type="text" size="4" offset="0x43675E"/>
+        
+        
+        <!-- FRAMERECTS -->
+        <field type = "label">Snow framerect A</field>
+		<field type="text" size="4" offset="0x4366A0"/>
+        <field type = "label">Snow framerect B</field>
+		<field type="text" size="4" offset="0x4366A7"/>
+        <field type = "label">Snow framerect C</field>
+		<field type="text" size="4" offset="0x4366AE"/>
+        <field type = "label">Snow framerect D</field>
+		<field type="text" size="4" offset="0x4366B5"/>
+
+
+
+
+        <!-- Water droplet gen stuff -->
+        <field type = "label">Drop generator: Chance to NOT spawn droplets per frame (lower = more water)</field>
+		<field type="text" size="1" offset="0x46EA38"/>
+        
+        <!--> Compare random spawning chance to zero, rather than 2. This allows spawning water every frame or 2nd frame<!-->
+        <field type = "label">Look at this cool 00. Awesome!</field>
+        <field type="data" offset="0x46EA45">
+        00
+        </field>
+        
+        <field type = "label">How far the player can be away from the droplet generator</field>
+        <field type = "label">Droplet generator RIGHT X distance</field>
+		<field type="text" size="4" offset="0x46E9EC"/>
+        
+        <field type = "label">Droplet generator LEFT X distance</field>
+		<field type="text" size="4" offset="0x46EA03"/>
+        
+        <field type = "label">Droplet generator UP Y distance</field>
+		<field type="text" size="4" offset="0x46EA17"/>
+        
+        <field type = "label">Droplet generator DOWN Y distance</field>
+		<field type="text" size="4" offset="0x46EA2B"/>
+        
+        
+        
+	</panel>
+	<panel>
+		<field type="info">
+		Snow stuff
+		</field>
+	</panel>
+</hack>

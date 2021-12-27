@@ -1,0 +1,52 @@
+; omg Brayconn made this!!!1
+; with help on optimization/debugging from TXIN!!!!
+; also used KENZO'S SUPER COOL LIST OF COMMAND OFFSETS
+#define
+tscoff=4a5ae0
+maxFuel=49df90
+GetTextScriptNo=421900
+parserEnd=4225cb
+nextCommand=423721
+#enddefine
+
+offset 4236C0
+
+MOV EDI, tscoff  ; put the TSC offset into edi
+MOV EAX, [EDI-8] ; the tsc buffer address is 8 away, so we put that into eax
+ADD EAX, [EDI]   ; then add the two to get the actual address in the buffer
+CMP dword [EAX], 5346423C ; check for <BFS (5346423C)
+JNZ nextCommand
+
+MOV ESI, GetTextScriptNo ; store address of the function
+MOV EAX, [EDI]       ; we need to pass the tsc offset, not the actual address, so reset to just the offset
+ADD EAX, 4           ; move past the <BFS
+PUSH EAX             ; send that as the argument to GetTextScriptNo
+CALL ESI             ; get first arg
+XCHG EAX,EBX         ; store new booster fuel
+POP EAX              ; put the address back
+ADD EAX, 2           ; GetTextScriptNo leaves us on the third digit in the arguments, so adding 2 gets past the last digit and the :
+PUSH EAX
+CALL ESI             ; get next arg
+
+POP ECX              ; don't need that address anymore
+ADD [EDI], 9         ; but we do need to update the tsc offset
+
+MOV ESI, maxFuel     ; store maxFuel in a register for better optimized movs later
+
+DEC EAX              ; if EAX-1 < 0
+JL :set              ; then EAX was 0, so we're setting
+DEC EAX              
+JL :add              ; EAX must be 1, so add
+DEC EAX
+JL :sub              ; EAX must be 2, so sub
+JMP :end             ; otherwise just quit
+:set
+MOV [ESI], EBX
+JMP :end
+:add
+ADD [ESI], EBX
+JMP :end
+:sub
+SUB [ESI], EBX
+:end
+JMP parserEnd
