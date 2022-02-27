@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<hack name="Title Screen (IntroState 2)" author="Doors and Kayya and Enlight">
+<hack name="Title Screen (IntroState 2)" author="Robin and Kayya and Enlight">
     <panel>
 		<panel title="Rendering">
 			<field type = "label">
@@ -97,10 +97,10 @@
 			<field type="text" size="4" offset="0x40FE47"/>
 			<field type="text" size="4" offset="0x40FE66"/>
 			<field type="label">(1 minute = 3000)</field>
-			<field type="text" size="1" offset="0x40FEBF"/>
-			<field type="text" size="1" offset="0x40FEAA"/>
-			<field type="text" size="1" offset="0x40FE95"/>
 			<field type="text" size="1" offset="0x40FE80"/>
+			<field type="text" size="1" offset="0x40FE95"/>
+			<field type="text" size="1" offset="0x40FEAA"/>
+			<field type="text" size="1" offset="0x40FEBF"/>
         </panel>
 		<panel title="Background Color">
             <field type="label">Convert the number to hex,</field>

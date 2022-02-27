@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Allow # and &lt; in Textboxes" author="periwinkle">
+	<panel>
+	<field type="info">
+		Allows the # and &lt; characters to be safely used
+		in textboxes. Caveats:
+		- The # character may not be the first character of the
+		  line;
+		- Actual event numbers (starting with #) must start at the
+		  beginning of the line (this is the norm anyways);
+		- The three characters following a &lt; may not be a valid
+		  TSC command (or else it'll just execute that command);
+		- Don't use &lt; characters with &lt;TUR text—they don't
+		  interact well.
+	</field>
+	<!-- Only check for # at the start of a line -->
+	<field type="data" offset="0x421A3E">
+		8B 15 E0 5A 4A 00 8A 0C 02 84 C9 75 07 33 C0 E9
+		92 00 00 00 80 F9 23 75 46 85 D2 74 0B 80 7C 02
+		FF 0A 75 3B 90 90 90 90
+	</field>
+	<field type="data" offset="0x421BA1">
+		A1 E0 5A 4A 00 90 8A 14 08 84 D2 75 07 33 C0 E9
+		8F 00 00 00 80 FA 23 75 44 85 C0 74 0A 80 7C 08
+		FF 0A 75 39 90 90 90
+	</field>
+	<!-- Jump to text printing code on invalid TSC commands -->
+	<field type="data" offset="0x425244">
+		E9 CB 01 00 00 90
+	</field>
+	</panel>
+</hack>

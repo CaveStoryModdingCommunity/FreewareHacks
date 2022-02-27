@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Ravil Lunge Contact Damage" author="Brayconn">
+   	<panel>
+	<field type="info">
+		here u go cold :smile_eol:
+	</field>
+	
+	<panel>
+	<field type="text" size = "4" offset = "0x43DE86"/>
+	</panel>
+	
+	</panel>
+</hack>

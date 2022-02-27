@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Drowning Sprites in MyChar" author="duncathan_salt">
+	<panel>
+		<field type="info">
+			Draws the drowning sprite from MyChar rather than from Caret, respecting player direction and Mimiga Mask.
+			Drowning sprites are at x=208 in MyChar.bmp. (This is outside the bounds of the vanilla MyChar.)
+			Compatible with &lt;MIM; other hacks have not been tested.
+		</field>
+		<panel>
+			<panel>
+				<field type="data" offset="0x414bf0" comment="AnimationMyChar">
+				55 89 e5 81 ec a0 01 00 00 56 57 31 f6 68 d0 00
+				00 00 6a 70 6a 60 6a 30 6a 50 6a 30 6a 40 6a 30
+				6a 00 6a 20 6a 00 6a 10 6a 00 b8 00 00 00 00 b9
+				10 00 00 00 ba 20 00 00 00 eb 0b 83 c6 10 81 fe
+				d0 00 00 00 7d 3e 89 84 35 34 ff ff ff 89 8c 35
+				64 fe ff ff 89 8c 35 3c ff ff ff 89 94 35 6c fe
+				ff ff 5f 89 bc 35 30 ff ff ff 89 bc 35 60 fe ff
+				ff 83 c7 10 89 bc 35 38 ff ff ff 89 bc 35 68 fe
+				ff ff eb b7 8b 15 dc e6 49 00 83 fa 00 7f 0f c7
+				05 78 e6 49 00 0c 00 00 00 e9 42 01 00 00 0f b6
+				05 38 e6 49 00 a9 02 00 00 00 0f 85 74 01 00 00
+				8b 0d 3c e6 49 00 f7 c1 08 00 00 00 0f 84 df 00
+				00 00 a9 01 00 00 00 74 0f c7 05 78 e6 49 00 0b
+				00 00 00 e9 08 01 00 00 8b 0d 10 e2 49 00 8b 15
+				30 36 49 00 0b 15 38 36 49 00 85 d1 74 72 83 7d
+				08 00 74 6c 85 0d 34 36 49 00 74 0a 6a 06 6a 09
+				6a 09 6a 07 eb 08 6a 01 6a 04 6a 04 6a 02 0d 04
+				00 00 00 a2 38 e6 49 00 58 59 8b 35 74 e6 49 00
+				46 8b 3d 78 e6 49 00 83 fe 04 7e 17 31 f6 47 39
+				c7 74 04 39 cf 75 0c 6a 01 6a 18 e8 10 b9 00 00
+				83 c4 08 89 35 74 e6 49 00 58 59 39 c7 7f 04 39
+				cf 7d 02 89 cf 89 3d 78 e6 49 00 e9 80 00 00 00
+				85 0d 34 36 49 00 74 0a 83 7d 08 00 74 04 6a 05
+				eb 02 6a 00 a9 04 00 00 00 74 0c 6a 01 6a 18 e8
+				cc b8 00 00 83 c4 08 0f b6 05 38 e6 49 00 25 fb
+				ff ff ff a2 38 e6 49 00 59 89 0d 78 e6 49 00 eb
+				3f 8d 05 78 e6 49 00 83 3d 44 e6 49 00 00 74 08
+				c7 00 06 00 00 00 eb 28 83 3d 48 e6 49 00 00 74
+				08 c7 00 0a 00 00 00 eb 17 83 3d 70 e6 49 00 00
+				7e 08 c7 00 01 00 00 00 eb 06 c7 00 03 00 00 00
+				a1 78 e6 49 00 c1 e0 04 83 3d 40 e6 49 00 00 75
+				09 8d 84 28 30 ff ff ff eb 07 8d 84 28 60 fe ff
+				ff 8b 08 89 0d 9c e6 49 00 8b 48 04 89 0d a0 e6
+				49 00 8b 48 08 89 0d a4 e6 49 00 8b 48 0c 89 0d
+				a8 e6 49 00 5f 5e 89 ec 5d c3 cc
+				</field>
+			</panel>
+			<panel col="1">
+				<field type="data" offset="0x415256" comment="PutMyChar">
+				83 3d dc e6 49 00 00 0f 8e 32 02 00 00 a0 38 e6
+				49 00 a8 80 74 04 a8 02 74 05
+				</field>
+				<field type="data" offset="0x414b50" comment="InitMyChar">
+				55 89 e5 68 b4 00 00 00 6a 00 68 38 e6 49 00 e8
+				cc c1 06 00 83 c4 0c c6 05 38 e6 49 00 80 c7 05
+				40 e6 49 00 02 00 00 00 b8 00 10 00 00 a3 94 e6
+				49 00 a3 90 e6 49 00 a3 8c e6 49 00 a3 98 e6 49
+				00 b9 00 0a 00 00 89 0d 84 e6 49 00 a3 80 e6 49
+				00 89 0d 7c e6 49 00 a3 88 e6 49 00 66 c7 05 cc
+				e6 49 00 03 00 66 c7 05 d0 e6 49 00 03 00 c7 05
+				4c e6 49 00 00 00 00 00 c7 05 dc e6 49 00 e8 03
+				00 00 5d c3 cc
+				</field>
+				<field type="data" offset="0x4169eb" comment="ProcessAir">
+				68 a0 0f 00 00 e8 3b 7f ff ff 59 85 c0 74 17 68
+				4c 04 00 00 e8 8c af 00 00 59 c7 05 dc e6 49 00
+				e8 03 00 00 eb 54 6a 29 e8 78 af 00 00 59 eb 37
+				</field>
+			</panel>
+		</panel>
+	</panel>
+</hack>

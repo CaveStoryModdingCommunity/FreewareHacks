@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Framerects for NPCs which draw from tilesets" author="duncathan_salt">
+	<panel>
+		<panel title="Static Blocks">
+			<panel title="Moving Blocks">
+				<panel title="Horizontal [NPC 149]">
+					<field type="label">Left:</field>
+					<field type="label">Top:</field>
+					<field type="label">Right:</field>
+					<field type="label">Bottom:</field>
+					<field type="text" size="4" offset="0x4455e9" col="1"></field>
+					<field type="text" size="4" offset="0x4455f0"></field>
+					<field type="text" size="4" offset="0x4455f7"></field>
+					<field type="text" size="4" offset="0x4455fe"></field>
+				</panel>
+				<panel title="Vertical [NPC 157]">
+					<field type="label">Left:</field>
+					<field type="label">Top:</field>
+					<field type="label">Right:</field>
+					<field type="label">Bottom:</field>
+					<field type="text" size="4" offset="0x447117" col="1"></field>
+					<field type="text" size="4" offset="0x44711e"></field>
+					<field type="text" size="4" offset="0x447125"></field>
+					<field type="text" size="4" offset="0x44712c"></field>
+				</panel>
+			</panel>
+			<panel title="Falling Block [NPC 279]" col="1">
+				<panel title="Large">
+					<field type="label">Left:</field>
+					<field type="label">Top:</field>
+					<field type="label">Right:</field>
+					<field type="label">Bottom:</field>
+					<field type="text" size="4" offset="0x45dcf9" col="1"></field>
+					<field type="text" size="4" offset="0x45dd00"></field>
+					<field type="text" size="4" offset="0x45dd07"></field>
+					<field type="text" size="4" offset="0x45dd0e"></field>
+				</panel>
+				<panel title="Small">
+					<field type="label">Left:</field>
+					<field type="label">Top:</field>
+					<field type="label">Right:</field>
+					<field type="label">Bottom:</field>
+					<field type="text" size="4" offset="0x45dd15" col="1"></field>
+					<field type="text" size="4" offset="0x45dd1c"></field>
+					<field type="text" size="4" offset="0x45dd23"></field>
+					<field type="text" size="4" offset="0x45dd2a"></field>
+				</panel>
+			</panel>
+		</panel>
+		<panel title="Small Shutter [NPC 185]">
+			<field type="label">Left:</field>
+			<field type="label">Top:</field>
+			<field type="label">Right:</field>
+			<field type="label">Bottom:</field>
+			<field type="text" size="4" offset="0x44ca69" col="1"></field>
+			<field type="text" size="4" offset="0x44ca70"></field>
+			<field type="text" size="4" offset="0x44ca77"></field>
+			<field type="text" size="4" offset="0x44ca7e"></field>
+		</panel>
+		<panel title="Large Shutter [NPC 184]">
+			<panel title="Frame 1">
+				<field type="label">Left:</field>
+				<field type="label">Top:</field>
+				<field type="label">Right:</field>
+				<field type="label">Bottom:</field>
+				<field type="text" size="4" offset="0x44c7a9" col="1"></field>
+				<field type="text" size="4" offset="0x44c7b0"></field>
+				<field type="text" size="4" offset="0x44c7b7"></field>
+				<field type="text" size="4" offset="0x44c7be"></field>
+			</panel>
+			<panel title="Frame 3">
+				<field type="label">Left:</field>
+				<field type="label">Top:</field>
+				<field type="label">Right:</field>
+				<field type="label">Bottom:</field>
+				<field type="text" size="4" offset="0x44c7e1" col="1"></field>
+				<field type="text" size="4" offset="0x44c7e8"></field>
+				<field type="text" size="4" offset="0x44c7ef"></field>
+				<field type="text" size="4" offset="0x44c7f6"></field>
+			</panel>
+			<panel title="Frame 2" col="1">
+				<field type="label">Left:</field>
+				<field type="label">Top:</field>
+				<field type="label">Right:</field>
+				<field type="label">Bottom:</field>
+				<field type="text" size="4" offset="0x44c7c5" col="1"></field>
+				<field type="text" size="4" offset="0x44c7cc"></field>
+				<field type="text" size="4" offset="0x44c7d3"></field>
+				<field type="text" size="4" offset="0x44c7da"></field>
+			</panel>
+			<panel title="Frame 4">
+				<field type="label">Left:</field>
+				<field type="label">Top:</field>
+				<field type="label">Right:</field>
+				<field type="label">Bottom:</field>
+				<field type="text" size="4" offset="0x44c7fd" col="1"></field>
+				<field type="text" size="4" offset="0x44c804"></field>
+				<field type="text" size="4" offset="0x44c80b"></field>
+				<field type="text" size="4" offset="0x44c812"></field>
+			</panel>
+		</panel>
+		<panel title="Lift Block [NPC 186]">
+			<panel title="Frame 1">
+				<field type="label">Left:</field>
+				<field type="label">Top:</field>
+				<field type="label">Right:</field>
+				<field type="label">Bottom:</field>
+				<field type="text" size="4" offset="0x44cbe9" col="1"></field>
+				<field type="text" size="4" offset="0x44cbf0"></field>
+				<field type="text" size="4" offset="0x44cbf7"></field>
+				<field type="text" size="4" offset="0x44cbfe"></field>
+			</panel>
+			<panel title="Frame 3">
+				<field type="label">Left:</field>
+				<field type="label">Top:</field>
+				<field type="label">Right:</field>
+				<field type="label">Bottom:</field>
+				<field type="text" size="4" offset="0x44cc21" col="1"></field>
+				<field type="text" size="4" offset="0x44cc28"></field>
+				<field type="text" size="4" offset="0x44cc2f"></field>
+				<field type="text" size="4" offset="0x44cc36"></field>
+			</panel>
+			<panel title="Frame 2" col="1">
+				<field type="label">Left:</field>
+				<field type="label">Top:</field>
+				<field type="label">Right:</field>
+				<field type="label">Bottom:</field>
+				<field type="text" size="4" offset="0x44cc05" col="1"></field>
+				<field type="text" size="4" offset="0x44cc0c"></field>
+				<field type="text" size="4" offset="0x44cc13"></field>
+				<field type="text" size="4" offset="0x44cc1a"></field>
+			</panel>
+			<panel title="Frame 4">
+				<field type="label">Left:</field>
+				<field type="label">Top:</field>
+				<field type="label">Right:</field>
+				<field type="label">Bottom:</field>
+				<field type="text" size="4" offset="0x44cc3d" col="1"></field>
+				<field type="text" size="4" offset="0x44cc44"></field>
+				<field type="text" size="4" offset="0x44cc4b"></field>
+				<field type="text" size="4" offset="0x44cc52"></field>
+			</panel>
+		</panel>
+		<panel title="Enemy Attacks">
+			<panel title="Mesa Block [NPC 319]">
+				<panel title="Frame 1">
+					<field type="label">Left:</field>
+					<field type="label">Top:</field>
+					<field type="label">Right:</field>
+					<field type="label">Bottom:</field>
+					<field type="text" size="4" offset="0x466e59" col="1"></field>
+					<field type="text" size="4" offset="0x466e60"></field>
+					<field type="text" size="4" offset="0x466e67"></field>
+					<field type="text" size="4" offset="0x466e6e"></field>
+				</panel>
+				<panel title="Frame 2">
+					<field type="label">Left:</field>
+					<field type="label">Top:</field>
+					<field type="label">Right:</field>
+					<field type="label">Bottom:</field>
+					<field type="text" size="4" offset="0x466e75" col="1"></field>
+					<field type="text" size="4" offset="0x466e7c"></field>
+					<field type="text" size="4" offset="0x466e83"></field>
+					<field type="text" size="4" offset="0x466e8a"></field>
+				</panel>
+				<panel title="Frame 3">
+					<field type="label">Left:</field>
+					<field type="label">Top:</field>
+					<field type="label">Right:</field>
+					<field type="label">Bottom:</field>
+					<field type="text" size="4" offset="0x466e91" col="1"></field>
+					<field type="text" size="4" offset="0x466e98"></field>
+					<field type="text" size="4" offset="0x466e9f"></field>
+					<field type="text" size="4" offset="0x466ea6"></field>
+				</panel>
+			</panel>
+			<panel title="Ma Pignon Rock [NPC 314]" col="1">
+				<panel title="Frame 1">
+					<field type="label">Left:</field>
+					<field type="label">Top:</field>
+					<field type="label">Right:</field>
+					<field type="label">Bottom:</field>
+					<field type="text" size="4" offset="0x465cc9" col="1"></field>
+					<field type="text" size="4" offset="0x465cd0"></field>
+					<field type="text" size="4" offset="0x465cd7"></field>
+					<field type="text" size="4" offset="0x465cde"></field>
+				</panel>
+				<panel title="Frame 2">
+					<field type="label">Left:</field>
+					<field type="label">Top:</field>
+					<field type="label">Right:</field>
+					<field type="label">Bottom:</field>
+					<field type="text" size="4" offset="0x465ce5" col="1"></field>
+					<field type="text" size="4" offset="0x465cec"></field>
+					<field type="text" size="4" offset="0x465cf3"></field>
+					<field type="text" size="4" offset="0x465cfa"></field>
+				</panel>
+				<panel title="Frame 3">
+					<field type="label">Left:</field>
+					<field type="label">Top:</field>
+					<field type="label">Right:</field>
+					<field type="label">Bottom:</field>
+					<field type="text" size="4" offset="0x465d01" col="1"></field>
+					<field type="text" size="4" offset="0x465d08"></field>
+					<field type="text" size="4" offset="0x465d0f"></field>
+					<field type="text" size="4" offset="0x465d16"></field>
+				</panel>
+			</panel>
+		</panel>
+	</panel>
+</hack>
