@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Falling block damage" author="periwinkle">
+	<panel>
+	<field type="info">
+		Changes how much damage the falling blocks (NPC 279) do
+	</field>
+	</panel>
+	<panel>
+		<field type="label">
+			Damage when above player
+		</field>
+		<field type="text" offset="0x45DFE6" size="4"/>
+		
+		<field type="label">
+			Damage when below player
+		</field>
+		<field type="text" offset="0x45DFF5" size="4"/>
+	</panel>
+</hack>
