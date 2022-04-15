@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<hack name="Player auto health increase/decrease">
+<hack name="Player auto health increase/decrease" author="txin">
 	<panel>
 		<field type="info">
 			Causes the player to gain or lose health while the designated flag is set.

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<hack name="Power Critter Power">
+<hack name="Power Critter Power" author="JakeV">
 	<panel>
 		<field type = "label">Normal damage</field>
 		<field type="text" size="4" offset="0x42B0B4"/>

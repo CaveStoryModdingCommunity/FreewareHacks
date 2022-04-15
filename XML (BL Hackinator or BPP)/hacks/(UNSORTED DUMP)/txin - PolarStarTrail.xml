@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<hack name="Polar Star Trail">
+<hack name="Polar Star Trail" author="txin">
 	<panel>
 		<field type="info">
 			Causes the Polar Star bullets to have a trail that uses the sprites of the sparkles from Quote's headbonk animation.

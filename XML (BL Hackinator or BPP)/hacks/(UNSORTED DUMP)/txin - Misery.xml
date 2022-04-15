@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<hack name="Misery Teleportation Change">
+<hack name="Misery Teleportation Change" author="txin">
 	<panel>
 		<field type="info">
 			Modifies and enhances the entity #247 "Misery (Boss)" to be able to work with any terrain shape/size.

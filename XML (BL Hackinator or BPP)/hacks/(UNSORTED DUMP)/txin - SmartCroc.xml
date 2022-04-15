@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<hack name="Smart Crocs">
+<hack name="Smart Crocs" author="txin">
 	<panel>
 		<field type="info">
 			Causes Sand Zone's Sandcroc enemies to automatically sink back into the ground after a delay 

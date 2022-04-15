@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<hack name="Water Droplet Physics">
+<hack name="Water Droplet Physics" author="JakeV">
 	<panel>
 		<field type = "label">Snow X velocity min bound [1 byte]</field>
         <field type = "label">should make this 4 bytes tbh</field>

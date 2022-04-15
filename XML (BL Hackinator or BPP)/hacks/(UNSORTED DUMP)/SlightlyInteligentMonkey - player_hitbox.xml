@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<hack name="player hitbox">
+<hack name="player hitbox" author="SlightlyInteligentMonkey">
 	<panel>
 	<field type="info">
 		Allows you to change the players initial hitbox (vanilla doesn't change the hitbox during the game)

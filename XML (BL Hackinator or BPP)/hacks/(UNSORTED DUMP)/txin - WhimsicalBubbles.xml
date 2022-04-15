@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<hack name="WhimsicalBubbles">
+<hack name="WhimsicalBubbles" author="txin">
 	<panel>
 		<field type="info">
 			Causes the Whimsical Star to spawn Bubbler bullets when a certain TSC flag is set and the fire button is held.

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<hack name="Night Spirit Hack">
+<hack name="Night Spirit Hack" author="txin">
 	<panel>
 		<field type="info">
 			Allows slight customization of the Night Spirit enemy.

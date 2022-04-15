@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<hack name="noLoseFocus">
+<hack name="noLoseFocus" author="Clownacy">
 	<panel>
 		<field type="info">
 			Prevents the game stopping when in the background

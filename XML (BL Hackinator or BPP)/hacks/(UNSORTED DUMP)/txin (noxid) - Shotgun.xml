@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<hack name="Shotgun+">
+<hack name="Shotgun+" author="txin and Noxid">
 	<panel>
 		<field type="info">
 			Replaces the Polar Star with an upgraded version of the Shotgun.

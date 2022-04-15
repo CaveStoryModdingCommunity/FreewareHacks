@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<hack name="NPC_Hitstun">
+<hack name="NPC_Hitstun" author="txin">
 	<panel>
 		<panel title="Description" col="0">
 			<field type="info" col="0">

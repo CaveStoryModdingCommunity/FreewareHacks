@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<hack name="Water Droplet Physics">
+<hack name="Water Droplet Physics" author="JakeV">
 	<panel>
 		<field type = "label">Gravity [-126, 126]</field>
 		<field type="text" size="1" offset="0x43605A"/>

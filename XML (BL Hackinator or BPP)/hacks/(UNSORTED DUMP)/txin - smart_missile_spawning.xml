@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<hack name="Smart Missile Spawns">
+<hack name="Smart Missile Spawns" author="txin">
 	<panel>
 		<field type="info">
 			This hack causes missile pickups to not drop if missile ammo is full.

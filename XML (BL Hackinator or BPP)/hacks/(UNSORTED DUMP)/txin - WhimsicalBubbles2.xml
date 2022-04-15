@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<hack name="WhimsicalBubbles+">
+<hack name="WhimsicalBubbles+" author="txin">
 	<panel>
 		<field type="info">
 			If flag 7007 is set, the Bubbler will additionally fire shots from Whimsical Stars circling around Quote.

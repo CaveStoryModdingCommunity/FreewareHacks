@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<hack name="Monster X customisations">
+<hack name="Monster X customizations" author="txin">
 	<panel>
 		<field type="info">
 			Allows easy modification of most useful monster X variables.
