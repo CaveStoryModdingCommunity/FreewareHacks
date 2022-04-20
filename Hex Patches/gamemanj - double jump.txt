@@ -1,4 +1,6 @@
 Replace Booster 0.8 with a double jump!
+hack is by gamemanj
+
 0x4157A1
 C7 05 E8 E6 49 00 02 00 00 00
 
@@ -7,5 +9,3 @@ C7 05 E8 E6 49 00 02 00 00 00
 BA 00 00 00 00 A1 E8 E6 49 00
 99 B9 03 00 00 00 F7 F9 85 D2
 90 90
-
-hack is by gamemanj

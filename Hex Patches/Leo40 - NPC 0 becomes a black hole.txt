@@ -1,9 +1,7 @@
 makes NPC000 have a 0-width, 0-height framerect
+Note by Enlight: Apparently this was made years ago to save a whopping 28 bytes in the null npc code........ okay. Yeah this is pretty much an utterly useless patch lol.
+
 0x426547
 00
 0x42654E
 00
-
-
-
-NOTE BY ENLIGHT: I UTTERLY, ON A FUNDAMENTAL LEVEL DOWN INTO THE CORE OF MY BEING, CANNOT COMPREHEND WHY THIS WAS MADE. WHAT IS THE POINT OF THIS.

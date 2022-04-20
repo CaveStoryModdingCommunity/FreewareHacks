@@ -1,11 +1,17 @@
 Blade LVL 3 is pure RNG. For 50 frames in a row King has a 1/3 chance to spawn a blade slash in a random offset x/y. He can deal between 1-15 damage and stand there for a full second doing nothing, or deal 600 damage if you have Dream's luck like 30 speedruns in a row. Here's some patches to alter the odds to see the most ideal and least ideal probability:
-All 50 slashes
+
+All 50 slashes:
+
 0x004073EB
 90 90 90 90 90 90
-No Slashes
+
+No Slashes:
+
 0x004073EB
 E9 9B 00 00 00 90
-Disable X/Y RNG
+
+Disable X/Y RNG:
+
 0x40742D
 FF 71 14 90
 0x407443

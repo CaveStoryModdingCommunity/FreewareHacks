@@ -1,0 +1,8 @@
+NOTE: THIS IS FOR ORGMAKER2! DO NOT APPLY THIS TO CAVE STORY!
+
+Hex patch to fix Orgmaker2 bug where it stops playing when you switch to another audio playing program.
+
+0x410DFD
+80
+0x4116C9
+80

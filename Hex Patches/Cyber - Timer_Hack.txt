@@ -86,15 +86,12 @@ E4 14 83 C4 14 F6 05 44 BA 4B 00 04 75 02 C9 C3
 6A 04 59 8D 7D D0 F3 AB 90 90 80 25 44 BA 4B 00
 FB F6 05 44 BA 4B 00 01 0F 85 46 FE FF FF C9 C3
 
-
 If you want the timer not to stop when a boss fight stops, apply this hack after the previous two:
 
 0x47b600
 80 25 44 BA 4B 00 FE
 
-If you want to remove the ticking noise (again, apply after the previous two):
+If you want to remove the ticking noise (again, apply after the first two):
 
 0x424C34
 90 90 90 90 90
-
-

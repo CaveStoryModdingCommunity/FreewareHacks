@@ -1,6 +1,6 @@
-Misery's balls disappear after some amount of time.
-0x457180
+Misery's hovering ball projectiles disappear after some amount of time. This prevents a bug in vanilla where it's possible to hit the entity cap.
 
+0x457180
 55 8B EC 83 EC 34 C7 45 D0 00 00 00 00 31 C0 B8
 20 00 00 00 C7 45 D8 10 00 00 00 C7 45 DC 30 00
 00 00 C7 45 E0 10 00 00 00 89 45 E4 89 45 D4 89

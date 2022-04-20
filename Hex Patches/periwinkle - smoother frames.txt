@@ -1,9 +1,10 @@
 Behold, a 2-byte patch that magically fixes* the choppy frame output of the game:
 (*your mileage may vary)
-0x40B35E
-58 C2
 
 Synopsis: To achieve a target 50 FPS, the game tries to draw a frame at 20ms intervals. To keep track of how much time has passed since the last frame, Pixel calls GetTickCount() until it reaches the next 20ms frame target. However, GetTickCount() has a very poor resolution (can be as bad as ~15-16ms, depending on the system), which can cause wildly inconsistent frame delays with some frames being drawn 15-16ms apart and others 31-32ms apart, in some cases.
 This patch replaces the GetTickCount() call with timeGetTime(), which...also isn't perfect, but in practice seems to be much more precise most of the time (at least for me).
 Here's a comparison (vanilla on the left, patched version on the right, I also did a hack that shows the previous frame delay on the top right):
 https://cdn.discordapp.com/attachments/312734232810356736/927721014291488788/framedelays.mp4
+
+0x40B35E
+58 C2

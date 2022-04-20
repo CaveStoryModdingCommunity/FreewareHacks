@@ -1,4 +1,5 @@
 Weird jumping mechanics change where you gain acceleration every time you change directions.
+
 0x41606F
 74 33 A1 3C E6 49 00 25 00 F0 00 00 75 27 B8 01
 FD FF FF 31 C9 BB 6C E6 49 00 83 F9 01 7F 1D 39

@@ -1,3 +1,4 @@
-Made an ASM hack so the flying gaudis shoot blades instead of purple shit. Thank me later.
+Made an ASM hack so the flying Gaudi shoot blades instead of purple shit. Thank me later.
+
 0x446967
 68 AE 00 00 00

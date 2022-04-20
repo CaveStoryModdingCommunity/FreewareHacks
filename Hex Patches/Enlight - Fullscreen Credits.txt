@@ -1,4 +1,6 @@
 This prevents the black credits illustration buffer from showing up on the left half of the entire screen when running <CRE.
+
+Essentially if you're like me and want some scrolling text (and also those sprites from casts.bmp) but can't be bothered to do art, and would rather have the ENTIRE SCREEN available to run cutscenes and stuff instead of just the right half, this does that.
+
 0x40D575
 00
-Essentially if you're like me and want some scrolling text (and also those sprites from casts.bmp) but can't be bothered to do art, and would rather have the ENTIRE SCREEN available to run cutscenes and stuff instead of just the right half, this does that.

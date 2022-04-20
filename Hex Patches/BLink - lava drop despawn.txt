@@ -1,7 +1,7 @@
 PSA don't let acid drops drip off the bottom of the screen if you don't want to hit the entity cap.
-0x455AD5
+unless you use this hack of course...
 
+0x455AD5
 83 40 14 40 FF 40 70 31 DB 89 5D E8 81 78 70 00
 01 00 00 7C 06 C7 00 00 00 00 00 8B 48 04 90 90
 81 E1 FF 00 00 00 74 03 FF 45 E8
-unless you use this hack of course...

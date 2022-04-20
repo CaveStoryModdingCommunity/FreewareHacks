@@ -8,5 +8,6 @@ When you press the mini-map button, instead of opening the mini-map it runs even
 
 Please note that you need to have the mini-map (EQ+0002) for this to work.
 Or if you're already using the equip for something else, you can apply this patch to bypass the needed EQ+
+
 0x41075E
 90 90 90 90 90 90 90 90 90 90

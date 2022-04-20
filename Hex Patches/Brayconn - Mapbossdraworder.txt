@@ -1,4 +1,5 @@
 Simple hex patch that makes the map boss draw OVERTOP of other NPCs:
+
 0x410654
 B8 F1 05 00
 
