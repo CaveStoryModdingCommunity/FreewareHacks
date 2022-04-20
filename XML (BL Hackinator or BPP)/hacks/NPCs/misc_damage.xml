@@ -1,11 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<hack name="Misc. Damage Values" author="Noxid and EnlightenedOne">
+<hack name="Misc. Damage Values" author="Compiled by Enlight">
+	<!--See the comment tags for individual credits.-->
 	<panel>
-		<field type="label">Tile Spike damage:</field>
-		<field type="label">Lightning damage:</field>
-		<field type="label">Bute (Sword) damage:</field>
-		<field type="text" size="1" offset="0x4162F0" col="1"/>
-		<field type="text" size="1" offset="0x4448C6"/>
-		<field type="text" size="1" offset="0x463EEA"/>
+		<panel col="0">
+			<field type="label" col="0">[TILE] Tile Spike Damage:</field><!--Noxid-->
+			<field type="text" size="1" offset="0x4162F0" col="1"/>
+			<field type="label" col="0">[#146] Lightning Damage:</field><!--Enlight-->
+			<field type="text" size="1" offset="0x4448C6" col="1"/>
+			<field type="label" col="0">[#115] Ravil Lunge:</field><!--Brayconn-->
+			<field type="text" size="4" offset="0x43DE86" col="1"/>
+			<field type="label" col="0">[#24] Power Critter Contact:</field><!--JakeV-->
+			<field type="text" size="4" offset="0x42B0B4" col="1"/>
+			<field type="label" col="0">[#24] Power Critter Smash:</field><!--JakeV-->
+			<field type="text" size="4" offset="0x42B009" col="1"/>
+			<field type="label" col="0">[#58] Basu Contact Damage:</field><!--periwinkle-->
+			<field type="text" size="4" offset="0x431D81" col="1"/>
+		</panel>
+		<panel title="[#310] Bute (Sword)" col="1"><!--BLink-->
+			<field type = "label" col="0">Standing Damage:</field>
+			<field type="text" size="4" offset="0x463F82" col="1"/>
+			<field type = "label" col="0">(Edit all three)</field>
+			<field type="text" size="4" offset="0x463DA7" col="1"/>
+			<field type = "label" col="0"></field>
+			<field type="text" size="4" offset="0x463D33" col="1"/>
+			<field type = "label" col="0"></field>
+			<field type = "label" col="1"></field>
+			<field type = "label" col="0">Attacking Damage:</field>
+			<field type="text" size="4" offset="0x463EEA" col="1"/>
+		</panel>
 	</panel>
 </hack>
