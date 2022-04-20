@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="&lt;MS4 and &lt;BLO" author="Serena and Txin">
+	<panel>
+		<panel>
+			<field type="label">
+				&lt;MS4 and &lt;BLO
+			</field>
+		</panel>
+		<panel>
+			<field type="info">
+				Adds the &lt;MS4 (invisible &lt;MSG) and &lt;BLO (boss explosion) commands.
+				Optimizes &lt;CLO and replaces &lt;CAT command.
+			</field>
+			<field type="data" offset="0x4236C0" col="1">
+				a1 d8 5a 4a 00 03 05 e0 5a 4a 00 81 38 3c 4d 53
+				34 75 3b e8 b8 e7 ff ff 82 0d dd 5a 4a 00 01 82
+				25 dd 5a 4a 00 cd f6 05 dd 5a 4a 00 40 74 07 82
+				0d dd 5a 4a 00 10 83 25 0c 5b 4a 00 00 83 05 e0
+				5a 4a 00 04 6a 01 8f 45 d4 e9 bd ee ff ff 81 38
+				3c 42 4c 4f 75 49 6a 00 58 82 fc 02 73 2c 6b c8
+				56 8d 34 4d 20 62 4a 00 40 50 f6 06 80 74 e9 81
+				7e 30 9a 02 00 00 75 e0 6a 01 ff 76 0c ff 76 08
+				e8 2b b3 fe ff 83 c4 0c eb ce 83 05 e0 5a 4a 00
+				04 e9 75 ee ff ff 90 90 90 90 90 90 90 90 90 81
+				38 3c 43 4c 4f 75 1c 0f be 0d dd 5a 4a 00 83 e1
+				cc 88 0d dd 5a 4a 00 83 05 e0 5a 4a 00 04 e9 48
+				ee ff ff
+			</field>
+		</panel>
+		<field type="label">
+			Explosion Event Number
+		</field>
+		<field type="text" size="2" offset="0x423732" />
+	</panel>
+</hack>
