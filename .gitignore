@@ -1,2 +1,28 @@
+# Catch all for files that should not never be found here
+*.exe
+
 # Mac OSX folder metadata attributes
 *.DS_Store
+*__MACOSX/
+
+# Booster's Lab files in case someone has BL alongside the XML "hacks" folder
+BoostLab_0500.jar
+XML (BL Hackinator or BPP)/help/
+XML (BL Hackinator or BPP)/changelog.txt
+editor.rect
+entityInfo.txt
+FlagListing.txt
+flagnames.txt
+XML (BL Hackinator or BPP)/License.txt
+linetypes.txt
+musiclist.txt
+XML (BL Hackinator or BPP)/README.md
+sfxList.txt
+TRAListing.txt
+tsc_list.txt
+tsc_list_tsc+.txt
+
+# Allow a private subfolder for hacks
+XML (BL Hackinator or BPP)/hacks/_PRIVATE/
+Hex Patches/_PRIVATE/
+Doukutsu Assembler/_PRIVATE/
