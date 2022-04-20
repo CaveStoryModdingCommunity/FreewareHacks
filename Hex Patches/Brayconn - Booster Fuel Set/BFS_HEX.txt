@@ -1,0 +1,15 @@
+This is the Booster Fuel Set command (<BFS) that Kenzo, Txin, and myself made for ACSS.
+Usage is <BFSFUEL:MODE, mode 0 is set, mode 1 is add, and mode 2 is subtract (anything else does nothing).
+It's currently set to overwrite <CAT, but the DouA source code is there if you want it to overwrite something else.
+BFS1.txt is the main command, BSF_2.txt is a simple patch to remove the hard-coding for booster fuel, and BFS_HEX.txt is just the hex patch for use with BL/BPP.
+
+0x4236c0
+bf e0 5a 4a 00 8b 47 f8 03 07 81 38 3c 42 46 53
+75 4f be 00 19 42 00 8b 07 83 c0 04 50 ff d6 87
+d8 58 83 c0 02 50 ff d6 59 83 07 09 be 90 df 49
+00 48 7c 08 48 7c 09 48 7c 0a eb 0a 89 1e eb 06
+01 1e eb 02 29 1e e9 c0 ee ff ff
+
+0x415796
+f6 05 50 e6 49 00 21 74 07 a1 90 df 49 00 eb 02
+31 c0 a3 e8 e6 49 00 eb 1e

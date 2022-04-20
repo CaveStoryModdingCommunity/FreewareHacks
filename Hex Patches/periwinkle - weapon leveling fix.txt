@@ -1,0 +1,4 @@
+Weapon leveling is slightly bugged: When grabbing XP on a level 1 weapon, the game checks the thresholds for both L1>2 and L2>3 to determine whether to level up the gun. This means, for instance, that if you have L1 set to level up at 20 XP and L2 at 10 XP, then it will actually only take 10 XP to level up from 1 to 2 (the lesser of the two numbers). This doesn't affect vanilla because every weapon takes at least as much XP to level up 2>3 as it does for 1>2. But if you ever want to make a weapon take more XP to level up 1>2 than 2>3, then apply this hex patch:
+
+0x419851
+90 90 90 90 90

@@ -1,0 +1,23 @@
+To toggle the "Debug Save" menu item and profile.dat drag-n-drop:
+Add a blank file called "save" in your directory,
+just like you would the hidden debug files "mute" "fps" and "s_reverse" that are still coded in the game.
+
+0x412D40
+8B 7D 08 57 FF 15 18 C2 48 00 89 45 FC 68 1C B9
+48 00 E8 B9 DF FF FF 83 C4 04 85 C0 75 12 6A 00
+68 45 9C 00 00 FF 75 FC FF 15 F0 C1 48 00 EB 12
+BB 00 B9 48 00 53 FF 15 1C C1 48 00 E9 A1 8B 07
+00 90 68 04 C6 48 00 E8 84 DF FF FF 83 C4 04 85
+C0 75 10 6A 00 68 47 9C 00 00 FF 75 FC FF 15 F0
+C1 48 00 57 FF 15 F4 C1 48 00 68 0C C6 48 00 E8
+5C DF FF FF 83 C4 04 A3 64 E4 49 00
+
+0x48B8FF
+CC 73 68 65 6C 6C 33 32 2E 64 6C 6C 00 44 72 61
+67 41 63 63 65 70 74 46 69 6C 65 73 00 73 61 76
+65 00 CC 83 C3 0C 53 50 FF 15 34 C1 48 00 6A 01
+57 FF D0 E9 4B 74 F8 FF CC
+
+NOTES: Nothing in the code specifically looks for a "save" file, that was theorized by Clownacy and implimented in the patches above by Enlight. It's possible Pixel had these functions default to ALWAYS ON and then disabled them for release.
+What IS included in the game's code is a dlg_save menu that is randomly deleted just before the game window is created (just like what it does for dlg_mute, except it never checks for any file to prevent it).
+Also the game is programmed that if you were to drag a profile.dat on top of it, it would check if it is valid and then load it. The problem is that nowhere in the code does it turn on the Windows flag to allow things to be dragged into the window in the first place.

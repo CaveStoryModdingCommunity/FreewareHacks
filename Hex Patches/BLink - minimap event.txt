@@ -1,0 +1,13 @@
+When you press the mini-map button, instead of opening the mini-map it runs event 50 in head.tsc
+
+0x410776
+6A 32 E8 13 12 01 00 83 C4 04 EB 2A 90 90 90 90
+90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
+90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
+90 90 90 90 90 90
+
+Please note that you need to have the mini-map (EQ+0002) for this to work.
+Or if you're already using the equip for something else, you can apply this patch to bypass the needed EQ+
+
+0x41075E
+90 90 90 90 90 90 90 90 90 90

@@ -1,0 +1,10 @@
+One-way Moving Labyrinth Blocks (#149 & #157). This hack removes the reset upon hitting a wall. Once quote activates them and they travel in the set direction, that's it they won't come back the other way.
+
+0x446E17
+01
+0x446FEA
+01
+0x4452E7
+01
+0x4454BB
+01

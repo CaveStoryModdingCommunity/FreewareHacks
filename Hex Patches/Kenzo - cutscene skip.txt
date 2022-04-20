@@ -1,0 +1,21 @@
+This allows you to "skip cutscenes"
+courtesy of the great @Kenzo (A Spirt), by setting NPC 262 (Chako caged), and in the tsc, setting FL+2000 in an event of your choice, pressing the "q" - menu button - will jump the script to event 500 (that must be set in the script) which will allow you to do a myriad of things, in this case, skip cutscenes.
+An example can be:
+#400
+<FL+2000<KEY<MSGHi.<NOD<CLO<FL-2000<END
+#0500
+<FL-2000<MSGThis is a secret.<NOD<CLO<END
+Make sure you unset the flag in the event itself so you don't keep repeating it - this includes the initial cutscene so as the flag is unset whether you press q or not.
+Warning: It doesn't work with <PRI
+Also, make sure when you jump to "skip cutscenes" you do all the necessary things like add flags, weapons etc...
+Example:
+#400
+<FL+2000<KEY<MSGHi.<NOD<GIT+1003<CLO<FL-2000<END
+#0500
+<FL-2000<GIT+1003<END
+
+0x458c30
+55 89 e5 83 ec 10 8b 4d 08 68 d0 07 00 00 e8 ed
+5c fb ff 5a 25 01 00 00 00 74 1a a1 14 e2 49 00
+3d 00 10 00 00 75 0e 68 f4 01 00 00 e8 2f 8d fc
+ff 5a 8b 4d 08 c9 c3

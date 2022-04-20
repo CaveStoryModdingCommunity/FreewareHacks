@@ -1,0 +1,97 @@
+This hack created by Cybersleuth applies a timer bar above the Boss Health Bar:
+
+<SETXXXX:YYYY will set a timer for X seconds that will run event Y when the timer stops.
+the timer can function at the same time as <BSL, and unsets the boolean set by <BSL if the timer ends, so it should stop any boss fight.
+
+<ENT stops the timer as well as any boss fight going on, but does not run any TSC event.
+
+NOTES
+
+this hack optimizes <BSL and <MYD in the tsc parser, as well as the functions at 0047B450, 0047B460, 0047B500, and 0047B540,
+
+uses memory locations 
+
+4BBA44 - booleans here
+4BBA45 - byte for second timer
+
+4BBA46 - word AMOUNT OF SECONDS
+49E280 - word EVENT NUMBER
+49E282 - word INITIAL SEC AMOUNT
+49E284 - word INITIAL SEC AMOUNT
+
+<SETxxxx:yyyy will set a timer for X seconds that will run event Y when the timer stops.
+the timer can function at the same time as <BSL, and unsets the boolean set by <BSL if the timer ends, so it should stop any boss fight.
+
+<ENT stops the timer as well as any boss fight going on (unfortunately), but does not run any TSC event.
+
+0x424B55
+BF D8 5A 4A 00 8B 17 03 57 08 BB 00 19 42 00 8B
+77 08 81 3A 3C 42 53 4C 75 21 83 C6 04 56 FF D3
+59 83 F8 00 75 05 E8 80 69 05 00 50 E8 DA 68 05
+00 59 83 47 08 08 E9 17 07 00 00 81 3A 3C 53 45
+54 75 34 83 C6 04 56 FF D3 66 A3 46 BA 4B 00 A3
+82 E2 49 00 90 C6 05 45 BA 4B 00 32 59 83 C6 05
+56 FF D3 59 66 A3 80 E2 49 00 80 0D 44 BA 4B 00
+02 83 47 08 0C EB BF 81 3A 3C 4D 59 44 75 14 83
+C6 04 56 FF D3 59 50 E8 8F 1F FF FF 59 83 47 08
+08 EB A3 81 3A 3C 45 4E 54 75 56 80 25 44 BA 4B
+00 00 83 47 08 04 EB 8E 80 3D 45 BA 4B 00 16 7F
+08 80 45 D0 08 80 45 D8 08 40 89 45 C8 6A 01 6A
+2F 0F B6 0D 45 BA 4B 00 83 F8 27 7D 0D 83 F9 19
+75 08 6A 16 8F 04 E4 90 EB 05 83 F9 01 75 08 E8
+07 BA FF FF 59 59 90 BB CA 00 00 00 E9 AE 68 05
+00
+
+0x47B450
+55 8B EC 80 25 44 BA 4B 00 00 90 90 90 5D C3 CC
+55 8B EC 31 C0 3D 00 02 00 00 7D 16 89 C1 69 C9
+AC 00 00 00 8B 91 50 62 4A 00 3B 55 08 74 03 40
+EB E3 3D 00 02 00 00 75 04 31 C0 EB 25 80 0D 44
+BA 4B 00 01 8B 91 60 62 4A 00 89 15 4C BA 4B 00
+89 15 50 BA 4B 00 8D 91 60 62 4A 00 89 15 48 BA
+4B 00 C9 C3 80 25 44 BA 4B 00 00 66 FF 35 80 E2
+49 00 E8 C9 64 FA FF 59 C9 C3 99 F7 3D 82 E2 49
+00 90 89 45 F8 90 90 80 0D 44 BA 4B 00 04 EB 0F
+66 83 3D 46 BA 4B 00 00 7E CA E9 C4 00 00 00 E9
+09 97 FA FF E9 7A 01 00 00 90 90 90 90 90 C9 C3
+55 8B EC 80 0D 44 BA 4B 00 01 90 90 90 A1 98 BA
+4B 00 A3 4C BA 4B 00 8B 0D 98 BA 4B 00 89 0D 50
+BA 4B 00 C7 05 48 BA 4B 00 98 BA 4B 00 B8 01 00
+00 00 5D C3 C6 45 D4 30 C6 45 D8 20 EB 6D 90 CC
+C8 50 00 00 31 C0 6A 14 59 8D 7D B0 F3 AB C6 45
+D4 30 C6 45 D8 20 C6 45 DC 38 C6 45 B8 F4 C6 45
+BC 08 C6 45 E4 10 C6 45 E8 F4 C6 45 EC 18 C6 45
+F4 18 C6 45 FC 20 C6 45 C4 20 C6 45 C8 E8 C6 45
+CC 28 F6 05 44 BA 4B 00 04 75 09 F6 05 44 BA 4B
+00 02 75 02 EB 55 C6 45 D0 70 C6 45 D4 68 C6 45
+D8 77 C6 45 DC 6F E9 35 FF FF FF C6 45 DC 38 EB
+E3 90 90 80 3D 45 BA 4B 00 00 7F 0E C6 05 45 BA
+4B 00 32 66 FF 0D 46 BA 4B 00 FE 0D 45 BA 4B 00
+0F B7 05 46 BA 4B 00 69 C0 C6 00 00 00 E9 E8 FE
+FF FF 80 25 44 BA 4B 00 FB C9 C3 F6 05 44 BA 4B
+00 01 75 02 EB 11 A1 48 BA 4B 00 83 38 01 7D 09
+80 25 44 BA 4B 00 0C EB D9 A1 48 BA 4B 00 8B 00
+68 DC 00 00 00 5B 90 69 C0 C6 00 00 00 99 F7 3D
+4C BA 4B 00 89 45 F8 8B 15 48 BA 4B 00 A1 50 BA
+4B 00 3B 02 7E 17 FF 05 54 BA 4B 00 83 3D 54 BA
+4B 00 1E 7E 06 FF 0D 50 BA 4B 00 EB 0A C7 05 54
+BA 4B 00 00 00 00 00 A1 50 BA 4B 00 69 C0 C6 00
+00 00 99 F7 3D 4C BA 4B 00 89 45 C8 80 25 44 BA
+4B 00 FB 8D 45 B0 68 C0 C3 40 00 6A 1A 50 53 6A
+20 68 1C F9 48 00 FF 54 E4 14 83 44 E4 0C 30 83
+44 E4 08 08 FF 54 E4 14 83 6C E4 0C 20 83 6C E4
+08 04 83 44 E4 04 28 FF 54 E4 14 83 44 E4 0C 30
+FF 54 E4 14 83 6C E4 0C 20 83 6C E4 04 20 FF 54
+E4 14 83 C4 14 F6 05 44 BA 4B 00 04 75 02 C9 C3
+6A 04 59 8D 7D D0 F3 AB 90 90 80 25 44 BA 4B 00
+FB F6 05 44 BA 4B 00 01 0F 85 46 FE FF FF C9 C3
+
+If you want the timer not to stop when a boss fight stops, apply this hack after the previous two:
+
+0x47b600
+80 25 44 BA 4B 00 FE
+
+If you want to remove the ticking noise (again, apply after the first two):
+
+0x424C34
+90 90 90 90 90

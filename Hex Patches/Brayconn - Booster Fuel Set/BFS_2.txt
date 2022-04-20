@@ -1,0 +1,17 @@
+; omg this was made by TXIN!!!!1
+; then converted to DouA by BRAYCONN!!!!?
+#define
+maxFuel = [49df90]
+equipFlags = [49E650]
+currentFuel = [49E6E8]
+#enddefine
+
+offset 415796
+
+TEST byte equipFlags, 21
+JE SHORT 004157A6
+MOV EAX, maxFuel
+JMP SHORT 004157A8
+XOR EAX, EAX
+MOV currentFuel, EAX
+JMP SHORT 004157CD

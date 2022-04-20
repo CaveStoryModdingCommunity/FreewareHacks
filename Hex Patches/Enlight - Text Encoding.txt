@@ -1,0 +1,5 @@
+Make your CS font look crisp and display Japanese characters correctly.
+
+0x40CD90
+6A 03 31 C0 50 6A 04 68 80 00 00 00 50 50 50 68
+90 01 00 00 50 50 FF 75 FC FF 75 F8 90 90 90

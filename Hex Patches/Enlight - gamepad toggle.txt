@@ -1,0 +1,5 @@
+Credit to <@317026565810552842> for discovering that in Vanilla Cave Story, pressing the F5 key will disable the gamepad controls. The instruction that does this is at 0x413004
+I made a patch that makes this debug function actually useful by turning the F5 key into a gamepad toggle, as opposed to only disabling gamepads and forcing an .exe relaunch. Use this if you want to have back and forth testing of gamepad and keyboard support.
+
+0x413004
+31 C0 40 30 05 5C E4 49 00 90

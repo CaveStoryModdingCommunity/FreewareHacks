@@ -1,0 +1,19 @@
+optimizes <MOV and puts <CNV in the free space.
+
+<CNVaaaa:bbbb:cccc will change variable B to number C on any NPC with event A.
+
+variable B is the number used for the NPC variables in defines but divided by 4.
+so damage, which is usually A4, is 41.
+HP would be 16.
+
+0x422E3A
+BF D8 5A 4A 00 8B 17 03 57 08 BB 00 19 42 00 8B
+77 08 81 3A 3C 4D 4F 56 75 24 83 C6 09 56 FF D3
+59 C1 E0 0D 50 83 EE 05 56 FF D3 59 C1 E0 0D 50
+E8 51 3C FF FF 83 47 08 0D E9 2F 24 00 00 81 3A
+3C 43 4E 56 75 55 83 C6 04 56 FF D3 59 50 83 C6
+05 56 FF D3 59 6B C0 04 50 83 C6 05 56 FF D3 59
+50 6A 00 8B 54 E4 0C 58 80 FC 02 73 28 6B C8 56
+8D 0C 4D 20 62 4A 00 40 50 F6 01 80 74 E5 39 51
+30 75 E0 8B 54 E4 08 8B 44 E4 04 89 04 0A EB D3
+90 90 90 90 90 83 47 08 12 EB 9E
