@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<hack name="Basu damage" author="periwinkle">
-	<panel>
-		<field type="label"> Basu contact damage: </field>
-		<field type="text" size="4" offset="0x431D81"/>
-	</panel>
-</hack>
