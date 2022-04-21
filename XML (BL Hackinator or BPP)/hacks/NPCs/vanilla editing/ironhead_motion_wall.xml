@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Ironhead Motion Wall [#196]" author="periwinkle">
+	<panel>
+	<field type="info">
+		Allows you to customize various parameters of the moving walls
+		in the Ironhead fight (NPC 196).
+		Values are in units (pixels * 512, blocks * 8192).
+	</field>
+	
+	<field type="label">
+	Amount to move left per frame
+	</field>
+	<field type="text" offset="0x44DFA6" size="4"/>
+	
+	<field type="label">
+	Left boundary
+	</field>
+	<field type="text" offset="0x44DFB6" size="4"/>
+	
+	<field type="label">
+	When hitting the left boundary, teleport right by this amount
+	</field>
+	<field type="text" offset="0x44DFC4" size="4"/>
+	
+	</panel>
+</hack>

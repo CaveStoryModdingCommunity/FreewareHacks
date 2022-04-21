@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Falling Block [#279]" author="periwinkle">
+<panel>
+	<panel>
+	<field type="info">
+		Modifies various properties of the falling blocks (NPC 279).
+		Note, 8192 units = 16 pixels = 1 block.
+	</field>
+	</panel>
+	<panel>
+		<field type="label">
+			Gravity (prior to hitting the ground) (units/frame^2)
+		</field>
+		<field type="text" offset="0x45DEA2" size="1"/>
+		
+		<field type="label">
+			Max fall speed (prior to hitting the ground). Change both 
+			values to the same thing (units/frame)
+		</field>
+		<field type="text" offset="0x45DEAF" size="4"/>
+		<field type="text" offset="0x45DEBB" size="4"/>
+		
+		<field type="label">
+			Disable Ignore Solid flag (until hitting the ground) when 
+			below this y position (units)
+		</field>
+		<field type="text" offset="0x45DEC5" size="4"/>
+		
+		<field type="label">
+			Bounce velocity when hitting the ground (units/frame)
+		</field>
+		<field type="text" offset="0x45DEF1" size="4"/>
+		
+		<field type="label">
+			Gravity (after hitting the ground) (units/frame^2)
+		</field>
+		<field type="text" offset="0x45DFA3" size="1"/>
+		
+		<field type="label">
+			Damage when above player
+		</field>
+		<field type="text" offset="0x45DFE6" size="4"/>
+		
+		<field type="label">
+			Damage when below player
+		</field>
+		<field type="text" offset="0x45DFF5" size="4"/>
+	</panel>
+</panel>
+</hack>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Toroko Boss Wait [#140]" author="JakeV">
+<panel>
+	<panel>
+		<field type = "label">Maximum wait bound</field>
+		<field type="text" size="2" offset="0x443158"/>
+		<field type = "label">Minumum wait bound</field>
+		<field type="text" size="1" offset="0x44315D"/>
+	</panel>
+	<panel>
+		<field type="info">
+		Toroko boss wait time. It is randomized between these 2 numbers.
+        Min wait must be less than 255
+		</field>
+	</panel>
+</panel>
+</hack>

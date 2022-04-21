@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Water Droplet Physics [#73 and #359]" author="JakeV">
+<panel>
+	<panel col="0">
+		<field type = "label">Gravity [-126, 126]</field>
+		<field type="text" size="1" offset="0x43605A"/>
+        <field type = "label">Max Y Velocity</field>
+		<field type="text" size="4" offset="0x436079"/>
+        <field type = "label">Max Y Velocity (use same value as above)</field>
+		<field type="text" size="4" offset="0x436085"/>
+        <field type = "label">Drop generator: Chance to NOT spawn droplets per frame (lower = more water)</field>
+		<field type="text" size="1" offset="0x46EA38"/>
+
+        <field type = "label">Initial Y velocity of drops spawned by generator</field>
+		<field type="text" size="1" offset="0x46EA67"/>
+	</panel>
+	<panel col="1">
+		<field type="info">
+		Modifies water droplet physics and Water droplet generator physics
+		</field>
+		<!--> Compare random spawning chance to zero, rather than 2. This allows spawning water every frame or 2nd frame<!-->
+        <field type = "label">Look at this cool 00. Awesome!</field>
+        <field type="data" offset="0x46EA45">
+        00
+        </field>
+	</panel>
+</panel>
+</hack>
