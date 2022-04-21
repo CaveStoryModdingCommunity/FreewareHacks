@@ -12,18 +12,13 @@ WARNING: Booster's Lab is designed to automatically rename modified bitmap files
 </field>
 </panel>
 
+<!-->Light improvements made by Enlight.<!-->
 <panel title="Set all textboxes to the same value">
-<field type="text" size="4" offset="0x48c285"/>
-<field type="text" size="4" offset="0x48c309"/>
-<field type="text" size="4" offset="0x48c32d"/>
+<field type="text" size="5" offset="0x48c285"/>
+<field type="text" size="5" offset="0x48c309"/>
+<field type="text" size="5" offset="0x48c32d"/>
 </panel>
-<field type="label">Convert the ASCII for the new file extension to hexadecimal, and then convert to decimal.</field>
-<field type="label">This hack WILL require manual file renaming after applying the hack.</field>
-<field type = "label">   ‍   </field>
-<field type="label">IMPORTANT TIP:</field>
-<field type="label">Place the hex in reverse first, and then convert to decimal.</field>
-<field type="label">Here's an example for the .bmp extension:</field>
-<field type="label">p m b . = 70 6D 62 2E = 1886216750</field>
+<field type="label">This hack does not rename your files for you. You MUST manually change the extension of every file yourself!</field>
 
 </panel>
 
