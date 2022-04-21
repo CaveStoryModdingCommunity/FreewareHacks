@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<hack name="Missile Ammo Drops" author="EnlightenedOne">
+<hack name="Missile Ammo Drops [#86]" author="EnlightenedOne">
 	<panel>
 		<field type = "label">Missile Drops (Entity #86) attempts to</field>
 		<field type = "label">load ammo to weapon ID</field>

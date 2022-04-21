@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<hack name="Falling block editor" author="periwinkle">
+<hack name="Falling Block [#279]" author="periwinkle">
+<panel>
 	<panel>
 	<field type="info">
 		Modifies various properties of the falling blocks (NPC 279).
@@ -45,4 +46,5 @@
 		</field>
 		<field type="text" offset="0x45DFF5" size="4"/>
 	</panel>
+</panel>
 </hack>

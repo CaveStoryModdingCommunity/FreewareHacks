@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<hack name="Toroko Boss Wait" author="JakeV">
+<hack name="Toroko Boss Wait [#140]" author="JakeV">
+<panel>
 	<panel>
 		<field type = "label">Maximum wait bound</field>
 		<field type="text" size="2" offset="0x443158"/>
@@ -12,4 +13,5 @@
         Min wait must be less than 255
 		</field>
 	</panel>
+</panel>
 </hack>
