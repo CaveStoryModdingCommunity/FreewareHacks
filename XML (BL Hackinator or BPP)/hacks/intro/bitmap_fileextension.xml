@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Bitmap File Extensions" author="Serri">
+
+<panel>
+
+<panel>
+<field type="info">
+This hack now changes the file extension in the bitmaps to whatever 3-character name you want it to be. Be wary of possible conflicts if you rename them to something typically read by other programs.
+</field>
+<field type="info" col="1">
+WARNING: Booster's Lab is designed to automatically rename modified bitmap files back to .bmp. To avoid frustration, keep backups of the modified bitmaps inside your data folder prior to reapplying the hack.
+</field>
+</panel>
+
+<!-->Light improvements made by Enlight.<!-->
+<panel title="Set all textboxes to the same value">
+<field type="text" size="5" offset="0x48c285"/>
+<field type="text" size="5" offset="0x48c309"/>
+<field type="text" size="5" offset="0x48c32d"/>
+</panel>
+<field type="label">This hack does not rename your files for you. You MUST manually change the extension of every file yourself!</field>
+
+</panel>
+
+</hack>
