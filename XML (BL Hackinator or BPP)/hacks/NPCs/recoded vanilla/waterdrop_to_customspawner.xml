@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <hack name="Custom Spawners" author="txin">
+<panel>
 	<panel>
 		<field type="info">
 			Allows modifying the water droplet spawner (entity 359) to spawn anything.
@@ -30,4 +31,5 @@
 		<field type="text" size="1" offset="0x46EA25">73</field>
 		<field type="text" size="1" offset="0x46EA56"></field>
 	</panel>
+</panel>
 </hack>

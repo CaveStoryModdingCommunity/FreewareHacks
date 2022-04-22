@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <hack name="Misery Teleportation Change" author="txin">
+<panel>
 	<panel>
 		<field type="info">
 			Modifies and enhances the entity #247 "Misery (Boss)" to be able to work with any terrain shape/size.
@@ -59,20 +60,23 @@
 
 		</field>
 	</panel>
-	<panel title="Customize: Misery">
-		<field type="label">Max horizontal distance (Blocks)</field>
-		<field type="label">Min horizontal distance (Blocks)</field>
-		<field type="label">Max vertical distance (Blocks)</field>
-		<field type="label">Min vertical distance (Blocks)</field>
+	<panel col="1">
+		<panel title="Customize: Misery">
+			<field type="label">Max horizontal distance (Blocks)</field>
+			<field type="label">Min horizontal distance (Blocks)</field>
+			<field type="label">Max vertical distance (Blocks)</field>
+			<field type="label">Min vertical distance (Blocks)</field>
+				
+			<field type="text" size="1" offset="0x456941" col="1">14</field>
+			<field type="text" size="1" offset="0x456948">7</field>
+			<field type="text" size="1" offset="0x456957">8</field>
+			<field type="text" size="1" offset="0x45695E">4</field>
+		</panel>
+		<panel title="Customize: Lightning Ball">
+			<field type="label">Lightning Ball vertical distance</field>
 			
-		<field type="text" size="1" offset="0x456941" col="1">14</field>
-		<field type="text" size="1" offset="0x456948">7</field>
-		<field type="text" size="1" offset="0x456957">8</field>
-		<field type="text" size="1" offset="0x45695E">4</field>
+			<field type="text" size="1" offset="0x457248">3</field>
+		</panel>
 	</panel>
-	<panel title="Customize: Lightning Ball">
-		<field type="label">Lightning Ball vertical distance</field>
-		
-		<field type="text" size="1" offset="0x457248">3</field>
-	</panel>
+</panel>
 </hack>

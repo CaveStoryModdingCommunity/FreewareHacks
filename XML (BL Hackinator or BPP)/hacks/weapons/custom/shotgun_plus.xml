@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <hack name="Shotgun+" author="txin and Noxid">
+<panel>
 	<panel>
 		<field type="info">
 			Replaces the Polar Star with an upgraded version of the Shotgun.
@@ -77,7 +78,7 @@
 			54 7E 05 31 C0 89 41 0C 8B E5 5D C3
 		</field>
 	</panel>
-	<panel title="Customize: Weapon Attributes">
+	<panel title="Customize: Weapon Attributes" col="1">
 		<field type="label">Shot move speed fast</field>
 		<field type="label">Shot move speed slow</field>
 		<field type="label">Shot randomness left</field>
@@ -108,4 +109,5 @@
 		<field type="text" size="1" offset="0x41DF6F">-10</field>
 		<field type="text" size="1" offset="0x41DF72">-10</field>
 	</panel>
+</panel>
 </hack>

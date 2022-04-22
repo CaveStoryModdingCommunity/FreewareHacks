@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <hack name="WhimsicalBubbles+" author="txin">
+<panel>
 	<panel>
 		<field type="info">
 			If flag 7007 is set, the Bubbler will additionally fire shots from Whimsical Stars circling around Quote.
-			Requires the "WeaponUpgradeSetup.xml" hack installed.
+		</field>
+		<field type="label">
+			Requires the "/weapons/weapon_upgrade_setup.xml" hack installed first.
 		</field>
 		<field type="data" offset="0x41A15B">
 			55 89 E5 BB 57 1B 00 00 6A 07 E8 D6 9A FE FF 83
@@ -55,4 +58,5 @@
 		<field type="text" size="1" offset="0x41A1BA">3</field>
 		<field type="text" size="1" offset="0x41FFD1">1</field>
 	</panel>
+</panel>
 </hack>

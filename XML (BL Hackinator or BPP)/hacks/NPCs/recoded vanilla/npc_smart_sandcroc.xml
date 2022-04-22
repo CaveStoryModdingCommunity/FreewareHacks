@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <hack name="Smart Crocs" author="txin">
+<panel>
 	<panel>
 		<field type="info">
 			Causes Sand Zone's Sandcroc enemies to automatically sink back into the ground after a delay 
@@ -69,11 +70,12 @@
 			00 00 75 04 83 61 14 00 80 49 52 01 C3
 		</field>
 	</panel>
-	<panel title="Customize">
+	<panel title="Customize" col="1">
 		<field type="label">Sink Delay</field>
 		<field type="label">Attack Damage</field>
 			
 		<field type="text" size="1" offset="0x42F5BC" col="1">32</field>
 		<field type="text" size="1" offset="0x42F569">10</field>
 	</panel>
+</panel>
 </hack>

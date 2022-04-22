@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <hack name="Swimming" author="txin">
+<panel>
 	<panel>
 		<field type="info">
 			Allows midair jumping underwater, when a specified TSC flag is set.
@@ -15,4 +16,5 @@
 			
 		<field type="text" size="4" offset="0x415BEA" col="1">4096</field>
 	</panel>
+</panel>
 </hack>
