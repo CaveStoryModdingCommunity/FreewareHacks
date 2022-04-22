@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Night Spirit Hack" author="txin">
+	<panel>
+		<field type="info">
+			Allows slight customization of the Night Spirit enemy.
+			NPC flag 0x0002 will now cause the Night Spirit to face right and fire towards the right,
+			while NPC flag 0x0400 will cause the Night Spirit to always turn to face Quote.
+		</field>
+		<field type="data" offset="0x450BF0">
+			C8 A4 00 00 8B 7D 08 D9 EE DD 95 60 FF FF FF DD
+			95 68 FF FF FF DD 9D 70 FF FF FF 8B 47 50 F6 47
+			51 04 74 12 8B 4F 08 3B 0D 54 E6 49 00 7C 04 6A
+			00 EB 02 6A 02 58 83 E0 02 48 93 D9 D0 65 66 D9
+			D0 65 66 D9 D0
+		</field>
+		<field type="data" offset="0x450F7A">
+			53 9B
+		</field>
+		<field type="data" offset="0x451221">
+			6B 4F 68 10 8D B4 0D 60 FF FF FF 83 C7 54 6A 04
+			59 F3 A5 4B 75 0C 8B 45 08 99 B2 80 01 50 58 01
+			50 60 C9 C3
+		</field>
+		<field type="data" offset="0x4512FA">
+			8B 7D 08 8B 5F 4C 89 4D CC 83 7F 74 00 74 0B 83
+			7F 74 01
+		</field>
+		<field type="data" offset="0x451385">
+			8B 51 10 0F AF D3 F7 DA 9B 03 51 08
+		</field>
+		<field type="data" offset="0x451402">
+			6B 4F 68 10 8D B4 0D D0 FF FF FF 83 C7 54 6A 04
+			59 F3 A5 4B 75 0C 8B 45 08 99 B2 80 01 50 58 01
+			50 60 C9 C3
+		</field>
+	</panel>
+</hack>

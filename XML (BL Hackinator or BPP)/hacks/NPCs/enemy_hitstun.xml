@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="NPC_Hitstun" author="txin">
+	<panel>
+		<panel title="Description" col="0">
+			<field type="info" col="0">
+				Causes all NPCs that are shootable to gain hitstun and not be able to act after being hit by bullets.
+				To make an NPC immune to hitstun, give it flag 0x400.
+			</field>
+		</panel>
+		<panel title="Data" col="0">
+			<field type="data" offset="0x46FA00" col="0">
+				60 8B EC 6A 00 58 80 FC 02 73 38 6B C8 56 8D 3C
+				4D 20 62 4A 00 40 50 F6 07 80 74 E9 8D 77 54 83
+				7E 48 01 7F 16 8B 4F 28 57 FF 14 8D 48 85 49 00
+				59 8B 4E 48 E3 CF FF 4E 48 EB CA F6 47 51 04 75
+				E4 EB EE 89 EC 61 C3 CC CC CC CC CC CC CC CC CC
+				6B 4D FC 56 6B 5D F4 40 8B 14 5D 9C 9C 49 00 8B
+				82 6F FA 46 00 88 04 4D BC 62 4A 00 C3 CC CC CC
+				00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+				00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+				00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+				CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC
+			</field>
+			<field type="data" offset="0x47226F" col="1">
+				E8 DC D7 FF FF 90 90 90 90 90 90 90 90 90 90 90
+			</field>
+			<field type="data" offset="0x41926F" col="2">
+				F6 05 E8 E1 49 00 02 75 05 E9 3D 01 00 00 6B 55
+				FC 56 8D 0C 55 70 62 4A 00 F6 41 01 20 75 EA 80
+				79 4C 01 7E 06 F6 41 01 04 74 DE F6 01 80 0F 84
+				DC 00 00 00 90 90 90 90 90 90 90 90 90 90 90 90
+				90 90 90 90 90 90
+			</field>
+		</panel>
+	</panel>
+	<panel title="Hitstun Frames" col="0">
+		<panel title="Level 1">
+			<field type="label">Snake</field>
+			<field type="label">Polar Star</field>
+			<field type="label">Fireball</field>
+			<field type="label">Machine Gun</field>
+			<field type="label">Missile Launcher</field>
+			<field type="label">06</field>
+			<field type="label">Bubbler</field>
+			<field type="label">Special</field>
+			<field type="label">Blade</field>
+			<field type="label">Super Missile Launcher</field>
+			<field type="label">11</field>
+			<field type="label">Nemesis</field>
+			<field type="label">Spur</field>
+			<field type="label">Spur Trail</field>
+			<field type="label">Special 2</field>
+				
+			<field type="text" size="1" offset="0x46FA70" col="1">16</field>
+			<field type="text" size="1" offset="0x46FA73">16</field>
+			<field type="text" size="1" offset="0x46FA76">16</field>
+			<field type="text" size="1" offset="0x46FA79">16</field>
+			<field type="text" size="1" offset="0x46FA7C">16</field>
+			<field type="text" size="1" offset="0x46FA7F">16</field>
+			<field type="text" size="1" offset="0x46FA82">16</field>
+			<field type="text" size="1" offset="0x46FA85">16</field>
+			<field type="text" size="1" offset="0x46FA88">16</field>
+			<field type="text" size="1" offset="0x46FA8B">16</field>
+			<field type="text" size="1" offset="0x46FA8E">16</field>
+			<field type="text" size="1" offset="0x46FA91">16</field>
+			<field type="text" size="1" offset="0x46FA94">16</field>
+			<field type="text" size="1" offset="0x46FA97">16</field>
+			<field type="text" size="1" offset="0x46FA9A">16</field>
+		</panel>
+		<panel title="Level 2" col="1">
+			<field type="label">Snake</field>
+			<field type="label">Polar Star</field>
+			<field type="label">Fireball</field>
+			<field type="label">Machine Gun</field>
+			<field type="label">Missile Launcher</field>
+			<field type="label">06</field>
+			<field type="label">Bubbler</field>
+			<field type="label">Special</field>
+			<field type="label">Blade</field>
+			<field type="label">Super Missile Launcher</field>
+			<field type="label">11</field>
+			<field type="label">Nemesis</field>
+			<field type="label">Spur</field>
+			<field type="label">Spur Trail</field>
+			<field type="label">Special 2</field>
+				
+			<field type="text" size="1" offset="0x46FA71" col="1">16</field>
+			<field type="text" size="1" offset="0x46FA74">16</field>
+			<field type="text" size="1" offset="0x46FA77">16</field>
+			<field type="text" size="1" offset="0x46FA7A">16</field>
+			<field type="text" size="1" offset="0x46FA7D">16</field>
+			<field type="text" size="1" offset="0x46FA80">16</field>
+			<field type="text" size="1" offset="0x46FA83">16</field>
+			<field type="text" size="1" offset="0x46FA86">16</field>
+			<field type="text" size="1" offset="0x46FA89">16</field>
+			<field type="text" size="1" offset="0x46FA8C">16</field>
+			<field type="text" size="1" offset="0x46FA8F">16</field>
+			<field type="text" size="1" offset="0x46FA92">16</field>
+			<field type="text" size="1" offset="0x46FA95">16</field>
+			<field type="text" size="1" offset="0x46FA98">16</field>
+			<field type="text" size="1" offset="0x46FA9B">16</field>
+		</panel>
+		<panel title="Level 3" col="2">
+			<field type="label">Snake</field>
+			<field type="label">Polar Star</field>
+			<field type="label">Fireball</field>
+			<field type="label">Machine Gun</field>
+			<field type="label">Missile Launcher</field>
+			<field type="label">06</field>
+			<field type="label">Bubbler</field>
+			<field type="label">Special</field>
+			<field type="label">Blade</field>
+			<field type="label">Super Missile Launcher</field>
+			<field type="label">11</field>
+			<field type="label">Nemesis</field>
+			<field type="label">Spur</field>
+			<field type="label">Spur Trail</field>
+			<field type="label">Special 2</field>
+				
+			<field type="text" size="1" offset="0x46FA72" col="1">16</field>
+			<field type="text" size="1" offset="0x46FA75">16</field>
+			<field type="text" size="1" offset="0x46FA78">16</field>
+			<field type="text" size="1" offset="0x46FA7B">16</field>
+			<field type="text" size="1" offset="0x46FA7E">16</field>
+			<field type="text" size="1" offset="0x46FA81">16</field>
+			<field type="text" size="1" offset="0x46FA84">16</field>
+			<field type="text" size="1" offset="0x46FA87">16</field>
+			<field type="text" size="1" offset="0x46FA8A">16</field>
+			<field type="text" size="1" offset="0x46FA8D">16</field>
+			<field type="text" size="1" offset="0x46FA90">16</field>
+			<field type="text" size="1" offset="0x46FA93">16</field>
+			<field type="text" size="1" offset="0x46FA96">16</field>
+			<field type="text" size="1" offset="0x46FA99">16</field>
+			<field type="text" size="1" offset="0x46FA9C">16</field>
+		</panel>
+	</panel>
+</hack>
+<!--
+Nullifies AI-controlled movement of NPCs in the hitstun animation after being hit (the shaking). Each bullet is given a customizable amount of hitstun to inflict, and enemies can optionally be configured to be immune to said hitstun. Stunned enemies will also not deal any damage to the player.
+-->

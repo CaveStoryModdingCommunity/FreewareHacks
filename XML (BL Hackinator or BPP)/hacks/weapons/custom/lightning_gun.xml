@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Lightning Gun" author="txin">
+	<panel>
+		<panel>
+			<field type="info">
+				Replaces the unused weapon 8 with the Lightning Gun originally from the mod "Rise of Ballos".
+				Fires a beam of electricity that deals low damage but arcs towards nearby enemies.
+			</field>
+		</panel>
+		<panel>
+			<field type="data" offset="0x4944FC" col="0">
+				E5 48 49 00 55 89 E5 A1 14 E2 49 00 85 05 14 36
+				49 00 74 32 6A 01 E8 89 DA F6 FF 85 C0 77 0B 6A
+				01 6A 25 E8 1C C1 F8 FF EB 1C 31 C9 51 6A 01 51
+				51 51 B8 54 E6 49 00 FF 70 04 FF 30 68 66 01 00
+				00 E8 8E AA FD FF BB 5A 4A 49 00 FE 03 80 3B 28
+				7E 0A C6 03 00 6A 01 E8 C8 DA F6 FF C9 C3 05 5F
+				45 49 00 55 89 E5 8B 87 A8 00 00 00 83 7F 4C 7F
+				75 1E C1 F8 D0 89 47 24 89 47 20 68 CD AB 00 00
+				68 67 45 00 00 E8 CA AD F7 FF 96 E9 DE 00 00 00
+				84 E4 0F 85 D2 01 00 00 83 F8 01 75 28 31 C0 B9
+				40 E6 49 00 80 79 04 01 74 17 80 79 08 01 74 0D
+				80 39 00 74 04 B0 00 EB 0A B0 80 EB 06 B0 40 EB
+				02 B0 C0 EB 09 6A 60 6A 20 E8 86 AD F7 FF 89 47
+				20 BB 00 D0 00 00 89 EC 6A 00 8D 65 FC 58 80 FC
+				02 73 7D 6B C8 56 8D 34 4D 20 62 4A 00 40 50 F6
+				06 80 74 E9 F6 46 50 20 74 E3 DB 46 08 DA 67 08
+				D8 C8 DB 46 0C DA 67 0C D8 C8 DE C1 D9 FA 06 DB
+				1C E4 58 39 D8 73 C6 50 8B 57 0C 8B 4F 08 2B 56
+				0C 2B 4E 08 52 51 E8 B9 12 F9 FF 59 5A 0F BE C8
+				51 DB 47 20 DA 24 E4 D9 E1 DB 1C E4 59 83 F9 18
+				7E 12 50 DB 47 20 DA 24 E4 D9 E1 DB 1C E4 59 83
+				F9 18 77 86 5B 89 47 24 89 77 28 E9 7A FF FF FF
+				80 FF D0 73 5A 8B 47 28 80 48 02 40 89 DE 8B 4F
+				08 8B 57 0C 89 4F 68 89 57 6C DB 47 68 DA 67 08
+				D8 C8 DB 47 6C DA 67 0C D8 C8 DE C1 D9 FA 06 DB
+				1C E4 58 39 F0 77 4B FF 77 24 E8 15 12 F9 FF 93
+				E8 1F 12 F9 FF E8 32 02 00 00 9B 6A 7F FF 77 6C
+				FF 77 68 6A 07 E8 CA F8 F6 FF 83 C4 14 EB BB 6A
+				10 6A F0 E8 8C AC F7 FF 02 47 20 50 85 C0 89 47
+				24 71 99 6A 7F FF 77 6C FF 77 68 6A 09 E8 A2 F8
+				F6 FF 83 BF A9 00 00 00 01 74 54 81 FE 00 D0 00
+				00 72 4C 89 EC 6A 00 58 6B 0D 68 9C 49 00 14 8B
+				91 CC 9B 49 00 4A 39 D0 73 30 40 50 6A 30 6A D0
+				E8 3F AC F7 FF 59 02 47 20 C1 F0 10 40 29 F6 56
+				50 6A 7F 56 56 FF 77 6C FF 77 68 68 66 01 00 00
+				E8 9F A8 FD FF 83 C4 24 EB BD 83 27 00 C9 C3 81
+				FE 00 D0 00 00 73 F3 83 7F 4C 7F 74 ED 29 F6 56
+				68 01 01 00 00 56 56 56 FF 77 6C FF 77 68 68 66
+				01 00 00 E8 6C A8 FD FF EB D0 6B 0D 68 9C 49 00
+				14 6B 99 CC 9B 49 00 04 E8 47 51 F8 FF 01 C3 C1
+				F3 0C 89 EC 6A 00 8D 65 FC 58 80 FC 02 73 49 6B
+				C8 56 8D 34 4D 20 62 4A 00 40 50 F6 06 80 74 E9
+				F6 46 50 20 74 E3 F6 46 02 40 75 DD DB 46 08 DA
+				67 08 D8 C8 DB 46 0C DA 67 0C D8 C8 DE C1 D9 FA
+				06 DB 1C E4 58 39 D8 73 07 3D 67 05 00 00 73 02
+				EB B4 93 89 77 20 EB AE 6B 0D 68 9C 49 00 14 6B
+				81 CC 9B 49 00 04 C1 F0 0C 39 C3 7D 64 8B 77 20
+				80 4E 02 40 89 DE 8B 5F 0C 8B 47 08 8B 4F 20 2B
+				59 0C 2B 41 08 53 50 85 F6 74 0B BA CD 0B 00 00
+				39 D6 7F 02 89 D6 E8 C9 10 F9 FF 93 6A 08 6A F8
+				E8 2F AB F7 FF 01 D8 89 47 24 8B 4F 08 8B 57 0C
+				89 4F 68 89 57 6C DB 47 68 DA 67 08 D8 C8 DB 47
+				6C DA 67 0C D8 C8 DE C1 D9 FA 06 DB 1C E4 58 39
+				F0 7D 28 FF 77 24 E8 59 10 F9 FF 93 E8 63 10 F9
+				FF E8 76 00 00 00 9B 6A 7F FF 77 6C FF 77 68 6A
+				07 E8 0E F7 F6 FF 83 C4 14 EB BB E9 62 FE FF FF
+				8B 48 4C 49 89 CA 83 E1 03 83 E2 04 C1 F1 04 B5
+				01 C1 F2 02 80 C2 90 89 48 3C 89 50 40 83 C1 10
+				89 48 44 83 C2 10 89 50 48 6A 03 6A 00 E8 A2 AA
+				F7 FF 99 48 0F 9C C2 8B 45 08 89 50 58 C6 40 5C
+				7F 83 78 4C 07 7E 04 83 60 0C 00 83 78 4C 01 75
+				09 6A 01 6A 65 E8 6A BD F8 FF EB 16 8D 04 40 8D
+				1C 5B 01 47 68 01 5F 6C C3 8B 7C E4 04 E9 71 FC
+				FF FF 8B 45 08 80 48 08 20 C9 C3
+			</field>
+			<field type="data" offset="0x42009A" col="1">
+				B2 00 42 00 E3 FF 41 00 2D 00 42 00 7A 00 42 00
+				49 00 42 00 62 00 42 00 E8 49 44 07 00 C9 C3
+			</field>
+			<field type="data" offset="0x404B30" col="2">
+				C8 EC 00 00 8B 45 08 FF 40 4C 83 78 38 7F 0F 84
+				38 FD 08 00 8B 50 4C 3B 50 54 7E 15 83 60 0C 00
+				6A 00 6A 03 FF 70 14 FF 70 10 E8 31 61 00 00 C9
+				C3 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
+				90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
+			</field>
+			<field type="data" offset="0x403F80" col="3">
+				55 8B EC 6A 00 60 83 7D FC 40 73 15 6B 45 FC 40
+				8D 0C 45 A4 9C 49 00 F6 01 80 74 13 FF 45 FC EB
+				E5 6A 3F 6A 00 E8 A6 B3 00 00 59 59 89 45 FC 90
+				90 90 90 90 90 90 90 90 90 90 90 68 80 00 00 00
+				6A 00 8B 45 FC C1 E0 07 05 98 9C 49 00 50 E8 5D
+				CD 07 00 83 C4 0C 8B 4D FC C1 E1 07 8B 55 08 89
+				91 9C 9C 49 00 8B 45 FC C1 E0 07 C7 80 A4 9C 49
+				00 80 00 00 00 8B 4D FC C1 E1 07 8A 55 14 88 91
+				D0 9C 49 00 8B 45 08 6B C0 2C 0F BE 88 48 F0 48
+				00 8B 55 FC C1 E2 07 89 8A F0 9C 49 00 8B 45 08
+				6B C0 2C 0F BE 88 49 F0 48 00 8B 55 FC C1 E2 07
+				89 8A F4 9C 49 00 8B 45 08 6B C0 2C 8B 4D FC C1
+				E1 07 8B 90 4C F0 48 00 89 91 EC 9C 49 00 8B 45
+				08 6B C0 2C 8B 4D FC C1 E1 07 8B 90 50 F0 48 00
+				89 91 A0 9C 49 00 8B 45 08 6B C0 2C 8B 88 54 F0
+				48 00 C1 E1 09 8B 55 FC C1 E2 07 89 8A F8 9C 49
+				00 8B 45 08 6B C0 2C 8B 88 58 F0 48 00 C1 E1 09
+				8B 55 FC C1 E2 07 89 8A FC 9C 49 00 8B 45 08 6B
+				C0 2C 8B 88 5C F0 48 00 C1 E1 09 8B 55 FC C1 E2
+				07 89 8A 00 9D 49 00 8B 45 08 6B C0 2C 8B 88 60
+				F0 48 00 C1 E1 09 8B 55 FC C1 E2 07 89 8A 04 9D
+				49 00 8B 45 08 6B C0 2C 8B 88 6C F0 48 00 C1 E1
+				09 8B 55 FC C1 E2 07 89 8A 10 9D 49 00 8B 45 08
+				6B C0 2C 8B 88 64 F0 48 00 C1 E1 09 8B 55 FC C1
+				E2 07 89 8A 08 9D 49 00 8B 45 08 6B C0 2C 8B 88
+				68 F0 48 00 C1 E1 09 8B 55 FC C1 E2 07 89 8A 0C
+				9D 49 00 8B 45 08 6B C0 2C 8B 88 70 F0 48 00 C1
+				E1 09 8B 55 FC C1 E2 07 89 8A 14 9D 49 00 8B 45
+				FC C1 E0 07 8B 4D 0C 89 88 A8 9C 49 00 8B 55 FC
+				C1 E2 07 8B 45 10 89 82 AC 9C 49 00 61 5C C9 C3
+			</field>
+			<field type="data" offset="0x46E8FB" col="4">
+				6A 20 8F 45 FC 8B 7D 08 8B 4F 74 83 BF A8 00 00
+				00 00 0F 85 4F 5C 02 00 E3 07 83 F9 0A 74 48 D9
+				D0
+			</field>
+		</panel>
+		<panel>
+			<field type="data" offset="0x403E0A" col="0">
+				83 65 F0 03 0F 80 EB 00 00 00
+			</field>
+			<field type="data" offset="0x48f17C" col="1">
+				00 08
+			</field>
+			<field type="data" offset="0x48F184" col="2">
+				20
+			</field>
+			<field type="data" offset="0x48F1D4" col="3">
+				01 08
+			</field>
+		</panel>
+		<panel>
+		</panel>
+		<panel title="Customize: Lightning Properties">
+			<field type="label">Max branch arc length</field>
+			<field type="label">Min branch arc length</field>
+			<field type="label">Max arc jump angle deviation left</field>
+			<field type="label">Max arc jump angle deviation right</field>
+			<field type="label">Max arc jump distance</field>
+			<field type="label">Max arc distance 1</field>
+			<field type="label">Max arc distance 2</field>
+			<field type="label">Max arc distance 3</field>
+			<field type="label">Max arc distance 4</field>
+			<field type="label">Branch arc max angle deviation left</field>
+			<field type="label">Branch arc max angle deviation right</field>
+			<field type="label">Damage fraction denominator (lower = higher damage)</field>
+			<field type="label">Fire sound effect</field>
+			<field type="label">Ammo recharge delay</field>
+			
+			<field type="text" size="4" offset="0x494578" col="1">43981</field>
+			<field type="text" size="4" offset="0x49457D">17767</field>
+			<field type="text" size="1" offset="0x49463B">24</field>
+			<field type="text" size="1" offset="0x49464D">24</field>
+			<field type="text" size="4" offset="0x4947C6">1383</field>
+			<field type="text" size="4" offset="0x494808">3021</field>
+			<field type="text" size="4" offset="0x4945CE">53248</field>
+			<field type="text" size="4" offset="0x4946E9">53248</field>
+			<field type="text" size="1" offset="0x494570">208</field>
+			<field type="text" size="1" offset="0x494709">48</field>
+			<field type="text" size="1" offset="0x49470B">-48</field>
+			<field type="text" size="1" offset="0x4948A6">3</field>
+			<field type="text" size="1" offset="0x4948D0">101</field>
+			<field type="text" size="1" offset="0x49454B">40</field>
+		</panel>
+	</panel>
+</hack>

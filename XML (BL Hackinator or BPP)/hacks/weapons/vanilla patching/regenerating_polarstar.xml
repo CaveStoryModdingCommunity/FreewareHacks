@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="The Regenerating Star" author="Gabriel Ravier">
+	<panel>
+		<field type="label">Polar Star bullet</field>
+		<field type="info">
+			Make it so the Polar Star regenerates a bullet every second. You will need to set the ammo limit properly, however, otherwise this will not work properly.
+		</field>
+			
+		<field type="data" offset="0x41DE60">
+55 53 57 56 83 EC 0C 8B 74 24 20 6A 02 5D 31 C0 
+39 EE 0F 94 C0 83 C8 04 83 FE 03 6A 06 5F 0F 45 
+F8 83 EC 0C 55 E8 B6 5D FE FF 83 C4 10 83 F8 01 
+0F 8F 2A 01 00 00 A1 14 36 49 00 85 05 14 E2 49 
+00 0F 84 0A 01 00 00 83 EC 0C 6A 01 E8 EF 40 FE 
+FF 83 C4 10 85 C0 74 29 83 3D 44 E6 49 00 00 6A 
+03 5A 74 25 83 3D 40 E6 49 00 00 A1 54 E6 49 00 
+74 3E 05 00 02 00 00 C7 44 24 08 00 02 00 00 EB 
+3C 6A 25 58 E9 BA 00 00 00 83 3D 48 E6 49 00 00 
+8B 0D 40 E6 49 00 A1 54 E6 49 00 74 2A 85 C9 74 
+39 05 00 02 00 00 C7 44 24 08 00 02 00 00 EB 37 
+05 00 FE FF FF C7 44 24 08 00 FE FF FF 31 ED 45 
+BB 00 F0 FF FF EB 3D 85 C9 74 25 05 00 0C 00 00 
+C7 44 24 08 00 18 00 00 EB 25 05 00 FE FF FF C7 
+44 24 08 00 FE FF FF BB 00 10 00 00 89 D5 EB 14 
+05 00 F4 FF FF C7 44 24 08 00 E8 FF FF 31 ED BB 
+00 06 00 00 8B 0D 58 E6 49 00 01 D9 55 51 50 57 
+E8 0B 60 FE FF 83 C4 10 8B 4C 24 08 03 0D 54 E6 
+49 00 03 1D 58 E6 49 00 6A 00 6A 03 5F 57 53 51 
+E8 FB CC FE FF 83 C4 10 39 FE 6A 31 59 6A 20 58 
+0F 44 C1 83 EC 08 6A 01 50 E8 92 26 00 00 83 C4 
+10 A1 EC E1 49 00 6A 3C 59 99 F7 F9 85 D2 74 08 
+83 C4 0C 5E 5F 5B 5D C3 83 EC 0C 6A 01 E8 4E 40 
+FE FF 83 C4 1C EB EC
+		</field>
+	</panel>
+</hack>
