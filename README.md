@@ -12,3 +12,6 @@ Hacks currently come in three formats:
 <hr>
 
 To contribute to this repository, you may upload files while [creating a new issue](https://github.com/CaveStoryModdingCommunity/FreewareHacks/issues) (do this **ONLY** for brand new hacks, not for updating/fixing hacks that  already exist in the repository), or by forking the repository and issuing a pull request.
+
+# How to Download:
+Click the green "Code" button at the top and then click "Download ZIP". Those familiar with git should already be aware of the additional methods of downloading a remote repository.
