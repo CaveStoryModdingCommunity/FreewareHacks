@@ -1,5 +1,5 @@
 Replace Booster 0.8 with a double jump!
-hack is by gamemanj
+hack is by 20kdc
 
 0x4157A1
 C7 05 E8 E6 49 00 02 00 00 00
