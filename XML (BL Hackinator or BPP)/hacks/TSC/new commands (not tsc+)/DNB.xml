@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="HEX PATCH">
+	<panel>
+		<panel title="Description">
+		</panel>
+		<field type="info">
+			Hex patch converted by Miza.
+			Adds a &lt;DNB command that deletes all active bullets.
+		</field>
+		<panel title="Data">
+		</panel>
+		<panel>
+			<field type="data" offset="0x422a96" col="0">
+				BB E0 5A 4A 00 8B 43 F8 03 03 81 38 3C 5A 41 4D 75 0A E8 A3 70 
+				FF FF 83 03 04 EB DF 81 38 3C 44 4E 42 75 33 E8 C1 12 FE FF EB 
+				EC
+			</field>
+		</panel>
+	</panel>
+</hack>
