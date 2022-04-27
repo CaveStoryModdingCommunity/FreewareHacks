@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<hack name="HEX PATCH">
+<hack name="Disable EXP from dropping" author="txin">
 	<panel>
 		<panel title="Description">
 		</panel>
 		<field type="info">
-			Hex patch converted by Miza.
+			Simple 1-byte hack that prevents NPC 1 (Experience) from ever spawning.
 		</field>
 		<panel title="Data">
 		</panel>

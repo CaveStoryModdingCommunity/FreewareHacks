@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<hack name="Creepy Curly">
+<hack name="Creepy Curly" author="txin">
 	<panel>
 		<field type="info">
 			Replaces entity #118: Curly (boss)
