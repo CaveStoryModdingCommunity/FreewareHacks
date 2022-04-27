@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<hack name="HEX PATCH">
+<hack name="DNB Command" author="txin">
 	<panel>
 		<panel title="Description">
 		</panel>
 		<field type="info">
-			Hex patch converted by Miza.
 			Adds a &lt;DNB command that deletes all active bullets.
 		</field>
 		<panel title="Data">

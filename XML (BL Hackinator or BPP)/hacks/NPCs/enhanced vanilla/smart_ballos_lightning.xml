@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<hack name="HEX PATCH">
+<hack name="Grounded Lightning (#313)" author="txin">
 	<panel>
 		<panel title="Description">
 		</panel>
 		<field type="info">
-			Hex patch converted by Miza.
 			Causes the lightning spawned by Ballos to always hit ground below if possible.
 		</field>
 		<panel title="Data">
