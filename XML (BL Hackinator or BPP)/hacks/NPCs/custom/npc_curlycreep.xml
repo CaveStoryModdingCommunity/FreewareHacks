@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Creepy Curly">
+	<panel>
+		<field type="info">
+			Replaces entity #118: Curly (boss)
+			NPC that follows the player or another one of itself
+			&#60;ANP0200 or less to follow the player
+			&#60;ANP0201 or more to follow duplicate of itself with &#60;ANP value 1 less
+		</field>
+		<field type="data" offset="0x43E9B0">
+			55 89 E5 8B 7D 08 83 67 4C 00 66 81 7F 74 C8 00
+			BB 54 E6 49 00 7F 26 8B 47 08 3B 03 7F 04 80 4F
+			4C 02 6B 4F 08 1F 6B 57 0C 1F 03 0B 03 53 04 C1
+			F9 05 C1 FA 05 89 4F 08 89 57 0C EB 4A 6A 00 58
+			80 FC 02 73 42 6B C8 56 8D 34 4D 20 62 4A 00 40
+			50 F6 06 80 74 E9 8B 57 74 4A 39 56 74 75 E0 8B
+			47 08 3B 46 08 7F 04 80 4F 4C 02 6B 4F 08 1F 6B
+			57 0C 1F 03 4E 08 03 56 0C C1 F9 05 C1 FA 05 89
+			4F 08 89 57 0C EB B8 FF 47 78 8B 47 78 6A 03 99
+			59 F7 F9 83 E0 03 3C 02 75 02 B0 00 3C 03 75 02
+			B0 02 C1 F0 04 89 47 54 83 C0 10 89 47 5C B0 60
+			6B 57 4C 08 01 D0 89 47 58 83 C0 10 89 47 60 C9
+			C3
+		</field>
+	</panel>
+	<panel title="Customize">
+		<field type="label">Animation Delay (frames)</field>
+		<field type="label">Sprite Position (Y)</field>
+			
+		<field type="text" size="1" offset="0x43EA3E" col="1">3</field>
+		<field type="text" size="1" offset="0x43EA5F">96</field>
+	</panel>
+</hack>

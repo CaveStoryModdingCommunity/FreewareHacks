@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="HEX PATCH">
+	<panel>
+		<panel title="Description">
+		</panel>
+		<field type="info">
+			Hex patch converted by Miza.
+			Removes knockback taken by the player if flag 4999 is set.
+		</field>
+		<panel title="Data">
+		</panel>
+		<panel>
+			<field type="data" offset="0x419941" col="0">
+				BA 88 E6 49 00 80 62 B0 FE C6 42 40 80 8B 4A C4 E3 10 F6 05 10 
+				E0 49 00 80 75 07 C7 42 E8 00 FC FF FF 90 90 90 90 90 90 90 90 
+				90 90
+			</field>
+		</panel>
+	</panel>
+</hack>

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Bubble Shield" author="txin">
+	<panel>
+		<panel title="Description">
+			<field type="info" col="0">
+				Replaces weapon 6 (unused, missile explosion placeholder). 
+				Adds a bubble shield weapon that uses bubbler bullet sprites, and fires a ring of bubbles around the player. 
+			</field>
+			<field type="info" col="1">
+				12 bubbles will be fired for level 1, 16 for levels 2 and 3. 
+				Each bubble will grow and spread to orbit a certain distance around the player, and serves as a defensive shield. 
+			</field>
+			<field type="info" col="2">
+				Level 1 bubbles will despawn immediately upon switching weapons, while levels 2 and 3 can be held out. 
+				Levels 1 and 2 bubbles will occupy slots and prevent new bubbles from being spawned in said slots, while level 3 will not. 
+			</field>
+			<field type="info" col="0">
+				Instead, all previously active level 3 bubbles will fly out in a spiral pattern and despawn once past X units away from the player. 
+				Levels 1 and 2 bubbles despawn on one hit, while level 3 can survive one additional hit. 
+			</field>
+			<field type="info" col="1">
+				To make sure invincible enemies are not inappropriately instakilled, increase their HP. 
+				Since some are unassigned, certain invincible enemies may additionally require their death animations and sounds changed via npc.tbl to suit your needs. 
+			</field>
+		</panel>
+		<panel title="Bubbles contacting NPCs will interact with a custom damage algorithm:">
+			<field type="label">
+				- If the target neither deals contact damage nor is shootable, skip; 
+			</field>
+			<field type="label">
+				- If the target is a hard solid (such as Labyrinth moving blocks), skip; 
+			</field>
+			<field type="label">
+				- If the target is flagged as a projectile (flag 0x400/11), immediately destroy it, bypassing all vanilla damage checks and invulnerability; 
+			</field>
+			<field type="label">
+				- If the target is smaller than R in average hitbox radius and has X health or less, immediately destroy it;
+			</field>
+			<field type="label">
+				- Otherwise if the target is invulnerable, skip; 
+			</field>
+			<field type="label">
+				- Replace the current frame of the bubble (normally an NPC) with a bullet to deal normal damage to the target. 
+			</field>
+		</panel>
+		<panel>
+			<field type="data" offset="0x4625a0" col="0">
+				C8 8C 00 00 8B 7D 08 F6 47 50 20 74 77 31 C0 99
+				B2 90 89 55 80 89 45 84 89 55 C0 B2 A0 89 55 88
+				6A 10 59 89 4D 8C 89 55 90 89 45 94 89 55 C8 89
+				55 D0 B2 B0 89 55 98 89 4D 9C 89 55 A0 89 45 A4
+				89 55 D8 89 55 E0 B2 C0 89 55 A8 89 4D AC 89 55
+				B0 89 45 B4 89 55 E8 89 55 F0 B2 D0 89 55 B8 89
+				4D BC 89 4D C4 B0 20 89 45 CC 89 4D D4 89 45 DC
+				89 4D E4 89 45 EC 89 4D F4 89 45 FC 89 55 F8 E9
+				45 4C FE FF 6A 11 8F 47 34 8B 5F 74 8B 47 68 83
+				F8 07 7E 03 6A 07 58 FF 47 68 D1 F8 9B C1 F0 03
+				83 FB 03 7D 17 0C C0 89 47 54 04 08 89 47 5C 6B
+				C3 08 89 47 60 2C 08 89 47 58 EB 1E 99 3C 10 7C
+				02 B2 08 0C F0 89 47 54 83 C0 08 89 47 5C 83 C2
+				10 89 57 58 83 C2 08 89 57 60 83 7F 78 00 75 14
+				66 C7 47 78 20 00 8D 47 54 B9 00 08 00 00 89 48
+				38 89 48 3C 83 FB 01 7F 10 6B 0D 68 9C 49 00 14
+				83 B9 C8 9B 49 00 06 75 0A 8B 4F 64 E3 2B 83 FB
+				03 7D 14 6A 00 6A 03 FF 77 0C FF 77 08 E8 CE 85
+				FA FF 83 27 00 C9 C3 83 F9 03 7F E7 83 47 78 03
+				81 7F 78 00 03 00 00 7D E9 B9 FC 42 49 00 DB 01
+				DA 71 FC DA 4F 4C 9B DB 47 6C DA 77 70 DE C1 D8
+				0D 18 CA 48 00 B9 81 1E 40 00 D9 FB DE 09 DA 4F
+				78 B8 54 E6 49 00 DB 5D FC 6B 57 08 07 03 10 03
+				55 FC C1 FA 03 89 57 08 DE 09 DA 4F 78 DB 5D FC
+				6B 57 0C 07 03 50 04 03 55 FC C1 FA 03 89 57 0C
+				6A 00 58 80 FC 02 0F 83 96 00 00 00 6B C8 56 8D
+				34 4D 20 62 4A 00 40 F6 06 80 74 E7 8D 56 54 83
+				7A 50 00 75 06 F6 46 50 20 74 D8 8B 4A 28 03 4A
+				2C 03 4A 30 03 4A 34 C1 F9 02 50 DB 47 08 DA 66
+				08 D8 C8 DB 47 0C DA 66 0C D8 C8 DE C1 D9 FA 54
+				DB 1C E4 58 29 C8 3D 00 08 00 00 7D A5 66 F7 46
+				50 40 02 75 18 F6 46 51 04 75 08 D9 D0 83 7E 40
+				07 7F 0A 6A FF 56 E8 D5 F3 00 00 EB 20 F6 46 50
+				20 74 D8 6A 03 FF 76 0C FF 76 08 83 C3 03 53 E8
+				BC 17 FA FF 83 7F 64 00 75 03 83 27 00 FF 47 64
+				C9 C3 6A 00 58 3C 14 73 F7 6B C8 56 8D 34 4D 58
+				BA 4B 00 40 F6 06 80 74 EC F6 46 50 20 74 E6 8D
+				56 54 8B 4A 28 03 4A 2C 03 4A 30 03 4A 34 C1 F9
+				02 50 DB 47 08 DA 66 08 D8 C8 DB 47 0C DA 66 0C
+				D8 C8 DE C1 D9 FA 54 DB 1C E4 58 29 C8 3D 00 08
+				00 00 7D B0 EB 8D
+			</field>
+			<field type="data" offset="0x4942f0" col="1">
+				01 00 00 00 00 00 00 00 80 00 00 00 00 00 00 00
+				6B 15 68 9C 49 00 14 8B 9A CC 9B 49 00 A1 14 E2
+				49 00 23 05 14 36 49 00 75 02 EB 13 6A 01 E8 7D
+				DC F6 FF 48 74 0E 6A 01 6A 25 E8 11 C3 F8 FF E9
+				E8 00 00 00 6A 10 59 BF C0 42 49 00 89 FE F3 AA
+				50 0F BE 17 58 80 FC 02 7D 47 6B C8 56 8D 3C 4D
+				20 62 4A 00 40 F6 07 80 74 EB 66 81 7F 28 2D 01
+				75 E3 F6 47 50 20 75 DD 50 39 5F 74 74 06 C6 47
+				64 01 EB D0 83 FB 03 7D F5 83 7F 64 01 7D 09 8B
+				57 4C 88 15 F0 42 49 00 8B 47 6C C6 04 06 01 EB
+				B3 6A 00 6A 0C 59 83 FB 01 7E 02 B1 10 BF 54 E6
+				49 00 58 38 C8 7D 5B 0F B6 14 30 40 50 4A 74 E3
+				99 6A 7F 52 0F BE 15 F0 42 49 00 52 52 52 FF 77
+				04 FF 37 68 2D 01 00 00 E8 03 AC FD FF 83 C4 20
+				80 FC 02 7D BE 6B C8 56 8D 3C 4D 20 62 4A 00 83
+				67 50 08 89 5F 74 58 50 48 89 47 6C 6A 0C 59 83
+				FB 01 7E 02 B1 10 89 4F 70 83 A7 A4 00 00 00 00
+				EB 9B BF C0 42 49 00 31 C0 F2 AE E3 21 6A 01 6A
+				30 E8 2A C2 F8 FF F6 1D F0 42 49 00 BE 58 55 4A
+				00 FF 06 8B 06 6A 64 99 59 F7 F1 4A 7D 07 6A 01
+				E8 EB DB F6 FF C9 C3
+			</field>
+			<field type="data" offset="0x41fe70" col="2">
+				C8 0C 00 00 BA 4C 55 4A 00 8B 0A E3 02 FF 0A BA
+				FC 42 49 00 FF 02 3E 66 0F 19 04 24
+			</field>
+			<field type="data" offset="0x420092" col="3">
+				00 43 49
+			</field>
+			<field type="data" offset="0x46f13f" col="4">
+				58 C9 C3 CC
+			</field>
+		</panel>
+		<panel>
+			<field type="label">
+				These fields are for customizing the behaviour of this hack. The recommanded values are the tested configuration, you may want to use these for initial testing if you just want to test out a reasonable configuration
+			</field>
+
+			<field type="label">
+				Ammo recharge delay, frames (Default: 100)
+			</field>
+			<field type="text" size="1" offset="0x494426">100</field>
+
+			<field type="label">
+				Level 1 bubble count (Default: 12) [Must change all]
+			</field>
+			<field type="text" size="1" offset="0x494394">12</field>
+			<field type="text" size="1" offset="0x4943ed">12</field>
+
+			<field type="label">
+				Level 2~3 bubble count (Default: 16) [Must change all]
+			</field>
+			<field type="text" size="1" offset="0x494335">16</field>
+			<field type="text" size="1" offset="0x49439c">16</field>
+			<field type="text" size="1" offset="0x4943f5">16</field>
+
+			<field type="label">
+				Ring orbital duration, frames (Default: 128)
+			</field>
+			<field type="text" size="4" offset="0x4942f8">128</field>
+
+			<field type = "label">
+				Base orbital radius, pixels (Default: 32)
+			</field>
+			<field type="text" size="2" offset="0x462684">32</field>
+
+			<field type = "label">
+				Level 3 spiral radius expansion velocity, pixels/frame (Default: 3)
+			</field>
+			<field type="text" size="1" offset="0x4626cf">3</field>
+
+			<field type = "label">
+				Maximum spiral radius before despawn, pixels (Default: 768)
+			</field>
+			<field type="text" size="4" offset="0x4626d3">768</field>
+
+			<field type = "label">
+				Bubble hitbox radius, units (Default: 2048) [Must change all]
+			</field>
+			<field type="text" size="4" offset="0x462787">2048</field>
+			<field type="text" size="4" offset="0x46281e">2048</field>
+
+			<field type = "label">
+				Maximum health NPC to instakill (Default: 7)
+			</field>
+			<field type="text" size="1" offset="0x4627a0">7</field>
+
+			<field type = "label">
+				Level 3 hits once released (Default: 3)
+			</field>
+			<field type="text" size="1" offset="0x4626c9">3</field>
+
+			<field type="label">
+				Sound played upon fire (Default: 48)
+			</field>
+			<field type="text" size="1" offset="0x494410">48</field>
+
+			<field type = "label">
+				Effect displayed upon despawn (Default: 3)
+			</field>
+			<field type="text" size="1" offset="0x4626b6">3</field>
+
+			<field type = "label">
+				Bullet family spawned, e.g. 0 = Snake, 3 = Polar Star, 12 = Missile Launcher, 33 = Nemesis (Default: 3)
+			</field>
+			<field type="text" size="1" offset="0x4627bd">3</field>
+		</panel>
+	</panel>
+</hack>

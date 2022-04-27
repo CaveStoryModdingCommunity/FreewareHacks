@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="HEX PATCH">
+	<panel>
+		<panel title="Description">
+		</panel>
+		<field type="info">
+			Hex patch converted by Miza.
+			Causes the lightning spawned by Ballos to always hit ground below if possible.
+		</field>
+		<panel title="Data">
+		</panel>
+		<panel>
+			<field type="data" offset="0x469140" col="0">
+				C8 24 00 00 8B 7D 08 8B 5F 68 FF 47 68 89 D8 83 E0 01 6B C0 18 
+				04 50 89 47 54 04 18 89 47 5C B0 78 89 47 58 B0 90 89 47 60 4B 
+				7F 09 6A 01 6A 67 E8 CB 74 FB FF 83 FB 28 7C 03 83 27 00 83 FB 
+				13 75 4D 83 7F 4C 00 75 47 6A 7F 31 C0 50 50 50 50 8B 77 0C 8B 
+				5F 08 C1 FE 0D C1 FB 0D 6A 00 58 3C 10 73 17 40 50 56 53 E8 F4 
+				A7 FA FF 59 5A 3C 05 74 07 3C 41 74 03 46 EB E5 58 C1 F6 0D 81 
+				EE 00 10 00 00 56 FF 77 08 B0 92 50 E8 01 5E 00 00 C9 C3
+			</field>
+		</panel>
+	</panel>
+</hack>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Smart Missile Spawns">
+	<panel>
+		<field type="info">
+			This hack causes missile pickups to not drop if missile ammo is full.
+		</field>
+		<field type="data" offset="0x46F430">
+			C8 38 00 04 83 65 CC 00 6A 28 6A 00 8D 45 D0 50
+			E8 EB 18 01 00 6A 00 58 3C 08 7D 6F 6B C8 14 40
+			50 8D 91 C8 9B 49 00 8B 4A 10 3B 4A 0C 7D 4F 83
+			3A 05 74 1E 83 3A 0A 74 2F EB 43
+		</field>
+		<field type="data" offset="0x46F4BA">
+			8C
+		</field>
+	</panel>
+</hack>
