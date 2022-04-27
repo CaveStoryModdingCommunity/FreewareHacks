@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Max Bullet Adjustments" author="txin">
+<panel>
+	<panel col="0">
+		<field type="info">
+			Allows the modification of all bullet limits in the game. 
+			These are bullet limits before the weapon caps out, meaning all weapons are able to fire when the bullet limit is reached, but not when it is exceeded.
+			Keep in mind, the engine itself limits the amount of available bullets to 64, so there's no point increasing any individual bullet limit past that.
+		</field>
+		<panel title="Customize">
+			<field type="label" col="0">Max Snake bullets</field>
+			<field type="text" size="1" offset="0x41DC15" col="1"></field>
+			
+			<field type="label" col="0">Max Polar Star bullets</field>
+			<field type="text" size="1" offset="0x41DEA5" col="1"></field>
+			
+			<field type="label" col="0">Max Fireball bullets (1)</field>
+			<field type="text" size="1" offset="0x41E13C" col="1"></field>
+			<field type="label" col="0">Max Fireball bullets (2)</field>
+			<field type="text" size="1" offset="0x41E159" col="1"></field>
+			<field type="label" col="0">Max Fireball bullets (3)</field>
+			<field type="text" size="1" offset="0x41E176" col="1"></field>
+			
+			<field type="label" col="0">Max Machine Gun bullets</field>
+			<field type="text" size="1" offset="0x41E3E2" col="1"></field>
+			
+			<field type="label" col="0">Max Missile Launcher bullets (1)</field>
+			<field type="text" size="1" offset="0x41E818" col="1">0</field>
+			<field type="label" col="0">Max Missile Explosion bullets (1)</field>
+			<field type="text" size="1" offset="0x41E82B" col="1">0</field>
+			<field type="label" col="0">Max Missile Launcher bullets (2)</field>
+			<field type="text" size="1" offset="0x41E841" col="1"></field>
+			<field type="label" col="0">Max Missile Explosion bullets (2)</field>
+			<field type="text" size="1" offset="0x41E855" col="1"></field>
+			<field type="label" col="0">Max Missile Launcher bullets (3)</field>
+			<field type="text" size="1" offset="0x41E86B" col="1"></field>
+			<field type="label" col="0">Max Missile Explosion bullets (3)</field>
+			<field type="text" size="1" offset="0x41E87F" col="1"></field>
+			
+			<field type="label" col="0">Max Super Missile Launcher bullets (1)</field>
+			<field type="text" size="1" offset="0x41E8E4" col="1">0</field>
+			<field type="label" col="0">Max Super Missile Explosion bullets (1)</field>
+			<field type="text" size="1" offset="0x41E8F7" col="1">0</field>
+			<field type="label" col="0">Max Super Missile Launcher bullets (2)</field>
+			<field type="text" size="1" offset="0x41E90D" col="1"></field>
+			<field type="label" col="0">Max Super Missile Explosion bullets (2)</field>
+			<field type="text" size="1" offset="0x41E921" col="1"></field>
+			<field type="label" col="0">Max Super Missile Launcher bullets (3)</field>
+			<field type="text" size="1" offset="0x41E937" col="1"></field>
+			<field type="label" col="0">Max Super Missile Explosion bullets (3)</field>
+			<field type="text" size="1" offset="0x41E94B" col="1"></field>
+			
+			<field type="label" col="0">Max Bubbler bullets (1)</field>
+			<field type="text" size="1" offset="0x41EFDF" col="1"></field>
+			<field type="label" col="0">Max Bubbler bullets (2)</field>
+			<field type="text" size="1" offset="0x41F28F" col="1"></field>
+			
+			<field type="label" col="0">Max Blade bullets</field>
+			<field type="text" size="1" offset="0x41F591" col="1">0</field>
+			
+			<field type="label" col="0">Max Nemesis bullets</field>
+			<field type="text" size="1" offset="0x41F755" col="1"></field>
+			
+			<field type="label" col="0">Max Spur bullets (1)</field>
+			<field type="text" size="1" offset="0x41FB8D" col="1">0</field>
+			<field type="label" col="0">Max Spur bullets (2)</field>
+			<field type="text" size="1" offset="0x41FB8B" col="1">0</field>
+		</panel>
+	</panel>
+	<panel col="1">
+		<field type="info">
+			This hack rewrites all bullet limit checking in the game to be specifically per bullet (as opposed to checking if it's within a family triplet). DO NOT EDIT ANYTHING THAT SAYS "Max Bullets" OR "Bullet Family" within this weapon folder after applying this hack (you'll edit them here instead).
+		</field>
+		<field type="data" offset="0x41F590">
+			3C 00
+		</field>
+		<field type="data" offset="0x41E817">
+			3C 00
+		</field>
+		<field type="data" offset="0x41E82A">
+			3C 00
+		</field>
+		<field type="data" offset="0x41E8E3">
+			3C 00
+		</field>
+		<field type="data" offset="0x41E8F6">
+			3C 00
+		</field>
+		<field type="data" offset="0x41EB7C">
+			3C 00
+		</field>
+		<field type="data" offset="0x41EB8A">
+			3C 00
+		</field>
+	</panel>
+</panel>
+</hack>
