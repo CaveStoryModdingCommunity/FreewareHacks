@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Ma Pignon walking animation timer" author="periwinkle">
+	<panel>
+	<field type="info">
+		Allows for slowing down Ma Pignon's walking animation
+		(ANP 300/301, before charging into the ceiling).
+	</field>
+	</panel>
+	<panel>
+	<panel col="0">
+	<field type="data" offset="0x46563A">
+		C7 40 68 09 00 00 00 31 C9 89 48 64 90 8B 40
+	</field>
+	</panel>
+	<panel col="1">
+	<field type="data" offset="0x46566D">
+		64 8B 50 68 41 83 F9 01 7C 03 31 C9 42 83 FA
+		0B 7E 05 BA 09 00 00 00 89 48 64 89 50 68
+	</field>
+	</panel>
+	</panel>
+	
+	<panel>
+	<field type="label">Number of ticks per animation frame:</field>
+	<field type="text" size="1" offset="0x465674"/>
+	</panel>
+</hack>
