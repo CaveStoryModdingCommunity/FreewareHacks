@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Make Dr. Gero affected by gravity" author="periwinkle">
+	<panel>
+	<field type="info">
+		Makes Dr. Gero (NPC 163) affected by gravity.
+		Set the values below to something reasonable before applying the hack
+		(e.g., gravity = 32, max fall speed = 1535).
+	</field>
+	
+	<field type="data" offset="0x4483AE">
+		8B 55 08 56 57 8B 42 14 83 C0 20 B9 FF 05 00 00
+		39 C8 7E 02 89 C8 89 42 14 01 42 0C 8D 7A 54 8B
+		42 68 C1 E0 04 8D 74 05 E0 83 7A 4C 00 74 04 8D
+		74 05 C0 A5 A5 A5 A5 5F 5E C9 C3 CC CC CC CC CC
+		CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC
+		CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC
+		CC
+	</field>
+	
+	<panel>
+	<field type="label">Gravity (units/frame^2):</field>
+	<field type="label">Max fall speed (units/frame):</field>
+	
+	<field type="text" size="1" offset="0x4483B8" col="1" />
+	<field type="text" size="4" offset="0x4483BA" />
+	</panel>
+	</panel>
+</hack>
