@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Sisters" author="Brayconn, Txin">
+	<panel>
+	<field type="info">
+		Sisters Editor. Values are in 8192ths of a tile.
+	</field>
+	
+	<panel title="X Spawning Position">
+	<field type="text" size = "4" offset = "0x47d230"/>
+	</panel>
+	
+	<panel title ="Y Spawning Position">
+	<field type="text" size = "4" offset = "0x47d23a"/>
+	</panel>
+	
+	</panel>
+</hack>
