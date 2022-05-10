@@ -1,0 +1,4 @@
+This makes the game impossible :D
+
+0x410512
+6A 00 E8 17 E4 FF FF 75 ED 90 90 90 90 90 90 90 90 90 90 90
