@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="TRR" author="txin">
+	<panel>
+		<panel title="Description">
+		</panel>
+		<field type="info">
+			Optimizes &lt;TRA, adds a &lt;TRR command that works the same as &lt;TRA, but doesn't reset player velocity, and also transports in relative coords (so &lt;TRA0001,0002,0003,0004 will still transport to map 1, event 2, x 3, y 4, and &lt;TRR0001,0002,0003,0004 will transport to map 1, event 2 as well, but will instead add 3 to x position in tiles, and 4 to y position in tiles, and if the player is currently moving velocity will be preserved. This allows you to have both seamless transitions as well as relative transitions.
+		</field>
+		<panel title="Data">
+		</panel>
+		<panel>
+			<field type="data" offset="0x422d5d" col="0">
+				BF E0 5A 4A 00 8B 47 F8 03 07 66 81 78 01 54 52 75 0E 80 78 03 
+				41 75 04 6A 00 EB 0C 80 78 03 52 0F 85 B7 00 00 00 6A 01 5E 8B 
+				1F BF 54 E6 49 00 8D 43 13 50 E8 6A EB FF FF 59 C1 F0 0D 8B 4F 
+				04 0F AF CE 01 C8 89 47 04 8D 43 0E 50 E8 52 EB FF FF 59 C1 F0 
+				0D 8B 0F 0F AF CE 01 C8 89 07 50 8D 43 09 50 E8 3B EB FF FF 59 
+				50 8D 43 04 50 E8 30 EB FF FF 59 50 4E 74 13 8B 07 89 47 08 8B 
+				4F 04 89 4F 0C D9 EE DD 57 10 DD 5F 18 68 0E 2E 42 00 C8 28 01 
+				00 A1 20 8B 49 00 89 45 FC E9 0F DE FF FF 90 90 90 90 90 90 90 
+				90 90 90 90 90 90 90 90 90
+			</field>
+		</panel>
+	</panel>
+</hack>
