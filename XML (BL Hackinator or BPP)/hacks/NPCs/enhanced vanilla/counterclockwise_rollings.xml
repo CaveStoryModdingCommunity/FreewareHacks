@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Counterclockwise Rollings (#330)" author="txin">
+	<panel>
+		<panel title="Description">
+		</panel>
+		<field type="info">
+			Adds counterclockwise rollings! Set NPC flag 0x8000 "Show Damage" to make a rolling move counterclockwise.
+			Flag 0x2000 "Interactable" also works. This allows you to use &lt;INP to spawn one, rather than needing to have it always be active in the map
+		</field>
+		<panel title="Data">
+		</panel>
+		<panel>
+			<field type="data" offset="0x468aea" col="0">
+				8B 7D 08 8B 4F 74 89 4D CC 83 7D CC 28 0F 87 38 01 00 00 8B 55 
+				CC 0F B6 82 3A 8D 46 00 FF 24 85 22 8D 46 00 6A 00 8B 4D 08 8B 
+				41 0C 99 81 E2 FF 01 00 00 03 C2 C1 F8 09 99 83 E2 0F 03 C2 C1 
+				F8 04 50 8B 55 08 8B 42 08 99 81 E2 FF 01 00 00 03 C2 C1 F8 09 
+				99 83 E2 0F 03 C2 C1 F8 04 50 E8 13 AF FA FF 83 7F 4C 00 75 04 
+				6A 0A EB 02 6A 1E 8F 47 74 F6 47 51 20 74 0D 80 67 51 DF 80 4F 
+				51 80 90 90 90 90 90 E9 C1 00 00 00 83 6F 10 40 83 67 14 00 F6 
+				47 04 01 74 20 F6 47 51 80 75 04 6A 14 EB 02 6A 28 8F 47 74 90 
+				90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 E9 8E 00 00 00 
+				83 6F 14 40 83 67 10 00 F6 47 04 02 74 20 F6 47 51 80 75 04 6A 
+				1E EB 02 6A 0A 8F 47 74 90 90 90 90 90 90 90 90 90 90 90 90 90 
+				90 90 90 90 EB 5E 83 47 10 40 83 67 14 00 F6 47 04 04 74 20 F6 
+				47 51 80 75 04 6A 28 EB 02 6A 14 8F 47 74 90 90 90 90 90 90 90 
+				90 90 90 90 90 90 90 90 90 90 EB 2E 83 47 14 40 83 67 10 00 F6 
+				47 04 08 74 20 F6 47 51 80 75 04 6A 0A EB 02 6A 1E 8F 47 74 90 
+				90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
+			</field>
+		</panel>
+	</panel>
+</hack>
