@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Death behavior" author="periwinkle">
+	<panel>
+	<field type="info">
+		Changes what happens when Quote dies (via taking damage).
+	</field>
+	</panel>
+	<panel>
+		<field type="label">Sound effect:</field>
+		<field type="label">Change this to 128 to keep Quote alive:</field>
+		<field type="label">Amount of smoke:</field>
+		<field type="label">Smoke spawn radius:</field>
+		<field type="label">Event number to execute:</field>
+		
+		<field type="text" size="1" offset="0x419B11" col="1"/>
+		<field type="text" size="1" offset="0x419B20"/>
+		<field type="text" size="1" offset="0x419B22"/>
+		<field type="text" size="4" offset="0x419B24"/>
+		<field type="text" size="1" offset="0x419B3F"/>
+	</panel>
+</hack>

@@ -1,0 +1,14 @@
+0x408D47
+28
+0x408D5B
+30
+0x408D6F
+28
+0x408D83
+30
+0x408D97
+28
+0x408DAB
+30
+
+hex patch that moves the framerects for Spur L3 MAX tail bullets shot vertically, so that they occupy the otherwise empty space below the horizontal versions of those bullets (which is where you would expect them to be, based on the placement of the L2 and L3 bullet sprites)
