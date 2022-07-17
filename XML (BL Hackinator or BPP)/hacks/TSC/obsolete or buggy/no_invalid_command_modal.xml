@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Remove Invalid Command MessageBox" author="joexyz">
+	<panel>
+		<field type="info">
+			Will get rid of the "invalid command" modal window when an invalid TSC command is provided so that the game will quit immediately.
+		</field>
+		<field type="data" offset="0x42528A">
+			90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
+			90 90 90 90 90 90
+		</field>
+	</panel>
+</hack>
