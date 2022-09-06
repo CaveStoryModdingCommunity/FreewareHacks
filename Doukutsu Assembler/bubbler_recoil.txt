@@ -1,0 +1,79 @@
+; this totally EPIC hack was made by BRAYCONN
+; it took 2-3 days to make :smile_eol:
+#define
+PlaySoundObject=420640
+SetCaret=40AC90
+SetBullet=403F80
+FuncReturn=406893
+gMC.ym=49E670
+#enddefine
+
+offset 40650E
+
+;optimized existing code
+PUSH [EDX+14]
+PUSH [EDX+10]
+CALL SetCaret
+PUSH 1
+PUSH 64
+CALL PlaySoundObject
+ADD ESP, 8 ; undoing the previous 2 pushes
+PUSH 16    ; pushing the bullet type for later
+ADD ESP, 10 ; the next push will be the direction arg
+
+MOV EDX, gMC.ym ; EDX = &gMC.ym
+MOV EAX, [EDX]  ; EAX = *gMC.ym
+
+;CheckUp
+CMP [EDX-2c], 0 ; facing up?
+JE :CheckDown
+PUSH 1         ; push dir
+ MOV EBX, 400   ; max (40653A)
+ MOV ECX, 100   ; momentum (40653F)
+JMP :AddMomentum
+
+:CheckDown
+CMP [EDX-28], 0 ; facing down?
+JE :DoLR
+PUSH 3         ; push dir
+CMP EAX, 0     ; ym > 0?
+JLE :DoDown
+SAR [EDX], 1   ; ym /= 2
+:DoDown
+ MOV EBX, -400  ; max (406555)
+ MOV ECX, -200  ; momentum (40655A)
+JMP :AddMomentum
+
+:DoLR
+SUB EDX, 4       ; EDX = &gMC.xm
+MOV EAX, [EDX]   ; EAX = *gMC.xm
+PUSH [EDX-2c]    ; push dir
+ MOV EBX, -400    ; max (406569)
+ MOV ECX, -200    ; momentum (40656E)
+CMP [EDX-2c], 0  ; direction right?
+JNZ :AddMomentum
+NEG EBX          ; flip direction
+NEG ECX
+XCHG EAX, EBX
+;FALLTHROUGH
+
+;EAX   = current xm/ym
+;EBX   = max momentum
+;ECX   = momentum to add
+;[EDX] = address of xm/ym
+;swapping EAX/EBX lets you flip comparison
+:AddMomentum
+CMP EAX, EBX   ; cap > cm
+JL :SpawnBullet
+ADD [EDX], ECX  ; *m += momentum
+ADD EAX, ECX
+CMP EAX, EBX  ; cap < *m
+JG :SpawnBullet
+MOV [EDX], EBX  ; m = cap
+
+:SpawnBullet
+SUB ESP, C ; restore the previously pushed stack values
+CALL SetBullet
+ADD ESP, 10 ; clear stack
+JMP FuncReturn
+NOP ; one byte to spare lol
