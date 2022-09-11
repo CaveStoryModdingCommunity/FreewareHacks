@@ -1,50 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <hack name="Monster X Position" author="Brayconn, Txin">
 	<panel>
-	<field type="info">
-		Monster X Editor. Values are in 8192ths of a tile.
-	</field>
-	
-	<panel title="Body">
-		<panel title="X Spawning Position">
-		<field type="text" size = "4" offset = "0x47e834"/>
-		</panel>		
-		<panel title ="Y Spawning Position">
-		<field type="text" size = "4" offset = "0x47e83e"/>
+		<field type="info">
+			Monster X Editor. Values are in 8192ths of a tile.
+			For referece, the tracks are 32768 away from the body horizontally and 28672 away vertically by default.
+			The Face values are only here for completeness, as the Face's AI will lock it to the location of the Body anyways.
+		</field>
+		<panel>
+			<panel title="Body">
+				<field type="label">X Spawning Position:</field>
+				<field type="label">Y Spawning Position:</field>
+				<field type="text" size="4" offset="0x47e834" col="1"/>
+				<field type="text" size="4" offset="0x47e83e"/>
+			</panel>
+			<panel title="Face" col="1">
+				<field type="label">X Spawning Position:</field>
+				<field type="label">Y Spawning Position:</field>
+				<field type="text" size="4" offset="0x47ea19" col="1"/>
+				<field type="text" size="4" offset="0x47ea23"/>
+			</panel>
 		</panel>
-	</panel>
-	<panel title="Top Left Track?">
-		<panel title="X Spawning Position">
-		<field type="text" size = "4" offset = "0x47ea19"/>
-		</panel>		
-		<panel title ="Y Spawning Position">
-		<field type="text" size = "4" offset = "0x47ea23"/>
+		<panel>
+			<panel title="Top Left Track" col="0">
+				<field type="label">X Spawning Position:</field>
+				<field type="label">Y Spawning Position:</field>
+				<field type="text" size="4" offset="0x47eabf" col="1"/>
+				<field type="text" size="4" offset="0x47eac9"/>
+			</panel>
+			<panel title="Top Right Track" col="1">
+				<field type="label">X Spawning Position:</field>
+				<field type="label">Y Spawning Position:</field>
+				<field type="text" size="4" offset="0x47eb51" col="1"/>
+				<field type="label">(Copied from T.L. Track)</field>
+			</panel>
+			<panel title="Bottom Left Track" col="0">
+				<field type="label">X Spawning Position:</field>
+				<field type="label">Y Spawning Position:</field>
+				<field type="text" size="4" offset="0x47eb76" col="1"/>
+				<field type="text" size="4" offset="0x47eb80"/>
+			</panel>
+			<panel title="Bottom Right Track" col="1">
+				<field type="label">X Spawning Position:</field>
+				<field type="label">Y Spawning Position:</field>
+				<field type="text" size="4" offset="0x47ebc3" col="1"/>
+				<field type="label">(Copied from B.L. Track)</field>
+			</panel>
 		</panel>
-	</panel>
-	<panel title="Top Right Track?">
-		<panel title="X Spawning Position">
-		<field type="text" size = "4" offset = "0x47eabf"/>
-		</panel>		
-		<panel title ="Y Spawning Position">
-		<field type="text" size = "4" offset = "0x47eac9"/>
-		</panel>
-	</panel>
-	<panel title="Bottom Left Track?">
-		<panel title="X Spawning Position">
-		<field type="text" size = "4" offset = "0x47eb76"/>
-		</panel>		
-		<panel title ="Y Spawning Position">
-		<field type="text" size = "4" offset = "0x47eb80"/>
-		</panel>
-	</panel>
-	<panel title="Bottom Right Track?">
-		<panel title="X Spawning Position">
-		<field type="text" size = "4" offset = "0x47eb51"/>
-		</panel>		
-		<panel title ="Y Spawning Position">
-		<field type="text" size = "4" offset = "0x47ebc3"/>
-		</panel>
-	</panel>
-	
 	</panel>
 </hack>
