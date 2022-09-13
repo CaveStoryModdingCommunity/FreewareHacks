@@ -2,7 +2,7 @@
 <hack name="water level" author="Brayconn">
    	<panel>
 		<field type="info">
-			Change the default height of the moving water. This number is tiles multiplied by 512. (So default is 3,840 tiles * 512 = 1966080).
+			Change the default height of the moving water. This number is tiles multiplied by 8192. (So default is 240 tiles * 8192 = 1966080).
 		</field>
 		<panel>
 			<field type="text" size = "4" offset = "0x402357"/>
