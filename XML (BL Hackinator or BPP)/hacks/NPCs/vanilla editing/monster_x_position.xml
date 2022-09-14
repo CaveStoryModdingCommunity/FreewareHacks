@@ -3,7 +3,7 @@
 	<panel>
 		<field type="info">
 			Monster X Editor. Values are in 8192ths of a tile.
-			For referece, the tracks are 32768 away from the body horizontally and 28672 away vertically by default.
+			For reference, the tracks are 32768 away from the body horizontally and 28672 away vertically by default.
 			The Face values are only here for completeness, as the Face's AI will lock it to the location of the Body anyways.
 		</field>
 		<panel>
