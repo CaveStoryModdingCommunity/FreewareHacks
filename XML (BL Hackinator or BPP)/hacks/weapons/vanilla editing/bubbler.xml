@@ -62,7 +62,7 @@
 			</panel>
 			<panel>
 				<field type="label">*Plus 1, so "1" actually means "2"</field>
-				<field type="label">†Minus 2, so "18" actually means "20"</field>
+				<field type="label">†Plus 2, so "18" actually means "20"</field>
 				<field type="label">(LVL 3 will be the bullet right after LVL 2)</field>
 				<field type="label">‡Lower value = Faster speed</field>
 			</panel>
