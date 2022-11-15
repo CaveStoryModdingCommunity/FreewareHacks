@@ -1,0 +1,37 @@
+; Brayconn made this...................
+; hi peri :smile_eol:
+
+#define
+CampLoop=401D10
+BackupSurface=40C320
+GameCliprect=48F91C
+EquipFlags=49E651
+NextCheck=41075E
+UpdateCond=41074C
+FuncEnd=4108A6
+#enddefine
+
+offset 410716
+
+MOV AL, [EquipFlags] ; get equip flags
+AND AL, 2            ; filter to 0x200
+JNZ NextCheck        ; skip this block if it was 0
+PUSH GameCliprect
+PUSH 0A
+CALL BackupSurface   ; setup background
+POP EAX              ; stack cleanup
+POP EAX 
+CALL CampLoop        ; open inventory
+TEST EAX, EAX        ; did it return 0?
+JE :ret              ; jump to the end and return 0 (Eax is already 0)
+CMP EAX, 2           ; is it 2 (restart)?
+JNZ UpdateCond       ; nope, just continue working
+DEC EAX              ; it was! EAX = 1, then return
+:ret
+JMP FuncEnd
+NOP                  ; MOV EAX, 1 sure takes up a lot of space huh
+NOP
+NOP
+NOP
+NOP
+NOP
