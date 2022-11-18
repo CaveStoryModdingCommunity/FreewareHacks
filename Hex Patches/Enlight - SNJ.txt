@@ -1,0 +1,14 @@
+I was forced to either make 50 TSC events or hack together this command. I picked the command.
+
+<SNJ - Skip Not Jump. Does the opposite of <SKJ, passing if the skipflag is set and jumping if it's unset. Not as useful as <FNJ, which maybe one of these days I'll make. Also this replaces the second <FAC like every other TSC hack so compatibility is shot. Pretty much don't apply this unless you know what you're doing and actually need it.
+
+
+0x424EAF
+A1 D8 5A 4A 00 8B 3D E0 5A 4A 00 01 F8 80 78 01
+53 75 71 80 78 02 4E 75 6B 80 78 03 4A 75 65 89
+F8 83 C0 04 50 E8 27 CA FF FF 83 C4 04 50 E8 2E
+9B FE FF 83 C4 04 85 C0 75 19 89 F8 83 C0 09 50
+E8 0C CA FF FF 83 C4 04 50 E8 F3 CB FF FF 83 C4
+04 EB 2C 89 F8 83 C0 0D A3 E0 5A 4A 00 EB 20 90
+90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
+90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
