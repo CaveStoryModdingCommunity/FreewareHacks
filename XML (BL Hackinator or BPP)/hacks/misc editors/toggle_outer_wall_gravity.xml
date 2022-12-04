@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Toggle Outer Wall Gravity", author="txin, Brayconn (just added the metadata lol)">
+	<panel>
+		<panel title="Description">
+		</panel>
+		<field type="info">
+			Makes hearts/EXP/missile pickups use their Outer Wall gravity behavior when flag 7501 is set (instead of being based on the background type)
+		</field>
+		<panel title="Data">
+		</panel>
+		<panel>
+			<field type="data" offset="0x4265b6" col="0">
+				68 4D 1D 00 00 E8 70 83 FE FF 48 0F 85 BD 00 00 00 EB 03
+			</field>
+			<field type="data" offset="0x43866f" col="1">
+				68 4D 1D 00 00 E8 B7 62 FD FF 48 0F 85 B5 00 00 00 EB 03
+			</field>
+			<field type="data" offset="0x43892f" col="2">
+				68 4D 1D 00 00 E8 F7 5F FD FF 48 0F 85 B5 00 00 00 EB 03
+			</field>
+		</panel>
+	</panel>
+</hack>
