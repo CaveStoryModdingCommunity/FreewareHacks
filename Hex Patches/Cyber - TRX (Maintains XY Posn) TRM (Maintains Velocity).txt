@@ -1,0 +1,30 @@
+((The CSMC is not 100% sure this hack was made by Cyber as the account that posted it was deleted. It's our best guess however with 90% surety.))
+
+0x422D5D
+BF D8 5A 4A 00 8B 17 03 57 08 81 3A 3C 54 52 41
+0F 85 A2 00 00 00 BB 00 19 42 00 8B 47 08 83 C0
+04 50 FF D3 59 89 45 DC 8B 47 08 83 C0 09 50 FF
+D3 59 89 45 FC 8B 47 08 83 C0 0E 50 FF D3 59 89
+45 F4 8B 47 08 83 C0 13 50 FF D3 59 50 FF 75 F4
+FF 75 FC FF 75 DC 83 7D F8 01 0F 8C 27 00 00 00
+0F 84 17 00 00 00 FF 35 58 E6 49 00 FF 35 54 E6
+49 00 FF 75 FC FF 75 DC E8 84 00 00 00 E8 5A 00
+00 00 E9 05 00 00 00 E8 F7 DD FF FF 83 C4 10 85
+C0 75 20 6A 00 68 CC C9 48 00 68 D4 C9 48 00 8B
+15 58 E4 49 00 52 FF 15 C4 C1 48 00 31 C0 E9 55
+29 00 00 E9 92 24 00 00 81 3A 3C 54 52 58 75 0A
+6A 01 8F 45 F8 E9 4C FF FF FF 81 3A 3C 54 52 4D
+75 49 6A 02 8F 45 F8 E9 3A FF FF FF C8 28 01 00
+A1 20 8B 49 00 89 45 FC 8B 45 14 C1 E0 04 C1 E0
+09 50 8B 4D 10 C1 E1 04 C1 E1 09 51 E9 AC DD FF
+FF C8 28 01 00 A1 20 8B 49 00 89 45 FC FF 75 14
+FF 75 10 EB E7 FF 75 10 EB E2 90 81 3A 3C 4D 4F
+56 75 55 8B 47 04 83 C0 04 50 E8 74 EA FF FF 59
+
+<TRX functions exactly the same as <TRA but it just ignores the last two inputs for x and y and uses your current x and y instead; use those inputs in the editor though (just fill them with zeros or something)
+<TRX also keeps your velocity
+
+<TRM functions the same as <TRA but keeps your velocity
+
+optimizes <TRA and <MOV command, doesn't touch anything else
+<TRA and <MOV still work exactly like normal
