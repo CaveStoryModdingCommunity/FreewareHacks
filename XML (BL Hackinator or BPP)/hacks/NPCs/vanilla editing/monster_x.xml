@@ -1,37 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<hack name="Monster X Customization" author="txin">
+<hack name="Monster X Customization" author="txin, Brayconn">
 <panel>
 	<panel>
 		<field type="info">
-			Allows easy modification of most useful monster X variables.
+			Monster X Editor. Positional Values are in 8192ths of a tile.
+			For reference, the tracks are 32768 away from the body horizontally and 28672 away vertically by default.
+			The Face values are only here for completeness, as the Face's AI will lock it to the location of the Body anyways.
 		</field>
+		<panel title="Customize">
+			<panel>
+				<field type="label" col="0">Initial Position X (before &lt;BOA)</field>
+				<field type="text" size="4" offset="0x47E807" col="1"></field>
+				<field type="label" col="0">Fish Missile fire delay</field>
+				<field type="text" size="4" offset="0x48020E" col="1"></field>
+				<field type="label" col="0">Fish Missile fire rate offset (for each launcher)</field>
+				<field type="text" size="1" offset="0x480132" col="1"></field>
+				<field type="label" col="0">Main Health</field>
+				<field type="text" size="4" offset="0x47E816" col="1"></field>
+				<field type="label" col="0">Turret Health</field>
+				<field type="text" size="4" offset="0x47E918" col="1"></field>
+			</panel>
+			<panel col="1">
+				<field type="label" col="0">Turret Projectile</field>
+				<field type="text" size="4" offset="0x48079C" col="1"></field>
+				<field type="label" col="0">Turret Randomness Right</field>
+				<field type="text" size="1" offset="0x480735" col="1"></field>
+				<field type="label" col="0">Turret Randomness Left</field>
+				<field type="text" size="1" offset="0x480737" col="1"></field>
+				<field type="label" col="0">Turret Projectile Count</field>
+				<field type="text" size="4" offset="0x4807BA" col="1"></field>
+				<field type="label" col="0">Turret Fire Sound</field>
+				<field type="text" size="1" offset="0x4807AB" col="1"></field>
+			</panel>
+		</panel>
 	</panel>
-	<panel title="Customize">
-		<field type="label">Initial Position X</field>
-		<field type="label">Position X after BOA</field>
-		<field type="label">Position Y after BOA</field>
-		<field type="label">Fish Missile fire delay</field>
-		<field type="label">Fish Missile fire rate offset (for each launcher)</field>
-		<field type="label">Main Health</field>
-		<field type="label">Turret Health</field>
-		<field type="label">Turret Projectile</field>
-		<field type="label">Turret Randomness Right</field>
-		<field type="label">Turret Randomness Left</field>
-		<field type="label">Turret Projectile Count</field>
-		<field type="label">Turret Fire Sound</field>
-		
-		<field type="text" size="4" offset="0x47E807" col="1"></field>
-		<field type="text" size="4" offset="0x47E834"></field>
-		<field type="text" size="4" offset="0x47E83E"></field>
-		<field type="text" size="4" offset="0x48020E"></field>
-		<field type="text" size="1" offset="0x480132"></field>
-		<field type="text" size="4" offset="0x47E816"></field>
-		<field type="text" size="4" offset="0x47E918"></field>
-		<field type="text" size="4" offset="0x48079C"></field>
-		<field type="text" size="1" offset="0x480735"></field>
-		<field type="text" size="1" offset="0x480737"></field>
-		<field type="text" size="4" offset="0x4807BA"></field>
-		<field type="text" size="1" offset="0x4807AB"></field>
+	<panel title="Positions After &lt;BOA0001">
+		<panel>
+			<panel title="Body">
+				<field type="label">X Spawning Position:</field>
+				<field type="label">Y Spawning Position:</field>
+				<field type="text" size="4" offset="0x47e834" col="1"/>
+				<field type="text" size="4" offset="0x47e83e"/>
+			</panel>
+			<panel title="Face" col="1">
+				<field type="label">X Spawning Position:</field>
+				<field type="label">Y Spawning Position:</field>
+				<field type="text" size="4" offset="0x47ea19" col="1"/>
+				<field type="text" size="4" offset="0x47ea23"/>
+			</panel>
+		</panel>
+		<panel>
+			<panel title="Top Left Track" col="0">
+				<field type="label">X Spawning Position:</field>
+				<field type="label">Y Spawning Position:</field>
+				<field type="text" size="4" offset="0x47eabf" col="1"/>
+				<field type="text" size="4" offset="0x47eac9"/>
+			</panel>
+			<panel title="Top Right Track" col="1">
+				<field type="label">X Spawning Position:</field>
+				<field type="label">Y Spawning Position:</field>
+				<field type="text" size="4" offset="0x47eb51" col="1"/>
+				<field type="label">(Copied from T.L. Track)</field>
+			</panel>
+			<panel title="Bottom Left Track" col="0">
+				<field type="label">X Spawning Position:</field>
+				<field type="label">Y Spawning Position:</field>
+				<field type="text" size="4" offset="0x47eb76" col="1"/>
+				<field type="text" size="4" offset="0x47eb80"/>
+			</panel>
+			<panel title="Bottom Right Track" col="1">
+				<field type="label">X Spawning Position:</field>
+				<field type="label">Y Spawning Position:</field>
+				<field type="text" size="4" offset="0x47ebc3" col="1"/>
+				<field type="label">(Copied from B.L. Track)</field>
+			</panel>
+		</panel>
 	</panel>
 </panel>
 </hack>
