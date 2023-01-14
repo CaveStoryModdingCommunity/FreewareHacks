@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <hack name="Fix Exp/Heart/Missiles in Wind" author="periwinkle">
+<panel>
 	<panel>
 	<field type="info">
 		By default, enemy drops in leftward-gravity background types
@@ -40,7 +41,7 @@
 		<field type="text" offset="0x42663C" size="4" />
 	</panel>
 	
-	<panel title="Missiles">
+	<panel title="Missiles" col="1">
 		<field type="label">x position to despawn:</field>
 		<field type="text" offset="0x4386D4" size="4" />
 		<field type="check" name="Fix speed cap bug?">
@@ -91,4 +92,5 @@
 		<field type="text" offset="0x4389A6" size="4" />
 		<field type="text" offset="0x4389B2" size="4" />
 	</panel>
+</panel>
 </hack>

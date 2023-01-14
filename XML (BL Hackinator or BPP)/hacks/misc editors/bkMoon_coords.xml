@@ -17,10 +17,10 @@
 		<field type="label">Draw line</field>
 		<field col="1" type="text" size = "4" offset = "0x402609"/>
 		<field type="text" size = "4" offset = "0x402610"/>
-		<field type="text" size = "4" offset = "0x402620"/>
+		<field type="text" size = "4" offset = "0x402620">0</field>
 	</panel>
 	
-	<panel title="Cloud 1">
+	<panel title="Cloud 1" col="1">
 		<field type="label">Start line</field>
 		<field type="label">End line</field>
 		<field type="label">Draw line R</field>
