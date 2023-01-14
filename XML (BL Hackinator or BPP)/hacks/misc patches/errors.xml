@@ -18,7 +18,7 @@
 	<field type="data" offset="0x48C3B4">
 		45 72 72 6F 72 00
 	</field>
-	<field type="data" offset="0x48C388">
+	<field type="data" offset="0x48C388" col="1">
 		45 72 72 6F 72 00
 	</field>
 
@@ -41,7 +41,7 @@
 	</field>
 
 	<!-- %s\sndvol.exe -->
-	<field type="data" offset="0x48C430">
+	<field type="data" offset="0x48C430" col="2">
 		25 73 5C 73 6E 64 76 6F 6C 2E 65 78 65 00
 	</field>
 	<!-- %s\sndvol.exe -->

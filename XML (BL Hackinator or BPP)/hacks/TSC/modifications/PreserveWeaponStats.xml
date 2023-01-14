@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <hack name="Preserve Weapon Stats" author="periwinkle">
-	<panel>
+<panel>
+	
 	<field type="info">
 		Remembers the level, exp, and current/max ammo of a weapon
 		when it is removed from the inventory, and restores those
@@ -13,7 +14,7 @@
 		the same ammo count that the old Missile Launcher had as
 		the ammo for the Super Missiles.)
 	</field>
-	</panel>
+	
 	<panel>
 	
 	<field type="data" offset="0x401050">
@@ -63,4 +64,5 @@
 		cc cc cc cc cc cc cc
 	</field>
 	</panel>
+</panel>
 </hack>
