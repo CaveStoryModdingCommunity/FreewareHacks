@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Kanpachi (fishing) [#075]" author="periwinkle">
+	<panel>
+	<field type="info">
+		Changes how close to Kanpachi (NPC 75) the player needs to be
+		to be noticed (eyes open sprite).
+		Values are in units (1 pixel = 512 units, 1 block = 16 pixels = 8192 units)
+	</field>
+	</panel>
+	<panel>
+		<field type="label">Left extent:</field>
+		<field type="label">Right extent:</field>
+		<field type="label">Top extent:</field>
+		<field type="label">Bottom extent:</field>
+		
+		<field type="text" size="4" offset="0x4365BD" col="1"/>
+		<field type="text" size="4" offset="0x4365D1" col="1"/>
+		<field type="text" size="4" offset="0x4365E5" col="1"/>
+		<field type="text" size="4" offset="0x4365F8" col="1"/>
+	</panel>
+</hack>
