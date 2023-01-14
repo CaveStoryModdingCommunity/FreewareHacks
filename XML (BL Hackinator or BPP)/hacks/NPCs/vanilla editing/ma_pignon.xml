@@ -1,57 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<hack name="MaPignon [#313]" author="txin">
+<hack name="MaPignon [#313]" author="txin, Brayconn">
 	<panel>
-		<panel title="Info">
-		</panel>
+		<panel title="Info"></panel>
 		<field type="info" col="0">
 			Allows modifying Ma Pignon's hardcoded values.
 		</field>
-		<panel title="Customize" col="0">
-		</panel>
-		<panel>
+		<panel title="Customize" col="0"></panel>
 			<panel title="Main Boss" col="0">
-				<field type="label">Base Damage</field>
-				<field type="label">Charge Attack Damage</field>
-				<field type="label">Falling Attack Damage</field>
-				<field type="label">Jump Attack Damage</field>
-				<field type="label">Clone Attack Damage</field>
-				<field type="label">Inactive Damage</field>
-				<field type="label">Left Dash Speed</field>
-				<field type="label">Right Dash Speed</field>
-				<field type="label">Super Jump Speed</field>
-				<field type="label">Fall Acceleration</field>
-					
-				<field type="text" size="4" offset="0x4651B2" col="1"></field>
-				<field type="text" size="4" offset="0x4654C7"></field>
-				<field type="text" size="4" offset="0x465627"></field>
-				<field type="text" size="4" offset="0x465785"></field>
-				<field type="text" size="4" offset="0x4658B9"></field>
-				<field type="text" size="4" offset="0x465906"></field>
-				<field type="text" size="4" offset="0x465699"></field>
-				<field type="text" size="4" offset="0x4656A5"></field>
-				<field type="text" size="4" offset="0x465739"></field>
-				<field type="text" size="1" offset="0x465921"></field>
+				<panel>
+					<field type="label" col="0">Base Damage</field>
+					<field type="text" size="4" offset="0x4651B2" col="1"></field>
+					<field type="label" col="0">Charge Attack Damage</field>
+					<field type="text" size="4" offset="0x4654C7" col="1"></field>
+					<field type="label" col="0">Falling Attack Damage</field>
+					<field type="text" size="4" offset="0x465627" col="1"></field>
+					<field type="label" col="0">Jump Attack Damage</field>
+					<field type="text" size="4" offset="0x465785" col="1"></field>
+					<field type="label" col="0">Running Attack Damage</field>
+					<field type="text" size="4" offset="0x4658B9" col="1"></field>
+				</panel>
+				<panel col="1">
+					<field type="label" col="0">Inactive Damage</field>
+					<field type="text" size="4" offset="0x465906" col="1"></field>
+					<field type="label" col="0">Left Dash Speed</field>
+					<field type="text" size="4" offset="0x465699" col="1"></field>
+					<field type="label" col="0">Right Dash Speed</field>
+					<field type="text" size="4" offset="0x4656A5" col="1"></field>
+					<field type="label" col="0">Super Jump Speed</field>
+					<field type="text" size="4" offset="0x465739" col="1"></field>
+					<field type="label" col="0">Fall Acceleration</field>
+					<field type="text" size="1" offset="0x465921" col="1"></field>
+				</panel>
 			</panel>
-			<panel title="Separate Attacks" col="1">
-				<field type="label">Rocks Summon Delay (Lower = More)</field>
-				<field type="label">Rock NPC ID</field>
-				<field type="label">Rock Damage</field>
-				<field type="label">Rock Fall Speed (Soft Cap)</field>
-				<field type="label">Rock Fall Speed (Hard Cap)</field>
-				<field type="label">Clones Summon Delay (Lower = More)</field>
-				<field type="label">Clone NPC ID</field>
-				<field type="label">Clone Damage</field>
-					
-				<field type="text" size="4" offset="0x4655A3" col="1"></field>
-				<field type="text" size="4" offset="0x4655D3"></field>
-				<field type="text" size="4" offset="0x465F0A"></field>
-				<field type="text" size="4" offset="0x465D8A"></field>
-				<field type="text" size="4" offset="0x465D96"></field>
-				<field type="text" size="4" offset="0x465838"></field>
-				<field type="text" size="4" offset="0x465865"></field>
-				<field type="text" size="4" offset="0x46605B">3</field>
+			<panel title="Customize Ma Pignon's Slam Attacks">	
+				<panel title="Rock Slam">
+					<field type="label">Spawn Every X Ticks:</field>
+					<field type="label">NPC Type:</field>
+					<field type="label">Left Edge (Tiles):</field>
+					<field type="label">Right Edge (Tiles):</field>
+					<field type="label">Y Position (Pixel Units):</field>
+					<field type="label">X momentum:</field>
+					<field type="label">Y momentum:</field>
+					<field type="label">Direction:</field>
+					<!--Parent would go here-->
+					<field type="label">Insert Index:</field>
+					<field type="label">Slam Time:</field>
+					<field type="text" size = "4" offset = "0x4655A3" col="1"/>
+					<field type="text" size = "4" offset = "0x4655D3"/>
+					<field type="text" size = "1" offset = "0x4655C2"/>
+					<field type="text" size = "1" offset = "0x4655C0"/>
+					<field type="text" size = "4" offset = "0x4655BB"/>
+					<field type="text" size = "1" offset = "0x4655B9"/>
+					<field type="text" size = "1" offset = "0x4655B7"/>
+					<field type="text" size = "1" offset = "0x4655B5"/>
+					<!--Parent would go here-->
+					<field type="text" size = "4" offset = "0x4655AE"/>
+					<field type="text" size = "1" offset = "0x4655E5"/>
+				</panel>
+				<panel title="Clone Slam" col="1">
+					<field type="label">Spawn Every X Ticks:</field>
+					<field type="label">NPC Type:</field>
+					<field type="label">Left Edge (Tiles):</field>
+					<field type="label">Right Edge (Tiles):</field>
+					<field type="label">Y Position (Pixel Units):</field>
+					<field type="label">X momentum:</field>
+					<field type="label">Y momentum:</field>
+					<field type="label">Direction:</field>
+					<!--Parent would go here-->
+					<field type="label">Insert Index:</field>
+					<field type="label">Slam Time:</field>
+					<field type="text" size = "4" offset = "0x465838" col="1"/>
+					<field type="text" size = "4" offset = "0x465865"/>
+					<field type="text" size = "1" offset = "0x465854"/>
+					<field type="text" size = "1" offset = "0x465852"/>
+					<field type="text" size = "1" offset = "0x465850"/>
+					<field type="text" size = "1" offset = "0x46584E"/>
+					<field type="text" size = "1" offset = "0x46584C"/>
+					<field type="text" size = "1" offset = "0x46584A"/>
+					<!--Parent would go here-->
+					<field type="text" size = "4" offset = "0x465843"/>
+					<field type="text" size = "1" offset = "0x465877"/>
+				</panel>
 			</panel>
-		</panel>
+			<panel title="Code within Separate Entities" col="0">
+				<panel title="Rock [#314]" col="0">
+					<field type="label" col="0">Rock Damage</field>
+					<field type="text" size="4" offset="0x465F0A" col="1"></field>
+					<field type="label" col="0">Rock Fall Speed (Soft Cap)</field>
+					<field type="text" size="4" offset="0x465D8A" col="1"></field>
+					<field type="label" col="0">Rock Fall Speed (Hard Cap)</field>
+					<field type="text" size="4" offset="0x465D96" col="1"></field>
+				</panel>
+				<panel title="Clone [#315]" col="1">
+					<field type="label" col="0">Clone Damage</field>
+					<field type="text" size="4" offset="0x46605B" col="1">3</field>
+				</panel>
+			</panel>
 		<panel title="Data" col="0">
 		</panel>
 		<panel>
