@@ -1,0 +1,83 @@
+#define
+oldWeaponID=[ebp+8]
+newWeaponID=[ebp+C]
+weaponAmmo=[ebp+10]
+#enddefine
+
+offset 401220 ; TradeArms
+
+push ebp
+mov ebp, esp
+push edi
+push esi
+push ebx
+mov ecx, oldWeaponID
+
+; Find where oldWeaponID is
+xor edi, edi
+mov eax, gArmsData.code
+:loopstart
+cmp [eax], ecx ; if (gArmsData[i].code == oldWeaponID)
+je :saveweaponstats
+add eax, 14 ; sizeof(ARMSDATA)
+inc edi
+cmp edi, 8 ; max weapon count
+jne :loopstart
+xor eax, eax
+jmp :leave
+
+:saveweaponstats
+; eax = &gArmsData[i]
+imul ecx, ecx, 6 ; size of saved weapon data
+lea ebx, [ecx+savedWeapon.level] ; &savedWeapon[oldWeaponID]
+mov edx, [eax+4] ; gArmsData[i].level
+dec edx
+mov byte [ebx], dl ; savedWeapon[oldWeaponID].level
+mov ecx, [eax+8] ; gArmsData[i].exp
+mov byte [ebx+1], cl ; savedWeapon[oldWeaponID].exp
+mov esi, [eax+C] ; gArmsData[i].max_num
+mov word [ebx+2], si ; savedWeapon[oldWeaponID].max_ammo
+mov edi, [eax+10] ; gArmsData[i].num
+mov word [ebx+4], di ; savedWeapon[oldWeaponID].cur_ammo
+
+; Get base max/current ammo based on weaponAmmo function parameter
+; ( >9000 => add to current ammo instead of saved ammo )
+imul ebx, newWeaponID, 6
+add ebx, savedWeapon.level ; &savedWeapon[newWeaponID]
+mov cx, word [ebx+2] ; savedWeapon[newWeaponID].max_ammo
+mov dx, word [ebx+4] ; savedWeapon[newWeaponID].cur_ammo
+; Check for weaponAmmo = 9xxx
+cmp weaponAmmo, decimal 8999
+
+jg :sub9000
+movzx esi, cx
+movzx edi, dx
+jmp :initnewweapon
+
+:sub9000
+sub weaponAmmo, decimal 9000
+
+:initnewweapon
+; esi = base max ammo, edi = base current ammo
+mov edx, newWeaponID
+mov [eax], edx ; gArmsData[i].code = newWeaponID
+movzx edx, byte [ebx] ; savedWeapon[newWeaponID].level
+inc edx
+mov [eax+4], edx ; gArmsData[i].level
+movzx edx, byte [ebx+1] ; savedWeapon[newWeaponID].exp
+mov [eax+8], edx ; gArmsData[i].exp
+add esi, weaponAmmo
+mov [eax+C], esi ; gArmsData[i].max_num
+add edi, weaponAmmo
+mov [eax+10], edi ; gArmsData[i].num
+mov eax, 1
+
+:leave
+pop ebx
+pop esi
+pop edi
+pop ebp
+retn
+
+; Clean up spare bytes
+data CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC

@@ -1,0 +1,69 @@
+#define
+weaponID=[ebp+8]
+gSelectedArms=499C68
+#enddefine
+
+offset 401160 ; SubArmsData
+
+push ebp
+mov ebp, esp
+push esi
+push edi
+mov esi, weaponID
+xor edx, edx ; loop index
+mov eax, gArmsData.code
+:loopstart
+cmp [eax], esi ; if (gArmsData[i].code == weaponID)
+je :saveweaponstats
+add eax, 14 ; sizeof(ARMSDATA)
+inc edx
+cmp edx, 8 ; max weapon count
+jl :loopstart
+xor eax, eax
+jmp :leave
+
+:saveweaponstats
+imul edi, esi, 6  ; size of saved weapon data
+add edi, savedWeapon.level
+mov cl, byte [eax+4] ; gArmsData[i].level
+dec cl
+mov byte [edi], cl ; savedWeapon[weaponID].level
+mov cl, byte [eax+8] ; gArmsData[i].exp
+mov byte [edi+1], cl ; savedWeapon[weaponID].exp
+mov cx, word [eax+C] ; gArmsData[i].max_num
+mov word [edi+2], cx ; savedWeapon[weaponID].max_ammo
+mov cx, word [eax+10] ; gArmsData[i].num
+mov word [edi+4], cx ; savedWeapon[weaponID].cur_ammo
+
+; shift the other weapons
+inc edx
+cmp edx, 8
+jge :clearlastweapon
+imul edx, edx, 14
+:shiftloop
+lea esi, [edx+gArmsData.code] ; &gArmsData[i]
+add edx, 14
+push 5
+pop ecx
+lea edi, [esi-14] ; &gArmsData[i-1]
+prefix rep | movsd
+cmp edx, A0
+jl :shiftloop
+
+:clearlastweapon
+xor eax, eax
+mov [499C54], eax ; gArmsData[7].code
+mov [gSelectedArms], eax
+inc eax
+
+:leave
+pop edi
+pop esi
+leave
+retn
+
+; Wow, look at all of these bytes that I saved
+data CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC
+data CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC
+data CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC
+data CC CC CC CC CC CC CC CC CC CC

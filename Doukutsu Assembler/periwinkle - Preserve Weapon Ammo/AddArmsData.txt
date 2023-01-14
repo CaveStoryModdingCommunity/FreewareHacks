@@ -1,0 +1,71 @@
+#define
+newWeaponID=[ebp+8]
+newWeaponAmmo=[ebp+C]
+#enddefine
+
+offset 401050 ; AddArmsData
+
+push ebp
+mov ebp, esp
+mov eax, gArmsData.code
+push ebx
+mov ebx, newWeaponID
+
+xor edx, edx
+:loopstart
+cmp [eax], ebx ; if (gArmsData[i].code == newWeaponID)
+je :setweapon
+cmp [eax], 0 ; if (gArmsData[i].code == 0)
+je :initnewweapon
+inc edx
+add eax, 14 ; sizeof(ARMSDATA)
+cmp edx, 8 ; max weapon count
+jl :loopstart
+xor eax, eax
+jmp :leave
+
+:initnewweapon
+imul edx, ebx, 6 ; size of saved weapon data
+add edx, savedWeapon.level
+movzx ecx, byte [edx] ; savedWeapon[newWeaponID].level
+inc ecx
+mov [eax+4], ecx ; gArmsData[i].level
+movzx ecx, byte [edx+1] ; savedWeapon[newWeaponID].exp
+mov [eax+8], ecx ; gArmsData[i].exp
+movzx ecx, word [edx+2] ; savedWeapon[newWeaponID].max_ammo
+mov [eax+C], ecx ; gArmsData[i].max_num
+movzx ecx, word [edx+4] ; savedWeapon[numWeaponID].cur_ammo
+mov [eax+10], ecx ; gArmsData[i].num
+
+:setweapon
+mov [eax], ebx ; gArmsData[i].code = newWeaponID
+mov ecx, newWeaponAmmo
+add [eax+C], ecx ; add ammo to gArmsData[i].max_num
+add [eax+10], ecx ; add ammo to gArmsData[i].num
+
+; cap ammo to max value
+mov ecx, [eax+C]
+cmp [eax+10], ecx
+jle :return
+mov [eax+10], ecx
+
+:return
+xor eax, eax
+inc eax
+
+:leave
+pop ebx
+pop ebp
+retn
+
+; Wow, look at all of these bytes I saved
+data CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC
+data CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC
+data CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC
+data CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC
+data CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC
+data CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC
+data CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC
+data CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC
+data CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC
+data CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC
