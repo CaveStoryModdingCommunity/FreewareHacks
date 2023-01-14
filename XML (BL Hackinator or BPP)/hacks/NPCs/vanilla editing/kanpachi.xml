@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <hack name="Kanpachi (fishing) [#075]" author="periwinkle">
+<panel>
 	<panel>
 	<field type="info">
 		Changes how close to Kanpachi (NPC 75) the player needs to be
@@ -17,5 +18,6 @@
 		<field type="text" size="4" offset="0x4365D1" col="1"/>
 		<field type="text" size="4" offset="0x4365E5" col="1"/>
 		<field type="text" size="4" offset="0x4365F8" col="1"/>
+	</panel>
 	</panel>
 </hack>
