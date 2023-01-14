@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Fix Exp/Heart/Missiles in Wind" author="periwinkle">
+	<panel>
+	<field type="info">
+		By default, enemy drops in leftward-gravity background types
+		despawn themselves below x = 5 (40960 in units). This hack allows
+		for changing this position in case you want it to disappear
+		offscreen or in a different position.
+		(Set it to something negative like -8192 to have them disappear
+		only when fully off-screen.)
+		Additionally, these drops have a bug where their leftward speed is
+		not capped properly; this hack allows you to fix that too.
+		All values are in units (1 block = 16 pixels = 8192 units).
+	</field>
+	</panel>
+		
+	<panel title="Exp">
+		<field type="label">x position to despawn:</field>
+		<field type="text" offset="0x42661E" size="4" />
+		<field type="check" name="Fix speed cap bug?">
+			<checked>
+				<field type="data" offset="0x42662F">
+				10
+				</field>
+				<field type="data" offset="0x42663B">
+				10
+				</field>
+			</checked>
+			<unchecked>
+				<field type="data" offset="0x42662F">
+				08
+				</field>
+				<field type="data" offset="0x42663B">
+				08
+				</field>
+			</unchecked>
+		</field>
+		<field type="label">x speed cap (if checked; change both, default is ok):</field>
+		<field type="text" offset="0x426630" size="4" />
+		<field type="text" offset="0x42663C" size="4" />
+	</panel>
+	
+	<panel title="Missiles">
+		<field type="label">x position to despawn:</field>
+		<field type="text" offset="0x4386D4" size="4" />
+		<field type="check" name="Fix speed cap bug?">
+			<checked>
+				<field type="data" offset="0x4386E5">
+				10
+				</field>
+				<field type="data" offset="0x4386F1">
+				10
+				</field>
+			</checked>
+			<unchecked>
+				<field type="data" offset="0x4386E5">
+				08
+				</field>
+				<field type="data" offset="0x4386F1">
+				08
+				</field>
+			</unchecked>
+		</field>
+		<field type="label">x speed cap (if checked; change both, default is ok):</field>
+		<field type="text" offset="0x4386E6" size="4" />
+		<field type="text" offset="0x4386F2" size="4" />
+	</panel>
+	
+	<panel title="Hearts">
+		<field type="label">x position to despawn:</field>
+		<field type="text" offset="0x438994" size="4" />
+		<field type="check" name="Fix speed cap bug?">
+			<checked>
+				<field type="data" offset="0x4389A5">
+				10
+				</field>
+				<field type="data" offset="0x4389B1">
+				10
+				</field>
+			</checked>
+			<unchecked>
+				<field type="data" offset="0x4389A5">
+				08
+				</field>
+				<field type="data" offset="0x4389B1">
+				08
+				</field>
+			</unchecked>
+		</field>
+		<field type="label">x speed cap (if checked; change both, default is ok):</field>
+		<field type="text" offset="0x4389A6" size="4" />
+		<field type="text" offset="0x4389B2" size="4" />
+	</panel>
+</hack>
