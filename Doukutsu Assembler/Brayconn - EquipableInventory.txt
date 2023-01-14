@@ -1,3 +1,5 @@
+; Requires <EQ+0512 to be set in order for the inventory to be used.
+; With <EQ-0512 removing the player's ability to open the inventory.
 ; Brayconn made this...................
 ; hi peri :smile_eol:
 
@@ -14,8 +16,8 @@ FuncEnd=4108A6
 offset 410716
 
 MOV AL, [EquipFlags] ; get equip flags
-AND AL, 2            ; filter to 0x200
-JNZ NextCheck        ; skip this block if it was 0
+AND AL, 2            ; filter to 0x200 (512 in hexadecimal)
+JNZ NextCheck        ; skip this block if it was 0 / Switch this to "JZ" to swap <EQ+0512 and <EQ-0512
 PUSH GameCliprect
 PUSH 0A
 CALL BackupSurface   ; setup background
