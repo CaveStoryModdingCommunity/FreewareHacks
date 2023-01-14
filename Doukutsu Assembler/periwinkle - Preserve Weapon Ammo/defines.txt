@@ -1,0 +1,16 @@
+; Points to the start of map flag data (49E5B8) by default.
+; If you want to change where the saved weapon data gets stored, edit the addresses below.
+; Note that this hack uses 672 bits/flags to store all of the data.
+; (e.g., to save the weapon data at the end of the NPC flags array (flags 7328-7999),
+; set the first address below to 49E134 and the rest accordingly.)
+savedWeapon.level=49E5B8     ; Start of the saved weapon stats data
+savedWeapon.exp=49E5B9       ; Must be equal to the previous address + 1
+savedWeapon.max_ammo=49E5BA  ; Must be equal to the previous address + 1
+savedWeapon.cur_ammo=49E5BC  ; Must be equal to the previous address + 2
+
+; Don't touch any of these addresses (these are vanilla addresses)
+gArmsData.code=499BC8
+gArmsData.level=499BCC
+gArmsData.exp=499BD0
+gArmsData.max_num=499BD4
+gArmsData.num=499BD8
