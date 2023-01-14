@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="bkMoon Scroll Coords" author="Brayconn">
+   	<panel>
+	<field type="info">
+		These let you change the vertical coordinates for the bkMoon scrolling style.
+	</field>
+	
+	<field type="data" offset="0x402614">
+	6A 1C 8D 4D F0 51 33 C0
+	89 45 F0 68 55 02 00 00
+	50 66 05 40 01 89 45 F8
+	</field>
+	
+	<panel title="Sky">
+		<field type="label">Start line</field>
+		<field type="label">End line</field>
+		<field type="label">Draw line</field>
+		<field col="1" type="text" size = "4" offset = "0x402609"/>
+		<field type="text" size = "4" offset = "0x402610"/>
+		<field type="text" size = "4" offset = "0x402620"/>
+	</panel>
+	
+	<panel title="Cloud 1">
+		<field type="label">Start line</field>
+		<field type="label">End line</field>
+		<field type="label">Draw line R</field>
+		<field type="label">Draw line L</field>
+		<field col="1" type="text" size = "4" offset = "0x40263C"/>
+		<field type="text" size = "4" offset = "0x402643"/>
+		<field type="text" size = "1" offset = "0x402662"/>
+		<field type="text" size = "1" offset = "0x402680"/>
+	</panel>
+	
+	<panel title="Cloud 2">
+		<field type="label">Start line</field>
+		<field type="label">End line</field>
+		<field type="label">Draw line R</field>
+		<field type="label">Draw line L</field>
+		<field col="1" type="text" size = "4" offset = "0x4026AB"/>
+		<field type="text" size = "4" offset = "0x4026B2"/>
+		<field type="text" size = "1" offset = "0x4026D4"/>
+		<field type="text" size = "1" offset = "0x4026F2"/>
+	</panel>
+
+	<panel title="Cloud 3">
+		<field type="label">Start line</field>
+		<field type="label">End line</field>
+		<field type="label">Draw line R</field>
+		<field type="label">Draw line L</field>
+		<field col="1" type="text" size = "4" offset = "0x402718"/>
+		<field type="text" size = "4" offset = "0x40271F"/>
+		<field type="text" size = "4" offset = "0x402743"/>
+		<field type="text" size = "4" offset = "0x402764"/>		
+	</panel>
+
+	<panel title="Cloud 4">
+		<field type="label">Start line</field>
+		<field type="label">End line</field>
+		<field type="label">Draw line R</field>
+		<field type="label">Draw line L</field>
+		<field col="1" type="text" size = "4" offset = "0x40278F"/>
+		<field type="text" size = "4" offset = "0x402796"/>
+		<field type="text" size = "4" offset = "0x4027BB"/>
+		<field type="text" size = "4" offset = "0x4027DC"/>
+	</panel>
+	
+	</panel>
+</hack>

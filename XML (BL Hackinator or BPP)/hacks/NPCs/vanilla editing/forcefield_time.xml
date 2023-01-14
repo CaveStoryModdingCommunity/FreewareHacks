@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Forcefield time" author="Brayconn">
+   	<panel>
+	<field type="info">
+		Changes how fast the forcefield cycles
+	</field>
+	
+	<panel>
+	<field type="text" size = "1" offset = "0x4299cb"/>
+	</panel>
+	
+	</panel>
+</hack>

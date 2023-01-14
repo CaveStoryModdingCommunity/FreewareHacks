@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Blue Robot (sitting) rect changer" author="Brayconn">	
+	<panel title="Left">
+	<field type="text" size = "4" offset = "0x430789"/>
+	</panel>		
+	<panel title ="Top">
+	<field type="text" size = "4" offset = "0x430790"/>
+	</panel>
+	<panel title ="Right">
+	<field type="text" size = "4" offset = "0x430797"/>
+	</panel>
+	<panel title ="Bottom">
+	<field type="text" size = "4" offset = "0x43079E"/>
+	</panel>	
+</hack>

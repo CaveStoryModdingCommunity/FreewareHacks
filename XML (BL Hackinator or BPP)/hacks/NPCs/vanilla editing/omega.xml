@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Omega" author="Brayconn, Txin, Enlight">
+	<panel>
+	<field type="info">
+		Omega Editor. Values are in 8192ths of a tile. For reference, Omega's default X/Y offset (219/16) places him with two tiles between him and the battle area, and the battle area is 17 tiles wide.
+	</field>
+	
+	<panel title="X Spawning Position">
+	<field type="text" size = "4" offset = "0x47B724"/>
+	</panel>
+	
+	<panel title ="Y Spawning Position">
+	<field type="text" size = "4" offset = "0x47B72E"/>
+	</panel>
+	
+	<panel title ="2nd Phase Trigger (HP)">
+	<field type="text" size = "4" offset = "0x47B98A"/>
+	</panel>
+	
+	</panel>
+</hack>

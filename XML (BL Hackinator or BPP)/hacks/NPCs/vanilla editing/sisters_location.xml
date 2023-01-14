@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Sisters" author="Brayconn, Txin, DT">
+	<panel>
+	<field type="info">
+		Sisters Editor. Spawn position values are in 8192ths of a tile.
+	</field>
+	
+	<panel title="X Spawning Position">
+	<field type="text" size = "4" offset = "0x47d230"/>
+	</panel>
+	
+	<panel title ="Y Spawning Position">
+	<field type="text" size = "4" offset = "0x47d23a"/>
+	</panel>
+	
+	<panel title ="Sister Initial Spawn Distance">
+	<field type="text" size = "4" offset = "0x47D313"/>
+	</panel>
+	
+	<panel>
+	<field type="info">
+		Necessary to edit the parameters below without the game crashing.
+		Values for affected parameters will also look wrong until applied and modified. Doesn't affect anything else.
+	</field>
+	<field type="data" offset="0x47D44E">
+		EB 57 8B 45 EC 8B 48 20 83 E9 01 8B 55 EC 89 4A
+		20 8B 45 EC 83 78 20 70 90 90 90
+	</field>
+	</panel>
+	
+	<panel title ="Sister Initial Closing Speed (Per Frame)">
+	<field type="info">
+		Increase this for higher spawn distances to make the Sisters move in faster.
+		Requires the above patch to not break the game. Default value 1, Max 255.
+	</field>
+	<field type="text" size = "1" offset = "0x47D458"/>
+	</panel>
+	
+	<panel title ="Sister Horizontal Rotation Distance">
+	<field type="info">
+		Also requires the patch to work properly.
+		Max 127 with this setup but that's almost to the edge of the screen anyway. The base value is 112.
+	</field>
+	<field type="text" size = "1" offset = "0x47D465"/>
+	</panel>
+	
+	</panel>
+</hack>

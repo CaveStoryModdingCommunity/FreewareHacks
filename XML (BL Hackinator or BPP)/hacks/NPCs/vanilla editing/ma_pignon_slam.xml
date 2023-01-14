@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Ma Pignon Slam" author="Brayconn">
+   	<panel title="Customize Ma Pignon's Slam Attacks">	
+	<panel title="Rock Slam">
+		<field type="label">Spawn Every X Ticks:</field>
+		<field type="label">NPC Type:</field>
+		<field type="label">Left Edge (Tiles):</field>
+		<field type="label">Right Edge (Tiles):</field>
+		<field type="label">Y Position (Pixel Units):</field>
+		<field type="label">X momentum:</field>
+		<field type="label">Y momentum:</field>
+		<field type="label">Direction:</field>
+		<!--Parent would go here-->
+		<field type="label">Insert Index:</field>
+		<field type="label">Slam Time:</field>
+		<field type="text" size = "4" offset = "0x4655A3" col="1"/>
+		<field type="text" size = "4" offset = "0x4655D3"/>
+		<field type="text" size = "1" offset = "0x4655C2"/>
+		<field type="text" size = "1" offset = "0x4655C0"/>
+		<field type="text" size = "4" offset = "0x4655BB"/>
+		<field type="text" size = "1" offset = "0x4655B9"/>
+		<field type="text" size = "1" offset = "0x4655B7"/>
+		<field type="text" size = "1" offset = "0x4655B5"/>
+		<!--Parent would go here-->
+		<field type="text" size = "4" offset = "0x4655AE"/>
+		<field type="text" size = "1" offset = "0x4655E5"/>
+	</panel>
+	<panel title="Clone Slam" col="1">
+		<field type="label">Spawn Every X Ticks:</field>
+		<field type="label">NPC Type:</field>
+		<field type="label">Left Edge (Tiles):</field>
+		<field type="label">Right Edge (Tiles):</field>
+		<field type="label">Y Position (Pixel Units):</field>
+		<field type="label">X momentum:</field>
+		<field type="label">Y momentum:</field>
+		<field type="label">Direction:</field>
+		<!--Parent would go here-->
+		<field type="label">Insert Index:</field>
+		<field type="label">Slam Time:</field>
+		<field type="text" size = "4" offset = "0x465838" col="1"/>
+		<field type="text" size = "4" offset = "0x465865"/>
+		<field type="text" size = "1" offset = "0x465854"/>
+		<field type="text" size = "1" offset = "0x465852"/>
+		<field type="text" size = "1" offset = "0x465850"/>
+		<field type="text" size = "1" offset = "0x46584E"/>
+		<field type="text" size = "1" offset = "0x46584C"/>
+		<field type="text" size = "1" offset = "0x46584A"/>
+		<!--Parent would go here-->
+		<field type="text" size = "4" offset = "0x465843"/>
+		<field type="text" size = "1" offset = "0x465877"/>
+	</panel>
+	
+	</panel>
+</hack>
