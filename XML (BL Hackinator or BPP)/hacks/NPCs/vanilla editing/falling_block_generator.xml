@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Falling Block Generator [#294]" author="periwinkle">
+	<panel>
+	<field type="info">
+		Customizes the behavior of the falling block generator (NPC 294).
+		Note, 8192 units = 16 pixels = 1 tile.
+	</field>
+	
+	<panel>
+	<field type="info">
+	The patch to the right makes the spawned block size (big vs. small)
+	based on a percentage chance, rather than a coinflip.
+	You will want to set that number below before applying this hack
+	(50 = vanilla behavior).
+	</field>
+	<field type="label">Percentage chance of spawning a small (alt direction)</field>
+	<field type="label">block (set to 50 for vanilla behavior):</field>
+	
+	<field type="data" offset="0x461B29" col="1">
+	63 6A 00 E8 1F D8 FA FF 83 C4 08 83 F8 32 90 90
+	90 90 90 90 90 90 90 90 90 7C
+	</field>
+	<field type="text" offset="0x461B36" size="1" />
+	</panel>
+	
+	<panel>
+		<field type="label">Start spawning blocks once the player is this many</field>
+		<field type="label">tiles away from the right side of the map:</field>
+		<field type="text" offset="0x461A09" size="1" />
+		
+		<field type="label">Farthest right that the spawner will move (number</field>
+		<field type="label">of tiles away from the right side of the map).</field>
+		<field type="label">Note, this will override the mimimum x position</field>
+		<field type="label">set below if the map is small enough: (change both)</field>
+		<field type="text" offset="0x461AA4" size="1" />
+		<field type="text" offset="0x461ABC" size="1" />
+		
+		<field type="label">How high above the player to spawn blocks, in units:</field>
+		<field type="text" offset="0x461B21" size="4" />
+		
+		<field type="label" col="1">Spawn a block when wait timer exceeds this value</field>
+		<field type="label">(think "maximum number of ticks(- 1) between</field>
+		<field type="label">block spawns"):</field>
+		<field type="text" offset="0x461ACF" size="1" />
+		
+		<field type="label">Starting value of wait timer after spawning a block</field>
+		<field type="label">(reduces maximum wait time above by this amount).</field>
+		<field type="label">Random between this range:</field>
+		<field type="text" offset="0x461B7B" size="1" />
+		<field type="text" offset="0x461B79" size="1" />
+		
+		<field type="label">Which NPC to spawn (in case you want to spawn</field>
+		<field type="label">something other than blocks??)</field>
+		<field type="text" offset="0x461B6C" size="4" />
+	</panel>
+	
+	<panel>
+		<field type="info">
+		Some parameters have alternate values depending on whether the player
+		has a certain equip flag (normally 32, i.e. Booster 2.0 in vanilla).
+		You can change this equip flag here, if desired.
+		(For those who want even finer control, the first field controls the
+		horizontal offset and minimum x position of the spawner, and the
+		second controls the range of the block spawns. If a sum of multiple
+		equip flags is specified, only one of them needs to be set to trigger
+		the alternate behavior.)
+		</field>
+		<field type="label">Alternate equip flag:</field>
+		<field type="text" offset="0x461A48" size="1" />
+		<field type="text" offset="0x461ADE" size="1" />
+	</panel>
+	
+	<panel>
+		<panel title="Non-equip behavior">
+			<field type="label">Horizontal offset (from the player)</field>
+			<field type="label">of spawner, in units:</field>
+			<field type="text" offset="0x461A7B" size="4" />
+			<field type="label">Minimum x position of spawner,</field>
+			<field type="label">in units (change both below):</field>
+			<field type="text" offset="0x461A8B" size="4" />
+			<field type="text" offset="0x461A97" size="4" />
+			<field type="label">Horizontal range of spawned blocks,</field>
+			<field type="label">in tiles (relative to spawner):</field>
+			<field type="text" offset="0x461B01" size="1" />
+			<field type="text" offset="0x461AFF" size="1" />
+		</panel>
+		<panel title="Alternate equip flag behavior" col="1">
+			<field type="label">Horizontal offset (from the player)</field>
+			<field type="label">of spawner, in units:</field>
+			<field type="text" offset="0x461A51" size="4" />
+			<field type="label">Minimum x position of spawner,</field>
+			<field type="label">in units (change both below):</field>
+			<field type="text" offset="0x461A61" size="4" />
+			<field type="text" offset="0x461A6D" size="4" />
+			<field type="label">Horizontal range of spawned blocks,</field>
+			<field type="label">in tiles (relative to spawner):</field>
+			<field type="text" offset="0x461AE4" size="1" />
+			<field type="text" offset="0x461AE2" size="1" />
+		</panel>
+	</panel>
+	
+	</panel>
+</hack>
