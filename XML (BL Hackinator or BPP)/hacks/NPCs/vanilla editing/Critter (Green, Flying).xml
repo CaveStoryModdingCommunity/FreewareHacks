@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Flying Green Critter Parameters" author="Hina">
+    <panel>
+        <panel>
+            <field type="info">
+		For open eye/jump distances (basically how far the critter sees), 1 tile = 8192 units; the directions indicate where the player is coming from.
+		Terminal velocity = maximum falling speed, please keep both values equal.
+		In flying critters, maximum velocities come in pairs, please keep those equal to each other as well.
+		</field>
+
+                <panel title="Green Critter [flying] (Grasstown)">
+                    <field type="label">X-distance to open eyes (left)</field>
+                    <field type="label">X-distance to open eyes (right)</field>
+                    <field type="label">Y-distance to open eyes (up)</field>
+                    <field type="label">Y-distance to open eyes (down)</field>
+
+                    <field type="label">X-distance to jump (left)</field>
+                    <field type="label">X-distance to jump (right)</field>
+                    <field type="label">Y-distance to jump (up)</field>
+                    <field type="label">Y-distance to jump (down)</field>
+
+                    <field type="label">Jump velocity</field>
+                    <field type="label">Jump sound</field>
+                    <field type="label">Jump distance (left)</field>
+                    <field type="label">Jump distance (right)</field>
+
+                    <field type="label">Y-velocity needed to start flying</field>
+                    <field type="label">Flight time</field>
+                    <field type="label">Damage when falling</field>
+                    <field type="label">Damage after landing (regular)</field>
+                    <field type="label">Flight sound</field>
+
+                    <field type="label">Landing sound</field>
+                    <field type="label">Gravity (255 max)</field>
+                    <field type="label">Terminal velocity</field>
+                    <field type="label">Terminal velocity</field>
+
+                    <field type="label">Flight acceleration (right)</field>
+                    <field type="label">Flight acceleration (left)</field>
+                    <field type="label">Flight acceleration (up)</field>
+                    <field type="label">Flight acceleration (down)</field>
+
+                    <field type="label">Maximum flying speed check (down)</field>
+                    <field type="label">Maximum flying speed set (down)</field>
+                    <field type="label">Maximum flying speed check (up)</field>
+                    <field type="label">Maximum flying speed set (up)</field>
+
+                    <field type="label">Maximum flying speed check (right)</field>
+                    <field type="label">Maximum flying speed set (right)</field>
+                    <field type="label">Maximum flying speed check (left)</field>
+                    <field type="label">Maximum flying speed set (left)</field>
+
+
+                    <field type="text" size="4" offset="0x42BCBB"  col="1" />
+                    <field type="text" size="4" offset="0x42BCCF"/>
+                    <field type="text" size="4" offset="0x42BCE3"/>
+                    <field type="text" size="4" offset="0x42BCF6"/>
+
+                    <field type="text" size="4" offset="0x42BD90"/>
+                    <field type="text" size="4" offset="0x42BDA4"/>
+                    <field type="text" size="4" offset="0x42BDB8"/>
+                    <field type="text" size="4" offset="0x42BDCB"/>
+
+                    <field type="text" size="4" offset="0x42BE2C"/>
+                    <field type="text" size="1" offset="0x42BE33"/>
+                    <field type="text" size="4" offset="0x42BE6F"/>
+                    <field type="text" size="4" offset="0x42BE7B"/>
+
+                    <field type="text" size="4" offset="0x42BE8A"/>
+                    <field type="text" size="1" offset="0x42BF0D"/>
+                    <field type="text" size="4" offset="0x42BF19"/>
+                    <field type="text" size="4" offset="0x42BFD9"/>
+                    <field type="text" size="1" offset="0x42BF61"/>
+
+                    <field type="text" size="1" offset="0x42C008"/>
+                    <field type="text" size="1" offset="0x42C022"/>
+                    <field type="text" size="4" offset="0x42C02F"/>
+                    <field type="text" size="4" offset="0x42C03B"/>
+
+                    <field type="text" size="1" offset="0x42C05A"/>
+                    <field type="text" size="1" offset="0x42C06B"/>
+                    <field type="text" size="1" offset="0x42C088"/>
+                    <field type="text" size="1" offset="0x42C099"/>
+
+                    <field type="text" size="4" offset="0x42C0A6"/>
+                    <field type="text" size="4" offset="0x42C0B2"/>
+                    <field type="text" size="4" offset="0x42C0BC"/>
+                    <field type="text" size="4" offset="0x42C0C8"/>
+
+                    <field type="text" size="4" offset="0x42C0D2"/>
+                    <field type="text" size="4" offset="0x42C0DE"/>
+                    <field type="text" size="4" offset="0x42C0E8"/>
+                    <field type="text" size="4" offset="0x42C0F4"/>
+                </panel>
+
+        </panel>
+    </panel>
+</hack>
