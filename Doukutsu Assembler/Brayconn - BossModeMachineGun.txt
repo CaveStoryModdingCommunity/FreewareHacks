@@ -1,0 +1,198 @@
+#define
+gKeyShot=493614
+gArmsData=499BC8
+gSelectedArms=499C68
+gKey=49E210
+gKeyTrg=49E214
+gKey=49E218
+gMC.direct=49E640
+gMC.rensha=49E6CA
+
+UseArmsEnergy=401FA0
+SetBullet=403F80
+ChargeArmsEnergy=402020
+PlaySoundObject=420640
+SetCaret=40AC90
+
+EquipFlags=49E650
+wait=4A5554
+
+#enddefine
+
+offset 41E3D3
+
+MOV EBX, [gKeyShot]
+TEST EBX, [gKeyTrg] ; Was the shoot button just pressed?
+JZ :MAIN_CHECK
+
+  PUSH 1 ; sound mode = play
+
+  MOV EAX, [gSelectedArms]
+  IMUL EAX, EAX, 14        ; convert the index to a byte offset
+  ADD EAX, gArmsData       ; EAX = &gArmsData[gSelectedArms]
+  MOV ECX, [EAX+C]         ; ECX = gArmsData[gSelectedArms].max
+  TEST ECX, ECX     ; infinite ammo?
+  JZ :START_SHOT
+  CMP ECX, [EAX+10] ; have full ammo?
+  JNE :PLAY_FAIL
+
+  :START_SHOT
+  MOV BYTE [gMC.rensha], 4 ; reset autofire timer
+  MOV WORD [wait], 1 ; charging = 1
+  PUSH 67 ; charging sound effect
+  JMP :PLAY_CHARGE
+
+  :PLAY_FAIL
+  PUSH 25 ; no ammo sound
+  :PLAY_CHARGE
+  CALL PlaySoundObject ; play the charging sound effect
+
+:MAIN_CHECK
+MOV ECX, wait
+XCHG ECX, EBX    ; EBX = &charging, ECX = ShotButton
+TEST ECX, [gKey] ; is the shoot button being held?
+JZ :RECHARGE
+
+CMP WORD [EBX], 0 ; are we charging/firing?
+JZ :RECHARGE
+
+CMP WORD [EBX], 33 ; if (charging >= 51)
+JGE :AUTOFIRE_CHECK
+INC WORD [EBX]
+JMP :END
+
+:AUTOFIRE_CHECK
+MOV EAX, gMC.rensha
+INC BYTE [EAX]
+CMP BYTE [EAX], 4 ; if gMC.rensha < 4
+JL :END
+MOV BYTE [EAX], 0 ; gMC.rensha = 0
+
+PUSH 1             ; this push is VERY IMPORTANT FOR LATER
+CALL UseArmsEnergy ; can we use 1 ammo?
+TEST EAX, EAX
+JZ :RECHARGE
+
+MOV EAX, gMC.direct; EAX = &gMC.direct
+LEA ESI, [EAX+30]  ; ESI = &gMC.ym
+MOV ECX, 3         ; X = 3
+LEA EBX, [ECX*2+2] ; Y = 8
+
+MOV EDX, [EAX+4]
+TEST EDX, EDX    ; facing up?
+JZ :TRY_DOWN
+NEG EBX          ; Y = -8
+JMP :GOT_DIRECTION
+
+:TRY_DOWN
+MOV EDX, [EAX+8]
+TEST EDX, EDX ; facing down?
+JZ :DO_LR
+LEA EDX, [EDX*2+EDX] ; dir = 3
+CMP [ESI], 0     ; if gMC.ym > 0
+JLE :GOT_DIRECTION
+SAR [ESI], 1     ; gMC.ym /= 2
+JMP :GOT_DIRECTION
+
+:DO_LR
+MOV EDX, [EAX]  ; use regular dir
+SUB EBX, 5      ; Y = 3
+SHL ECX, 2      ; X = 12
+SUB ESI, 4      ; ESI = &gMC.xm
+; FALLTHROUGH
+
+:GOT_DIRECTION
+PUSH EDX        ; push direction
+
+SHL EBX, 9        ; Y *= 0x200
+ADD EBX, [EAX+18] ; Y += gMC.y
+PUSH EBX          ; push Y pos
+
+TEST BYTE [EAX], 2 ; facing left?
+JNZ :DO_X
+NEG ECX           ; X *= -1
+:DO_X
+SHL ECX, 9        ; X *= 0x200
+ADD ECX, [EAX+14] ; X += gMC.x
+PUSH ECX          ; push x pos
+
+MOV EAX, [EBP+8]  ; EAX = level (parameter)
+MOV ECX, EAX
+SHL ECX, 7
+MOV EBX, EAX
+ADD EAX, 9       ; EAX = bullet type
+PUSH EAX         ; push bullet type
+MOV AL, 80       ; EAX = 80
+SHL EBX, 8
+ADD EBX, ECX
+ADD ECX, EAX     ; ECX = momentum, (level*0x80)+0x80, (1: 0x100, 2: 0x180, 3: 0x200)
+SUB EBX, EAX     ; EBX = max momentum, (level*0x180)-0x80, (1: 0x100, 2: 0x280, 3: 0x400)
+
+
+MOV EAX, [ESI]   ; EAX = current momentum
+
+TEST DL, 2      ; facing right/down?
+JZ :XCHG
+NEG EBX          ; flip signs
+NEG ECX
+JMP :ADD_MOMENTUM
+:XCHG
+XCHG EAX, EBX    ; otherwise flip comparison
+
+; reusing this code from my bubbler hack
+; EAX   = current xm/ym
+; EBX   = max momentum
+; ECX   = momentum to add
+; [ESI] = address of xm/ym
+; swapping EAX/EBX lets you flip comparison
+:ADD_MOMENTUM
+CMP EAX, EBX   ; cap > cm
+JL :SPAWN_BULLET
+ADD [ESI], ECX  ; *m += momentum
+ADD EAX, ECX
+CMP EAX, EBX  ; cap < *m
+JG :SPAWN_BULLET
+MOV [ESI], EBX  ; m = cap
+:SPAWN_BULLET
+CALL SetBullet
+
+ADD ESP, 14 ; the next push will overwrite the VERY IMPORTANT PUSH from earlier
+PUSH 0      ; caret direction
+PUSH 3      ; caret type
+SUB ESP, 8  ; restore x/y pos
+CALL SetCaret
+
+PUSH 1            ; sound mode = play
+CMP [EBP+8], 3    ; are we level 3?
+JNE :PLAY_LEVEL_1_2
+PUSH 31           
+JMP :PLAY_FIRE
+:PLAY_LEVEL_1_2
+PUSH 20
+:PLAY_FIRE
+CALL PlaySoundObject
+JMP :END
+
+:RECHARGE
+; by this point EBX = &wait
+AND WORD [EBX], 0   ; charging = 0
+ADD EBX, 2          ; EBX = &wait
+INC WORD [EBX]      ; wait++
+XOR EAX, EAX
+OR AL, 2            ; EAX = 2
+XOR CH, CH
+MOV CL, [EquipFlags] ; CL = lowest byte of equip flags
+AND CL, 8
+JZ :CHECK_WAIT       ; turbocharge equipped?
+DEC EAX              ; EAX = 1
+:CHECK_WAIT
+CMP WORD [EBX], EAX ; wait > EAX
+JLE :END
+XOR AL, AL
+MOV WORD [EBX], AX ; wait = 0
+PUSH 1
+CALL ChargeArmsEnergy
+
+:END
+LEAVE
+RETN
