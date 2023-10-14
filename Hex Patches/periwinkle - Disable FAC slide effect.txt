@@ -1,0 +1,4 @@
+Disables the <FAC slide effect so it just appears instantly.
+
+0x424E98
+68

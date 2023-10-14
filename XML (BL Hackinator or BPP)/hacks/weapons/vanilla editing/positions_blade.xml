@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Blade (ID: 9) Bullet Spawn Positions" author="EnlightenedOne">
+	<panel>
+		<panel>
+			<panel title="Upwards Left">
+				<field type="label">Y:</field>
+				<field type="label">X:</field>			
+				<field type="text" size="4" offset="0x41F5FA" col="1"></field>
+				<field type="text" size="4" offset="0x41F605"></field>			
+			</panel>
+			<panel title="Left">
+				<field type="label">Y:</field>
+				<field type="label">X:</field>			
+				<field type="text" size="4" offset="0x41F6B8" col="1"></field>
+				<field type="text" size="4" offset="0x41F6C3"></field>			
+			</panel>
+			<panel title="Downwards Left">
+				<field type="label">Y:</field>
+				<field type="label">X:</field>			
+				<field type="text" size="4" offset="0x41F65F" col="1"></field>
+				<field type="text" size="4" offset="0x41F66A"></field>			
+			</panel>
+			<panel title="Upwards Right" col="1">
+				<field type="label">Y:</field>
+				<field type="label">X:</field>			
+				<field type="text" size="4" offset="0x41F622" col="1"></field>
+				<field type="text" size="4" offset="0x41F62D"></field>			
+			</panel>
+			<panel title="Right">
+				<field type="label">Y:</field>
+				<field type="label">X:</field>			
+				<field type="text" size="4" offset="0x41F6E0" col="1"></field>
+				<field type="text" size="4" offset="0x41F6EB"></field>			
+			</panel>
+			<panel title="Downwards Right">
+				<field type="label">Y:</field>
+				<field type="label">X:</field>			
+				<field type="text" size="4" offset="0x41F687" col="1"></field>
+				<field type="text" size="4" offset="0x41F692"></field>			
+			</panel>
+		</panel>
+		<panel>
+			<field type="label">This is for all three levels.</field>
+			<field type="label">These are in subpixels. 512 subpixels = 1 pixel.</field>
+			<field type="label">Increasing number makes it farther from player,</field>
+			<field type="label">decreasing number brings it closer.</field>
+		</panel>
+	</panel>
+</hack>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Cloud Generator (NPC 296)" author="periwinkle">
+	<panel>
+	<field type="info">
+		Customizes various parameters of the cloud generator (NPC 296).
+	</field>
+	
+	<panel>
+		<field type="label">Maximum wait time between spawns:</field>
+		<field type="text" offset="0x461E5B" size="1" />
+		<field type="label">For each individual spawn, reduces the max wait time by this amount.</field>
+		<field type="label">Random between this range:</field>
+		<field type="text" offset="0x461E65" size="1" />
+		<field type="text" offset="0x461E63" size="1" />
+	</panel>
+	
+	<panel>
+	<panel title="Vertical generator">
+		<field type="label">x spawn offset range (in tiles):</field>
+		<field type="text" offset="0x461ED7" size="1" />
+		<field type="text" offset="0x461ED5" size="1" />
+		<field type="label">Spawned NPC type:</field>
+		<field type="text" offset="0x461F0F" size="4" />
+	</panel>
+	
+	<panel title="Horizontal generator (alt direction)" col="1">
+		<field type="label">y spawn offset range (in tiles):</field>
+		<field type="text" offset="0x461F64" size="1" />
+		<field type="text" offset="0x461F62" size="1" />
+		<field type="label">Spawned NPC type:</field>
+		<field type="text" offset="0x461F96" size="4" />
+	</panel>
+	</panel>
+	</panel>
+</hack>

@@ -1,0 +1,10 @@
+Fixes <MYD not working for event numbers over 255.
+
+0x416B74
+8B 45 08 90
+0x416BA2
+8B 45 08 90
+0x416BDB
+8B 4D 08 90
+0x424C29
+50

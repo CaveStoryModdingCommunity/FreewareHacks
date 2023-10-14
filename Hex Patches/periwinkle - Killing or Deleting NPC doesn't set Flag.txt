@@ -1,0 +1,8 @@
+Killing an enemy, <DNP, and <DNA no longer set the flag.
+
+0x471CDA
+90 90 90 90 90
+0x4702BB
+90 90 90 90 90
+0x470349
+90 90 90 90 90

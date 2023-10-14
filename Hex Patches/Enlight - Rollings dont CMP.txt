@@ -1,0 +1,4 @@
+Simple hack that makes it so Rollings (NPC 330) don't CMP the tile they spawn on.
+
+0x468B0E
+EB 40 CC 90 90
