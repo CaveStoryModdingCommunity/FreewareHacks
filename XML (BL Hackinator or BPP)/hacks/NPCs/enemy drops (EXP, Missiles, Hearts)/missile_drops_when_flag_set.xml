@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <hack name="Extra Missile Drop Condition" author="txin">
+<panel>
 	<panel>
 		<field type="info">
 			Causes missiles to drop from enemies if flag X is set.
@@ -15,4 +16,5 @@
 			
 		<field type="text" size="4" offset="0x46F442" col="1">3720</field>
 	</panel>
+</panel>
 </hack>
