@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Universal Ammo" author="txin">
+	<panel>
+		<panel title="Description">
+		</panel>
+		<field type="info">
+			Hack to allow missile pickups to refill ALL weapons except weapon 0
+		</field>
+		<panel title="Data">
+		</panel>
+		<panel>
+			<field type="data" offset="0x419ba0" col="0">
+				55 8B EC 6A 00 83 7D FC 08 7D 28 6B 45 FC 14 05 C8 9B 49 00 8B 
+				08 E3 16 83 F9 20 73 11 8B 55 0C 03 50 10 3B 50 0C 7E 03 8B 50 
+				0C 89 50 10 FF 45 FC EB D2 C9 C3 CC CC CC CC CC CC CC CC CC CC 
+				CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC 
+				CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC 
+				CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC 
+				CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC 
+				CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC 
+				CC CC CC CC CC CC CC CC CC
+			</field>
+		</panel>
+	</panel>
+</hack>
