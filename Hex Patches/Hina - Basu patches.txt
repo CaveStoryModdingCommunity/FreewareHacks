@@ -1,0 +1,13 @@
+Basu 1 patches
+
+makes the basu spawn at player's y-level when the trigger is crossed, instead of at the npc's y-level
+
+0x431D42
+A1 58 E6 49 00 90 90 90 90
+
+
+makes the basu try and follow player's y position, slowly ascending or descending to level with the player
+
+0x431CD1
+8B 15 58 E6 49 00 89 50 24 83 78 74 00 74 0F 83 78 74 01 0F 84 20 01 00 00 E9 DE 02 00 00 8B 50
+08 05 00 20 00 00 39 15 54 E6 49 00

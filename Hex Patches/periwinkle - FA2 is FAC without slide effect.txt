@@ -1,0 +1,8 @@
+Fun fact (though fairly well-known), the <FAC command is duplicated in the ASM so that makes it simple to write a patch that turns the second one into <FA2 and makes that one not slide in, in case you want a version of <FAC that slides in and another version (<FA2) that does not:
+
+0x424EEA
+32
+0x424F1E
+68
+
+WILL CONFLICT with any other hacks that use that space for their own purposes, which is very common for TSC command patches.

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Heart/Missile/Exp despawn time" author="periwinkle">
+	<panel>
+	<field type="info">
+		Edits the amount of time that enemy drops remain on screen before disappearing.
+		All values are in ticks (frames).
+	</field>
+	
+	<panel title="Exp">
+	<field type="label">Start blinking after:</field>
+	<field type="label">Despawn after:</field>
+	<field type="text" size="4" offset="0x426AA4" col="1"/>
+	<field type="text" size="4" offset="0x426A80" col="1"/>
+	</panel>
+	
+	<panel title="Missiles">
+	<field type="label">Start blinking after:</field>
+	<field type="label">Show "poof" sprite after:</field>
+	<field type="label">Despawn after:</field>
+	<field type="text" size="4" offset="0x4387F4" col="1"/>
+	<field type="text" size="4" offset="0x438825" col="1"/>
+	<field type="text" size="4" offset="0x4387E2" col="1"/>
+	</panel>
+	
+	<panel title="Hearts">
+	<field type="label">Start blinking after:</field>
+	<field type="label">Show "poof" sprite after:</field>
+	<field type="label">Despawn after:</field>
+	<field type="text" size="4" offset="0x438AB4" col="1"/>
+	<field type="text" size="4" offset="0x438AE5" col="1"/>
+	<field type="text" size="4" offset="0x438AA2" col="1"/>
+	</panel>
+	</panel>
+</hack>

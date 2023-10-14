@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="TRM and TRX" author="Cyber(?), periwinkle">
+	<panel>
+	<field type="info">
+		Adds &lt;TRM, which is like &lt;TRA but preserves x and y velocity,
+		and &lt;TRX, which is like &lt;TRM but also preserves x and y position.
+		For &lt;TRX, only use two arguments (The Map ID and Event Number).
+		Rewritten from the original hack by (presumably) Cyber, as that hack had
+		a few bugs with it.
+	</field>
+	<panel>
+	<field type="data" offset="0x422D5D">
+		8B 15 E0 5A 4A 00 A1 D8 5A 4A 00 01 D0 31 C9 81
+		38 3C 54 52 41 74 16 41 81 38 3C 54 52 58 74 0D
+		41 81 38 3C 54 52 4D 0F 85 B0 00 00 00 89 4D DC
+		83 C2 13 52 E8 6A EB FF FF 5A 50 83 EA 08 52 E8
+		5F EB FF FF 5A 50 83 EA 08 52 E8 54 EB FF FF 5A
+		50 83 EA 08 52 E8 49 EB FF FF 5A 50 B9 54 E6 49
+		00 8B 01 89 45 FC 8B 41 04 89 45 F8 8B 41 18 89
+		45 F4 8B 41 1C 89 45 F0 E8 06 DE FF FF 83 C4 10
+		85 C0 74 34 8B 45 DC 85 C0 74 4D 83 F8 01 75 13
+		FF 75 F8 FF 75 FC E8 C8 3C FF FF 83 C4 08 E8 30
+		C3 FE FF B9 6C E6 49 00 8B 55 F4 89 11 8B 55 F0
+		89 51 04 EB 23 90 90 90
+	</field>
+	</panel>
+	</panel>
+</hack>

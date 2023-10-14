@@ -1,0 +1,189 @@
+offset 00406BB0
+
+#define
+amt=500 ;how fast the bullet moves INITIALLY in the direction perpendicular to the main direction
+step=c0 ;how much the perpendicular velocity changes every frame
+limit=300 ;at what perpendicular velocity the bullet turns around (probably should be the same as amt?)
+limit2=180 ;at what perpendicular velocity the bullet disappears when returning (should be half of the value above)
+speed=1800 ;how fast the bullet is in the main direction
+
+level=[ebp+c] ;bullet level
+var=[edi+8] ;bullet flags
+frametimer=[edi+30]
+flyback=[edi+20]
+
+bullet.collision=[edi]
+bullet.shotID=[edi+4]
+bullet.inuse=[edi+C]
+bullet.x=[edi+10]
+bullet.y=[edi+14]
+bullet.movex=[edi+18]
+bullet.movey=[edi+1C]
+bullet.wassetup=[edi+28]
+bullet.frametimer=[edi+30]
+bullet.framenum=[edi+34]
+bullet.direction=[edi+38]
+bullet.displayl=[edi+3C]
+bullet.displayu=[edi+40]
+bullet.displayr=[edi+44]
+bullet.displayd=[edi+48]
+bullet.distance=[edi+4C]
+bullet.maxdistance=[edi+54]
+bullet.damage=[edi+58]
+bullet.numImpacts=[edi+5C]
+setpointer=mov edi,[ebp+8]
+#enddefine
+
+enter 0,0
+setpointer
+
+inc bullet.distance
+mov eax,bullet.distance
+cmp eax,bullet.maxdistance
+jle :working
+mov bullet.inuse,0
+push 0
+push 3
+push bullet.y
+push bullet.x
+call 40ac90
+add esp,10
+jmp :end
+
+:working
+cmp bullet.distance,3
+jne :sjump
+mov eax,var
+and eax,fffffffb
+mov var,eax
+:sjump
+mov eax,bullet.distance
+cdq
+mov ecx,5
+idiv ecx
+cmp edx,1
+jne :nosound
+push 1
+push 22
+call 420640
+add esp,8
+:nosound
+;setpointer
+cmp bullet.wassetup,0
+jne :movement
+;wasn't
+mov bullet.wassetup,1
+mov edx,bullet.direction
+cmp edx,3
+ja :endjump1
+jmp [edx*4+:StateTable]
+:Left
+mov bullet.movex,-speed
+mov bullet.movey,-amt
+jmp :endjump1
+:Up
+mov bullet.movey,-speed
+mov bullet.movex,-amt
+jmp :endjump1
+:Right
+mov bullet.movex,speed
+mov bullet.movey,-amt
+jmp :endjump1
+:Down
+mov bullet.movey,speed
+mov bullet.movex,-amt
+:endjump1
+mov flyback,1
+jmp :Render
+
+:movement
+cmp flyback,1
+jne :f0
+
+;f1
+mov eax,bullet.direction
+and eax,1
+jnz :updown1
+;leftright1
+add bullet.movey,step
+cmp bullet.movey,limit
+jle :nopej
+mov flyback,0
+mov eax,bullet.movex
+neg eax
+mov bullet.movex,eax
+mov bullet.movey,amt
+jmp :nopej
+:updown1
+add bullet.movex,step
+cmp bullet.movex,limit
+jle :nopej
+mov flyback,0
+mov eax,bullet.movey
+neg eax
+mov bullet.movey,eax
+mov bullet.movex,amt
+:nopej
+jmp :nope
+
+:f0
+mov eax,bullet.direction
+and eax,1
+jnz :updown2
+;leftright2
+sub bullet.movey,step
+cmp bullet.movey,-limit2
+jge :nopej2
+mov bullet.inuse,0
+jmp :nopej2
+:updown2
+sub bullet.movex,step
+cmp bullet.movex,-limit2
+jge :nopej2
+mov bullet.inuse,0
+
+:nopej2
+:nope
+mov eax,bullet.movex
+add bullet.x,eax
+mov eax,bullet.movey
+add bullet.y,eax
+
+:Render
+inc frametimer
+cmp frametimer,1
+jle :nochange
+mov frametimer,0
+inc bullet.framenum
+:nochange
+cmp bullet.framenum,3
+jle :nochange_either
+mov bullet.framenum,0
+:nochange_either
+
+mov eax,30
+mov bullet.displayu,eax
+add eax,10
+mov bullet.displayD,eax
+
+mov eax,bullet.framenum
+mov edx,10
+imul eax,edx
+cmp bullet.direction,0
+je :l
+:r
+add eax,40
+:l
+mov bullet.displayl,eax
+add eax,10
+mov bullet.displayr,eax
+
+:end
+leave
+retn
+
+:StateTable
+print :left
+print :up
+print :right
+print :down

@@ -1,4 +1,5 @@
 ((The CSMC is not 100% sure this hack was made by Cyber as the account that posted it was deleted. It's our best guess however with 90% surety.))
+((2023 NOTE: Has become obsolete with the new XML in /hacks/TSC/new commands (not tsc+)/TRM_TRX.xml which fixes bugs and is more optimized.))
 
 0x422D5D
 BF D8 5A 4A 00 8B 17 03 57 08 81 3A 3C 54 52 41
