@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Bute Arrow" author="Brayconn">
+   	<panel>
+		<field type="info">
+			Change what NPC spawns when an archer bute [#311] shoots an arrow.
+			The direction field may need to be used depending on the NPC you want to spawn (such as fish missiles).
+		</field>
+		<panel>
+			<panel title="Left Horizontal">
+				<panel title="NPC">
+					<field type="text" size = "4" offset = "0x4644DF"/>
+				</panel>
+
+				<panel title="Direction">
+					<field type="text" size = "1" offset = "0x4644C8"/>
+				</panel>
+			</panel>
+
+			<panel title="Left Up">
+				<panel title="NPC">
+					<field type="text" size = "4" offset = "0x46454F"/>
+				</panel>
+
+				<panel title="Direction">
+					<field type="text" size = "1" offset = "0x464535"/>
+				</panel>
+			</panel>
+			
+			<panel title="Right Horizontal" col="1">
+				<panel title="NPC">
+					<field type="text" size = "4" offset = "0x46450C"/>
+				</panel>
+
+				<panel title="Direction">
+					<field type="text" size = "1" offset = "0x4644F5"/>
+				</panel>
+			</panel>
+
+			<panel title="Right Up">
+				<panel title="NPC">
+					<field type="text" size = "4" offset = "0x46457F"/>
+				</panel>
+
+				<panel title="Direction">
+					<field type="text" size = "1" offset = "0x464565"/>
+				</panel>
+			</panel>
+
+		</panel>
+	</panel>
+</hack>
