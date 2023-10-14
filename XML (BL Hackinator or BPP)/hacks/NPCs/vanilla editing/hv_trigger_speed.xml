@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<hack name="H/V Trigger Speed" author="Brayconn">	
+<hack name="H/V Trigger Speed [#46]" author="Brayconn">	
 	<panel title="Right">
 	<field type="text" size = "4" offset = "0x42F375"/>
 	</panel>		
