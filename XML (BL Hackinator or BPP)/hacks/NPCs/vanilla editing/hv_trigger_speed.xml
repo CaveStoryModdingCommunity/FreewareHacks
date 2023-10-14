@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="H/V Trigger Speed [#46]" author="Brayconn">	
+	<panel title="Right">
+	<field type="text" size = "4" offset = "0x42F375"/>
+	</panel>		
+	<panel title ="Left">
+	<field type="text" size = "4" offset = "0x42F389"/>
+	</panel>
+	<panel title ="Down">
+	<field type="text" size = "4" offset = "0x42F3AA"/>
+	</panel>
+	<panel title ="Up">
+	<field type="text" size = "4" offset = "0x42F3BD"/>
+	</panel>	
+</hack>

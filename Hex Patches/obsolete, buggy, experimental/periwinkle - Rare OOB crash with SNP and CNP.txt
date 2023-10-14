@@ -1,0 +1,7 @@
+Prevents a rare crash involving <SNP or <CNP with an Out of Bounds entity type. You probably don't need this patch unless you're doing something weird (possibly involving lots of flags... 😉 )
+
+0x46F0E0
+81 FA 68 01 00 00 7F 57 6B D2 18 A1 34 BA 4B 00
+90 90 66 8B 14 10 66 89 91
+0x46FB47
+8B 81 48 62 4A 00 3D 68 01 00 00 7F 6A 90 90

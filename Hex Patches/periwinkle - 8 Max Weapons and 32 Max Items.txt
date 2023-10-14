@@ -1,0 +1,16 @@
+Fixes a bug where if you have 8 weapons, the game gives you additional glitched weapons. Also fixes the same issue with max items (32)
+
+0x4013D5
+31 C0 6B C8 14 83 B9 C8 9B 49 00 00 74 06 40 83
+F8 08 7C EE 89 45 F8 31 C0 83 3C 85 40 9B 49 00
+00 74 06 40 83 F8 20 7C F0 89 45 FC 90 90 90 90
+90 90
+0x4020EB
+31 C0 6B C8 14 83 B9 C8 9B 49 00 00 74 06 40 83
+F8 08 7C EE 89 45 FC 90 90 90
+0x40219B
+31 C0 6B C8 14 83 B9 C8 9B 49 00 00 74 06 40 83
+F8 08 7C EE 89 45 FC 90 90 90
+0x41A0D9
+31 C0 6B C8 14 83 B9 C8 9B 49 00 00 74 06 40 83
+F8 08 7C EE 89 45 E4 90 90 90

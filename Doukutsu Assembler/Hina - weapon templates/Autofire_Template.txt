@@ -1,0 +1,207 @@
+//customisable values
+#define
+
+//Bullet IDs for each weapon level
+BulLv1=4
+BulLv2=5
+BulLv3=6
+
+BulFamily=9 //bullet family, used for bullet counting
+BulCount=2  //maximum amount of bullets on screen
+
+shotDelay=6 //delay in ticks between autofired shots
+
+//shot displacements (0x200 being a single pixel)
+//what i mean by this is how far away from the player the bullet/effect appears
+UDVert=1400 //vertical displacement when aiming up/down
+UDHorz=600  //horizontal displacement when aiming up/down
+
+LRVert=400  //vertical displacement when not aiming up/down
+LRHorz=0c00 //horizontal displacement when not aiming up/down
+
+;side caret displacement
+SCVert=400  //these two aren't really used
+SCHorz=1800 //but i used them for manual calcs
+SCDiff=0c00 //difference between LRHorz and SCHorz. gets added before the caret is created
+
+caretMode=0 //this should usually stay as 0
+caretID=2   //ID 3 = star effect
+soundID=14  //snake sound effect by default
+#enddefine
+
+offset Weapon9 //the weapons are listed below! you probably don't want to use missiles with this because that weapon works very differently but the rest should work fine
+
+//don't touch these
+#define
+weaponlevel=[ebp+8]
+shotTimer=[49e6ca]
+PlayerX=[49E654]
+PlayerY=[49E658]
+DirectionFaced=[49E640]
+IsFacingUp=[49E644]
+IsFacingDown=[49E648]
+KeyHeld=[49E210]
+ShootKey=[493614]
+
+Weapon1=41DBD0  //snake
+Weapon2=41DE60  //polarstar
+Weapon3=41E110  //fireball
+Weapon4=41E3D0  //machinegun
+Weapon5=41E7B0  //missiles
+Weapon7A=41EFD0 //bubbler1
+Weapon7B=41F280 //bubbler2/3
+Weapon9=41F580  //blade
+WeaponC=41F710  //nemesis
+WeaponD=41FA10  //spur
+#enddefine
+
+
+push ebp
+mov ebp,esp
+
+mov eax,weaponlevel
+cmp eax,2
+jl :levelOne
+je :levelTwo
+jg :levelThree
+;will default to lv1 if level is neither 1, 2 or 3 but why would that ever happen
+
+:levelOne
+mov ebx,BulLv1
+jmp :countBullets
+:levelTwo
+mov ebx,BulLv2
+jmp :countBullets
+:levelThree
+mov ebx,BulLv3
+
+:countBullets
+push BulFamily
+call 403c40
+pop ecx
+
+cmp eax,BulCount
+jge :end
+
+;checkKeys
+mov ecx,keyHeld
+and ecx,ShootKey
+jne :checkSecond
+mov byte shotTimer,shotDelay
+
+:checkSecond
+mov ecx,keyHeld
+and ecx,ShootKey
+je :toEndJump1
+inc byte shotTimer
+cmp byte shotTimer,shotDelay
+jl :toEndJump1
+
+mov byte shotTimer,0
+push 1
+call 401fa0 ;take ammo
+pop ecx
+
+test eax,eax
+jne :prepareShooting
+
+;empty!
+push 1
+push 25 ;empty sound
+call 420640
+pop ecx
+pop ecx
+
+cmp [4a554c],0 ;empty caret timer?
+jne :toEndJump1
+push 0
+push 10
+mov eax,49e658
+push [eax]
+push [eax-4] ;funny way of pushing player coords onto stack
+call 40ac90
+mov esp,ebp
+mov [4a554c],32
+:toEndJump1
+jmp :end
+
+:prepareShooting
+mov esi,playerY ;esi will contain y spawn pos
+mov edi,playerX ;edi will contain x spawn pos
+
+xor eax,eax
+mov ecx,UDVert
+
+cmp isFacingUp,eax
+jne :lookingUp
+cmp isFacingDown,eax
+jne :lookingDown
+mov edx,LRHorz
+jmp :lookingSideways
+
+:lookingUp
+push 1
+neg ecx
+jmp :postDirDown
+
+:lookingDown
+push 3
+:postDirDown
+add esi,ecx
+mov edx,UDHorz
+jmp :LRcheck
+
+:lookingSideways
+cmp directionFaced,eax
+je :lSleft
+push 2
+jmp :lScont
+:lSleft
+push 0
+
+:lScont
+add esi,LRVert
+mov edx,LRHorz
+
+:LRcheck
+cmp directionFaced,eax
+jne :FacingRight
+
+;FacingLeft
+neg edx
+:FacingRight
+add edi,edx
+
+push esi ;bullet Y
+push edi ;bullet X
+push ebx ;bullet ID
+call 403f80
+mov esp,ebp
+
+push caretMode
+push caretID
+
+mov eax,isFacingUp
+or eax,isFacingDown
+jnz :justCall
+mov eax,SCDiff
+cmp directionFaced,0
+jne :CaretRight
+;CaretLeft
+neg eax
+:CaretRight
+add edi,eax
+:justCall
+push esi
+push edi
+
+call 40ac90
+add esp,10
+
+push 1
+push soundID
+call 420640
+
+:end
+leave
+retn

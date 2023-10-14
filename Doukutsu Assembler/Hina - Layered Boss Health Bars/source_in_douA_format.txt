@@ -1,0 +1,307 @@
+#define
+index=edi
+threshold=64
+
+boss_hp_active=[4bba44]
+boss_maxhp=[4bba4c] ;boss max hp
+boss_yellow=[4bba50] ;boss yellow bar
+boss_pointer=[4bba48] ;boss pointer
+boss_ytimer=[4bba54] ;boss yellow bar timer
+fullRect=0048f91c
+stackReset=add esp,10 ;mov esp,ebp
+#enddefine
+
+/*
+the first part of <BSL at 0x47b460 is called from 0x424BB1, is fine
+the second part is at 0x47b500, called from 0x424bbb, edit that one!
+the third part is at 0x47b540, called from 0x4106f0, also edit that!
+*/
+
+offset 47B460
+;<BSL part 1
+
+;enter 0,0
+push ebp
+mov ebp,esp
+
+push ecx ;ecx is also pushed as the function argument back at 0x424bb1
+
+xor index,index
+:loopCheck
+cmp index,200
+jge :loopPost
+mov edx,56
+imul edx,index
+mov eax,[edx*2+4a6250] ;eventnum
+cmp eax,[ebp+8] ;is the eventnum equal to what was pushed?
+je :loopPost
+inc index
+jmp :loopCheck
+
+:loopPost
+cmp index,200
+jne :checkPassed
+xor eax,eax ;return 0
+jmp :end1
+
+:checkPassed
+;mov edx,1
+xor eax,eax
+inc eax
+mov boss_hp_active,eax ;boss_hp_active = true
+;mov eax,index
+;imul eax,eax,0ac
+imul index,index,0ac
+mov edx,[index+4a6260]
+mov boss_maxhp,edx
+mov boss_yellow,edx
+add index,4a6260
+mov boss_pointer,index
+
+/*
+mov ecx,56
+imul ecx,index
+mov eax,[ecx*2+4a6260] ;current HP
+mov [4bba4c],eax ;boss max hp
+mov [4bba50],eax ;yellow bar value
+shl ecx,2
+add ecx,4a6260
+mov [4bba48],ecx ;pointer to boss hp
+mov eax,1 ;return value
+*/
+:end1
+;leave
+mov esp,ebp
+pop ebp
+retn
+
+
+:partTwo
+push ebp
+mov ebp,esp
+xor eax,eax
+inc eax
+mov boss_hp_active,eax ;boss_hp_active = true
+
+;0x4BBA58 is boss array, 0x4BBa98 points to the HP value
+mov ecx,4bba98
+mov edx,[ecx] ;health value of the npc
+mov boss_maxhp,edx ;boss max hp
+mov boss_yellow,edx ;boss yellow bar
+mov boss_pointer,ecx ;boss pointer
+
+pop ebp
+retn
+
+
+:partThree
+enter 50,0
+
+xor eax,eax
+mov [ebp-30],eax ;boss text
+mov [ebp-2c],30
+mov [ebp-28],20
+mov [ebp-24],38
+
+mov [ebp-50],eax ;top of text box
+mov [ebp-4c],eax
+mov [ebp-48],f4
+mov [ebp-44],8
+
+mov [ebp-20],0 ;bottom of text box
+mov [ebp-1c],10
+mov [ebp-18],f4
+mov [ebp-14],18
+
+mov [ebp-10],eax ;red bar
+;mov [ebp-c],90
+;mov [ebp-8],0 ;maybe omittable?
+;mov [ebp-4],98
+
+mov [ebp-40],eax ;yellow bar
+mov [ebp-3c],20
+;mov [ebp-38],0e8 ;probably don't need this either
+mov [ebp-34],28
+
+cmp boss_hp_active,0
+jnz :isActive
+jmp :end3Jump1
+:isActive
+mov esi,boss_pointer
+cmp [esi],1
+jge :stillActive
+mov boss_hp_active,0
+:end3Jump1
+jmp :end3
+:stillActive
+
+;drawing the box will be moved here from the very end
+;draw top of box
+push 1a
+lea eax,[ebp-50]
+push eax
+push 0dc
+push 20
+push fullRect
+call 40c3c0
+stackReset
+;draw bottom of box
+;push 1a
+lea eax,[ebp-20]
+push eax
+push 0e4
+push 20
+push fullRect
+call 40c3c0
+add esp,14 ;stackReset
+
+;drawing the bars
+xor ebx,ebx
+;mov edi,0d0
+push 1a ;textbox.bmp
+
+mov edi,[esi+4] ;grab xp value into EDI, this will be the amount of bars
+
+;the loop
+:theLoop
+cmp ebx,edi
+jge :loopExit
+
+mov eax,boss_maxhp
+cdq
+idiv edi ;divide maxhp by xp to get bar thresholds
+mov ecx,eax ;ecx holds the threshold now
+
+mov eax,[esi] ;[esi] still has the boss pointer inside
+mov edx,ebx
+imul edx,ecx
+sub eax,edx
+cmp eax,ecx
+jle :calcTwo
+mov eax,ecx
+:calcTwo
+test eax,eax
+jge :loopCalcs
+xor eax,eax
+mov [ebp-8],eax
+mov [ebp-c],eax
+mov [ebp-4],eax
+jmp :loopDraw
+
+:loopCalcs
+imul eax,eax,0c6
+cdq
+;mov ecx,threshold
+idiv ecx
+mov [ebp-8],eax
+
+mov eax,ebx
+shl eax,3
+add eax,90
+mov [ebp-c],eax
+add eax,8
+mov [ebp-4],eax
+
+:loopDraw
+;draw bar
+;push 1a
+lea eax,[ebp-10]
+push eax
+/*
+mov eax,0e0 ;draws them in a more "layered" way
+add eax,ebx
+push eax
+*/
+push 0e0 ;regular draw
+
+;push edi
+;add edi,2
+
+push 48
+push fullRect
+call 40c3c0
+stackReset
+
+:loopInc
+inc ebx
+jmp :theLoop
+
+:loopExit
+add esp,4
+
+/*
+;this bit calcs how far the red bar is drawn
+mov eax,[esi] ;[esi] still has the boss pointer inside
+imul eax,eax,0c6
+cdq
+data f73d 4cba4b00 ;idiv boss_maxhp
+mov [ebp-8],eax
+
+mov eax,boss_yellow
+cmp eax,[esi]
+jle :noYellowTimer
+inc boss_yTimer
+cmp boss_yTimer,1e
+jle :smallHop
+dec boss_yellow
+:smallHop
+jmp :barCalcs2
+:noYellowTimer
+xor eax,eax
+mov boss_yTimer,eax
+
+:barCalcs2
+;how far yellow bar is drawn
+mov eax,boss_yellow
+imul eax,eax,0c6
+cdq
+data f73d 4cba4b00 ;idiv boss_maxhp
+mov [ebp-38],eax
+*/
+
+/*
+;draw yellow bar
+push 1a
+lea eax,[ebp-40]
+push eax
+push 0e0
+push 48
+push fullRect
+call 40c3c0
+stackReset
+;draw red bar
+;push 1a
+lea eax,[ebp-10]
+push eax
+push 0e0
+push 48
+push fullRect
+call 40c3c0
+stackReset
+*/
+
+;draw boss text
+push 1a
+lea eax,[ebp-30]
+push eax
+push 0e0
+push 28
+push fullRect
+call 40c3c0
+add esp,14 ;stackReset
+
+/*
+mov eax,[esi] ;render hp num
+push 4
+push eax
+push 8
+push 8
+call 40f380
+stackReset
+*/
+:end3
+leave
+retn
+
+
+

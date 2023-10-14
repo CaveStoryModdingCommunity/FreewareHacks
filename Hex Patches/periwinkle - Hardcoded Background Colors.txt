@@ -1,0 +1,9 @@
+Changing the hardcoded background colors.
+The first address is the color of the screen after a <FAO and the second is the in-game background color (for e.g. background type black)
+Each set of 00s represents the rgb of the color in hex.
+(note: might actually be bgr instead (flipped) cause endian stuff, need to double check)
+
+0x40DE78
+00 00 00
+0x410407
+00 00 00

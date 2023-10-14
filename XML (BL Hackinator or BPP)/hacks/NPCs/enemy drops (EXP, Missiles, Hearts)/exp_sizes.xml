@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Exp sizes" author="periwinkle">
+<panel>
+	<panel>
+		<panel>
+			<field type="info">
+			Allows for editing the amount of exp given by each size of exp chip.
+			Note that the maximum allowable value is 127.
+			</field>
+		</panel>
+		<panel title="Small Exp">
+			<field type="info">
+				WARNING!!! Be VERY careful about editing this amount to anything other than 1.
+				Doing so may create exp amounts that are impossible to generate. This WILL cause
+				unintended behaviors if the game tries to generate such values. For example: If
+				the three exp sizes are set to 4, 6, and 8 exp, then an enemy that's set to drop
+				5 exp will be buggy. As another example, 10 exp is also impossible with these values
+				even though it looks like it can be made with a 4 exp and 6 exp chip, because
+				the game will always try to spawn the biggest possible exp chips first, which means
+				it will spawn an 8 exp chip leaving the remaining 2 exp unable to be created.
+			</field>
+			
+				<field type="label">Change all of these to the same value!</field>
+				<field type="text" size="1" offset="0x46F34E"/>
+				<field type="text" size="1" offset="0x46F356"/>
+				<field type="text" size="4" offset="0x46F35D"/>
+			
+		</panel>
+	</panel>
+	<panel col="1">
+		<panel title="Medium Exp">
+			<field type="label">Change all of these to the same value!</field>
+			<field type="text" size="1" offset="0x46F336"/>
+			<field type="text" size="1" offset="0x46F33E"/>
+			<field type="text" size="4" offset="0x46F345"/>
+			<field type="text" size="1" offset="0x426A18"/>
+		</panel>
+		
+		<panel title="Large Exp">
+			<field type="label">Change all of these to the same value!</field>
+			<field type="text" size="1" offset="0x46F31E"/>
+			<field type="text" size="1" offset="0x46F326"/>
+			<field type="text" size="4" offset="0x46F32D"/>
+			<field type="text" size="1" offset="0x426A1E"/>
+		</panel>
+	</panel>
+</panel>
+</hack>
