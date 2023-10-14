@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Red Critter [#241] Parameters" author="Hina">
+    <panel>
+        <panel>
+            <field type="info">
+		For open eye/jump distances (basically how far the critter sees), 1 tile = 8192 units; the directions indicate where the player is coming from.
+		Terminal velocity = maximum falling speed, please keep both values equal.
+		</field>
+
+                <panel title="Red Critter (Last Cave)">
+                    <field type="label">X-distance to open eyes (left)</field>
+                    <field type="label">X-distance to open eyes (right)</field>
+                    <field type="label">Y-distance to open eyes (up)</field>
+                    <field type="label">Y-distance to open eyes (down)</field>
+
+                    <field type="label">X-distance to jump (left)</field>
+                    <field type="label">X-distance to jump (right)</field>
+                    <field type="label">Y-distance to jump (up)</field>
+                    <field type="label">Y-distance to jump (down)</field>
+
+                    <field type="label">Jump velocity</field>
+                    <field type="label">Jump sound</field>
+                    <field type="label">Jump distance (left)</field>
+                    <field type="label">Jump distance (right)</field>
+
+                    <field type="label">Landing sound</field>
+                    <field type="label">Gravity (255 max)</field>
+                    <field type="label">Terminal velocity</field>
+                    <field type="label">Terminal velocity</field>
+
+
+                    <field type="text" size="4" offset="0x45548C"  col="1" />
+                    <field type="text" size="4" offset="0x45549F"/>
+                    <field type="text" size="4" offset="0x4554B3"/>
+                    <field type="text" size="4" offset="0x4554C7"/>
+
+                    <field type="text" size="4" offset="0x45553D"/>
+                    <field type="text" size="4" offset="0x455551"/>
+                    <field type="text" size="4" offset="0x455565"/>
+                    <field type="text" size="4" offset="0x455578"/>
+
+                    <field type="text" size="4" offset="0x4555D9"/>
+                    <field type="text" size="1" offset="0x4555E0"/>
+                    <field type="text" size="4" offset="0x4555F8"/>
+                    <field type="text" size="4" offset="0x455604"/>
+
+                    <field type="text" size="1" offset="0x455640"/>
+                    <field type="text" size="1" offset="0x455651"/>
+                    <field type="text" size="4" offset="0x45565E"/>
+                    <field type="text" size="4" offset="0x45566A"/>
+                </panel>
+
+        </panel>
+    </panel>
+</hack>

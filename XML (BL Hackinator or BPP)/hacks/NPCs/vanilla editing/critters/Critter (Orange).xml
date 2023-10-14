@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Orange Critter [#289] Parameters" author="Hina">
+<panel>
+	<panel>
+            	<field type="info">
+		For open eye/jump distances (basically how far the critter sees), 1 tile = 8192 units; the directions indicate where the player is coming from.
+		Terminal velocity = maximum falling speed, please keep both values equal.
+		</field>
+
+           	<field type="info">
+Orange critters are invisible and intangible for the first 16 frames (by default) of their existence. They also do not check for player distance, instead hopping towards them at all times, and disappear after a certain amount of jumps (plus one). They lack a landing sound, which is probably for the best.
+</field>
+		<panel title="Orange Critter (Misery spawn)">
+
+                    <field type="label">Activation time (in frames)</field>
+                    <field type="label">Damage dealt</field>
+                    <field type="label">Jumps before disappearing (+1)</field>
+
+                    <field type="label">Jump sound</field>
+                    <field type="label">Jump velocity</field>
+                    <field type="label">Jump distance (left)</field>
+                    <field type="label">Jump distance (right)</field>
+
+                    <field type="label">Gravity (255 max)</field>
+                    <field type="label">Terminal velocity</field>
+                    <field type="label">Terminal velocity</field>
+
+                    <field type="text" size="1" offset="0x4611EF"  col="1" />
+                    <field type="text" size="4" offset="0x46121F"/>
+                    <field type="text" size="1" offset="0x4612C2"/>
+
+                    <field type="text" size="1" offset="0x4612DE"/>
+                    <field type="text" size="4" offset="0x4612ED"/>
+                    <field type="text" size="4" offset="0x461300"/>
+                    <field type="text" size="4" offset="0x46130C"/>
+
+                    <field type="text" size="1" offset="0x461364"/>
+                    <field type="text" size="4" offset="0x461371"/>
+                    <field type="text" size="4" offset="0x46137D"/>
+		</panel>
+	</panel>
+
+</panel>
+</hack>
