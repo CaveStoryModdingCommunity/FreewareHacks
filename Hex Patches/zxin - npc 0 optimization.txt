@@ -1,0 +1,10 @@
+An optimised version of NPC0 to make it 30 bytes long. This version won't render anything, but should give you heaps of space to add whatever you may want to. (what would you add to this, anyway? 0x 200 moves it a tile to the left?? Guess it's useful if you have like 200 of them...)
+
+0x426533
+8B 7D 08 80 7F 74 00 77 10 FE 47 74 80 7F 4C 02
+75 07 81 47 0C 00 20 00 00 C9 C3 CC CC CC CC CC
+CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC
+CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC
+CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC
+CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC
+CC CC CC CC CC CC CC CC CC CC CC CC CC CC
