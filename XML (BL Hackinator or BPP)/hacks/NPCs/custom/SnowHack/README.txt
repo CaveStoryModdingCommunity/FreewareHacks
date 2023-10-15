@@ -1,5 +1,7 @@
 == Simple Snow Hack ==
 
+Made by JakeV
+
 # HOW TO USE
 To use the snow hack, simply replace your Caret.bmp with the one provided in this folder.
 Next, apply the patches in patch.txt in Boosters Lab.
