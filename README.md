@@ -16,6 +16,6 @@ To contribute to this repository, you may upload files while [creating a new iss
 # How to Download and Use:
 [Click here to download this repository as a .zip file](https://github.com/CaveStoryModdingCommunity/FreewareHacks/archive/refs/heads/main.zip) (there's nothing to compile/build, as it's a collection of patches for other programs).
 
-[You can also download the unsorted-dump version](https://github.com/CaveStoryModdingCommunity/FreewareHacks/archive/refs/heads/unsorted-dump.zip), which includes additional hacks that have not been fully sorted, tested, merged into similar hacks already in the main repository or otherwise contain issues that need attention.
+Additional hacks that have not been fully sorted, tested, merged into similar hacks or otherwise contain problems that need attention can be found in [Issues](https://github.com/CaveStoryModdingCommunity/FreewareHacks/issues).
 
 ***It is essential to backup your executable before applying any hacks to your CS mods!*** Many hacks are not compatible with other hacks (such as those having to do with TSC or those that edit the same Weapon or NPC) and will **corrupt your mod** if both are applied. There is little indication of what hacks are compatible outside special programs such as [Brayconn's Patching Program](https://github.com/Brayconn/BPP). Practise observation and caution when patching your game.
