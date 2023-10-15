@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="INP Flag Modifier" author="DT, Enlight (for inspiration)">
+	<panel>
+		<field type="info">
+			Allows the entity flag(s) set by INP to be changed. Multiple flags may be set at once.
+		</field>	
+		<field type="flags" size="2" offset="0x46FD9D">
+			<checkbox name="0x0001 (Solid, Bouncy Sides)" value="0x0001"/>
+			<checkbox name="0x0002 (Ignore Tile 44)" value="0x0002"/>
+			<checkbox name="0x0004 (Invulnerable)" value="0x0004"/>
+			<checkbox name="0x0008 (Ignore Solid)" value="0x0008"/>
+			<checkbox name="0x0010 (Bouncy Top)" value="0x0010"/>
+			<checkbox name="0x0020 (Shootable)" value="0x0020"/>
+			<checkbox name="0x0040 (Solid, Hard Sides)" value="0x0040"/>
+			<checkbox name="0x0080 (No Damage Rear or Top)" value="0x0080"/>
+			<checkbox name="0x0100 (Event on Contact)" value="0x0100"/>
+			<checkbox name="0x0200 (Event on Death)" value="0x0200"/>
+			<checkbox name="0x0400 (Unused)" value="0x0400"/>
+			<checkbox name="0x0800 (Visible when Flag ID Set)" value="0x0800"/>
+			<checkbox name="0x1000 (Spawn with Alt Direction)" value="0x1000"/>
+			<checkbox name="0x2000 (Interactable)" value="0x2000"/>
+			<checkbox name="0x4000 (Non-visible when Flag ID Set)" value="0x4000"/>
+			<checkbox name="0x8000 (Show Damage Nos)" value="0x8000"/>
+		</field>
+	</panel>
+</hack>
