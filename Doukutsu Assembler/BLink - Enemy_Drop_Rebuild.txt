@@ -1,0 +1,146 @@
+offset 471B80
+
+
+#define
+npc.graphic=[edi+94]
+#enddefine
+
+PUSH EBP
+MOV EBP,ESP
+push 1
+setpointer
+MOV ecx, npc.deathsound
+PUSH ECX
+CALL Playsound
+ADD ESP,8
+
+mov eax npc.deathgraphic
+cmp eax, 2
+jl :death_graphic_1
+je :death_graphic_2
+cmp eax, 3
+je :Death_graphic_3
+jmp :death_graphic_function_end
+
+:death_graphic_1
+push 3
+jmp :DG_END
+:death_graphic_2
+push 7
+jmp :DG_END
+:Death_graphic_3
+push 0C
+:DG_END
+mov edx, npc.graphic
+push edx
+mov ecx, npc.y
+push ecx
+mov eax, npc.X
+push EAX
+call 46F150          //explosion_create
+add esp, 10
+:death_graphic_function_end
+
+cmp npc.exp, 0  //skip exp/heart/missle if no exp
+JE :no_EXP
+push 5
+push 1
+call random  
+add esp, 8
+CMP eax,1
+JE :Heart_spawn
+CMP eax,3
+JL :Missle_spawn
+JMP :EXP_spawn
+
+
+:Heart_spawn
+CMP npc.EXP,6  //EXP value 6 or less
+JLE :heart_exp_less
+MOV eax,6
+JMP :spawn_heart_ok
+:heart_exp_less
+MOV eax,2
+:spawn_heart_ok
+PUSH EAX
+MOV EDX, npc.Y
+PUSH EDX
+MOV ECX, npc.x
+PUSH ECX
+CALL 0046F630  //spawn heart
+ADD ESP,0C
+JMP :no_EXP
+
+:Missle_spawn
+CMP npc.EXP,6
+JLE :set_to_1
+MOV eax,3   //big missles
+JMP :Set_to_3
+:set_to_1
+MOV eax,1
+:Set_to_3
+PUSH EAX 
+mov eax, npc.Y
+push eax
+mov eax, npc.X
+push eax
+CALL 0046F430   //spawn missle
+ADD ESP,0C
+TEST EAX,EAX
+Jne :no_EXP
+
+:EXP_spawn
+MOV EAX, npc.EXP
+PUSH EAX
+MOV EDX, npc.Y
+PUSH EDX 
+MOV ECX, npc.X
+PUSH ECX
+CALL 0046F2B0   //spawn exp
+ADD ESP,0C
+
+
+:no_EXP
+MOV EAX, npc.entityID
+PUSH EAX
+CALL 0040E890 //not sure...
+ADD ESP,4
+
+MOVZX EDX, npc.flags
+AND EDX,00008000
+JE :die_npc
+
+CMP npc.DamageTaken,0
+JE :don't_run_that_function
+
+MOV ECX, npc.damagetaken
+PUSH ECX
+mov EDX, EDI
+ADD EDX,0C
+PUSH EDX
+mov EAX, EDI
+ADD EAX,8
+PUSH EAX
+CALL 00425BF0  //draw damage taken
+ADD ESP,0C
+:don't_run_that_function
+
+CMP DWORD PTR SS:[EBP+0C],0  //I'm not sure what this is to be honest
+JE :end_of_code
+MOV ECX,DWORD PTR SS:[EBP+8]
+PUSH ECX   
+CALL 0046F760     
+ADD ESP,4
+JMP :end_of_code
+
+:die_npc
+MOV ECX,DWORD PTR SS:[EBP+8]
+MOV BYTE PTR DS:[ECX],0   //npc.inuse, 0
+:end_of_code
+MOV ESP,EBP
+POP EBP
+RETN
+
+
+
+

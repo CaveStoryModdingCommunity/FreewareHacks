@@ -40,7 +40,9 @@
 					</field>
 					<field type="text" size = "1" offset = "0x47D458"/>
 				</panel>
-			
+				<panel title ="Sister Vertical Rotation Distance">
+					<field type="text" size = "4" offset = "0x47D31D">
+				</panel>
 				<panel title ="Sister Horizontal Rotation Distance">
 					<field type="info">
 						Also requires the patch to work properly.

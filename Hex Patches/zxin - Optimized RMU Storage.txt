@@ -1,0 +1,11 @@
+Since Enlight's code was "rather ugly" I decided to give it a facelift. Now it should no longer occupy a ridiculous amount of space, and require you to not be using the space it occupied. Should be compatible with anything as long as it doesn't modify <RMU or change the length of the <CMU function.
+
+0x420F46
+C9
+
+0x420F53
+E8 18 B8 FF FF 97 E8 92 B8 FF FF BE F4 57 4A 00
+8B 1E 83 C6 08 8B 06 FF 34 85 E8 81 49 00 E8 7A
+B7 FF FF 83 EE 04 FF 36 E8 B0 B7 FF FF 6A 64 E8
+39 B8 FF FF E8 04 B8 FF FF 83 C6 04 8B 06 91 89
+1E 83 EE 04 89 3E EB A5

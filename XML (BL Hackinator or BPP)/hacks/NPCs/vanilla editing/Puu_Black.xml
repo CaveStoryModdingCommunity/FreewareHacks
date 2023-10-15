@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Puu Black [#160]" author="SlightlyInteligentMonkey, Brayconn">
+    <panel>
+	
+	<panel>
+	<field type="info">
+		This patch allows you to modify the big poo
+	</field>
+	</panel>
+        
+	<panel>
+    <panel title="Puu particles">
+	
+	<field type="label">Number of entities to spawn on landing</field>
+	<field type="text" size="1" offset="0x4477F2"/>
+	<field type="label">Entity type to spawn</field>
+	<field type="text" size="1" offset="0x44784E"/>
+	<field type="label">PS, those are a single byte so don't make them 2 big</field>
+	<field type="label">Bubble Entity</field>
+	<field type="text" size="4" offset="0x4479B1"/>
+
+	</panel>
+	</panel>
+
+	<panel>
+    <panel title="Puu sfx">
+	
+	<field type="label">Quake duration</field>
+	<field type="text" size="1" offset="0x44786E"/>
+	<field type="label">Impact Sound 1 (default 26)</field>
+	<field type="text" size="1" offset="0x44787A"/>
+	<field type="label">Impact Sound 2 (default 72)</field>
+	<field type="text" size="1" offset="0x447886"/>
+	<field type="label">PS, those are a single byte so don't make them 2 big</field>
+
+	</panel>
+	</panel>
+	
+	<panel>
+	<panel title="Puu misc">
+
+	<field type="label">Bits to unset (ANP 1)</field>
+	<field type="text" size="4" offset="0x44777E"/>
+		
+	<field type="label">Falling damage (ANP 2)</field>
+	<field type="text" size="4" offset="0x4478B1"/>
+	<field type="label">Falling damage reset (ANP 2)</field>
+	<field type="text" size="4" offset="0x4478C0"/>
+	<field type="label">Npc to delete (ANP 2)</field>
+	<field type="text" size="4" offset="0x4477D1"/>
+		
+	<field type="label">Vulnerability counter (ANP 3)</field>
+	<field type="text" size="1" offset="0x4478F8"/>
+	<field type="label">Unused Damage value (ANP 3)</field>
+	<field type="text" size="4" offset="0x4478D2"/>
+	<field type="label">Used Damage value (ANP 3)</field>
+	<field type="text" size="4" offset="0x4478DF"/>
+		
+	<field type="label">Jump speed (ANP 4)</field>
+	<field type="text" size="4" offset="0x4479EF"/>
+	<field type="label">Damage counter timer (ANP 4)</field>
+	<field type="text" size="1" offset="0x4479D2"/>
+		
+	<field type="label">Flying timer (ANP 5)</field>
+	<field type="text" size="1" offset="0x447A36"/>
+		
+	<field type="label">Fall speed (ANP 6)</field>
+	<field type="text" size="4" offset="0x447AA2"/>
+	<field type="label">Bubble hover height (ANP 6)</field>
+	<field type="text" size="4" offset="0x447A61"/>	
+
+	</panel>
+	</panel>
+	
+</panel>
+</hack>
