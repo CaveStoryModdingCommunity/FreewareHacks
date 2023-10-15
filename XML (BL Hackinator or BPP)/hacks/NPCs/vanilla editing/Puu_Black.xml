@@ -9,7 +9,7 @@
 	</panel>
         
 	<panel>
-    <panel title="Pooh particles">
+    <panel title="Puu particles">
 	
 	<field type="label">Number of entities to spawn on landing</field>
 	<field type="text" size="1" offset="0x4477F2"/>
@@ -23,7 +23,7 @@
 	</panel>
 
 	<panel>
-    <panel title="Pooh sfx">
+    <panel title="Puu sfx">
 	
 	<field type="label">Quake duration</field>
 	<field type="text" size="1" offset="0x44786E"/>
@@ -37,7 +37,7 @@
 	</panel>
 	
 	<panel>
-	<panel title="Pooh misc">
+	<panel title="Puu misc">
 
 	<field type="label">Bits to unset (ANP 1)</field>
 	<field type="text" size="4" offset="0x44777E"/>
