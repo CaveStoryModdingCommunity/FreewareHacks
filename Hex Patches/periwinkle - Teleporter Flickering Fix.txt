@@ -1,0 +1,4 @@
+Fixes the flickering teleporter menu
+
+0x41DB17
+95 EA
