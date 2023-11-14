@@ -1,0 +1,10 @@
+<hack name="Ma Pignon Rock [#314]" author="txin">
+    <panel>
+        <field type="label" col="0">Rock Damage</field>
+        <field type="text" size="4" offset="0x465F0A" col="1"></field>
+        <field type="label" col="0">Rock Fall Speed (Soft Cap)</field>
+        <field type="text" size="4" offset="0x465D8A" col="1"></field>
+        <field type="label" col="0">Rock Fall Speed (Hard Cap)</field>
+        <field type="text" size="4" offset="0x465D96" col="1"></field>
+    </panel>
+</hack>
