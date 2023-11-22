@@ -1,0 +1,30 @@
+<hack name="Misery (Boss) [#247] editor" author="Brayconn">
+    <panel title="Info">
+        <field type = "info">
+            Lets you edit Misery (Boss)'s teleportation range (and maybe other stuff in the future)
+        </field>
+    </panel>
+    <panel>
+        <!--Optimizes ANP 150's two calls to SetNpChar and expands the parameters to Random() to be 4 bytes each-->
+        <field type="data" offset="0x45691F">
+83 44 24 14 02 E8 A7 86 01 00 83 C4 20 68 1F 00 00 00 68 09 00 00 00 E8 15 8A FB FF C1 E0 0D 93
+68 07 00 00 00 68 05 00 00 00 E8 02 8A FB FF 83 C4 10 C1 E0 0D 8B 4D 08 89 59 20 89 41 24 EB 1B
+90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
+        </field>
+    </panel>
+    <panel title="Teleportation Range">
+		<field type="info">
+			All values are in tiles and inclusive
+		</field>
+		<panel>
+			<field type="label" col="0">Left edge</field>
+			<field type="text" size="4" offset="0x456932" col="1">9</field>
+			<field type="label" col="0">Right edge</field>
+			<field type="text" size="4" offset="0x45692D" col="1">31</field>
+			<field type="label" col="0">Top edge</field>
+			<field type="text" size="4" offset="0x456945" col="1">5</field>
+			<field type="label" col="0">Bottom edge</field>
+			<field type="text" size="4" offset="0x456940" col="1">7</field>
+		</panel>
+    </panel>
+</hack>
