@@ -1,11 +1,23 @@
 ; this totally EPIC hack was made by BRAYCONN
 ; it took 2-3 days to make :smile_eol:
+; Much later I found out I made a big dumb with the momentum code
+; so I stole a bunch of optimizations from txin (POP EAX and JECXZ)
+; and rewrote the entire momentum code so it actually works
+; we're probably up to like 6-7 total days worth of work tbh
 #define
 PlaySoundObject=420640
 SetCaret=40AC90
 SetBullet=403F80
 FuncReturn=406893
 gMC.ym=49E670
+
+Sign=EAX
+CurMomP=EDX
+AddMom=EBX
+MaxMom=ESI
+MaxMomB=EDI
+
+JECXZ=data E3
 #enddefine
 
 offset 40650E
@@ -17,63 +29,65 @@ CALL SetCaret
 PUSH 1
 PUSH 64
 CALL PlaySoundObject
-ADD ESP, 8 ; undoing the previous 2 pushes
+POP EAX ; undoing the previous 2 pushes
+POP EAX
 PUSH 16    ; pushing the bullet type for later
 ADD ESP, 10 ; the next push will be the direction arg
 
-MOV EDX, gMC.ym ; EDX = &gMC.ym
-MOV EAX, [EDX]  ; EAX = *gMC.ym
+MOV CurMomP, gMC.ym
+XOR Sign, Sign
+INC Sign            ; Sign = 1
 
 ;CheckUp
-CMP [EDX-2c], 0 ; facing up?
-JE :CheckDown
-PUSH 1         ; push dir
- MOV EBX, 400   ; max (40653A)
- MOV ECX, 100   ; momentum (40653F)
+MOV ECX, [CurMomP-2c] ; facing up?
+JECXZ 0D; :CheckDown
+PUSH ECX           ; push dir (1)
+ MOV MaxMom, 400   ; max (406538)
+ MOV AddMom, 100   ; momentum (40653D)
 JMP :AddMomentum
 
 :CheckDown
-CMP [EDX-28], 0 ; facing down?
-JE :DoLR
-PUSH 3         ; push dir
-CMP EAX, 0     ; ym > 0?
+MOV ECX, [CurMomP-28] ; facing down?
+JECXZ 15 ;:DoLR
+PUSH 3                ; push dir
+CMP [CurMomP], 0      ; if(ym > 0) {
 JLE :DoDown
-SAR [EDX], 1   ; ym /= 2
+SAR [CurMomP], 1      ; ym /= 2 }
 :DoDown
- MOV EBX, -400  ; max (406555)
- MOV ECX, -200  ; momentum (40655A)
-JMP :AddMomentum
+ MOV MaxMom, -400  ; max (406552)
+ MOV AddMom, -200  ; momentum (406557)
+JMP :FlipSign
 
 :DoLR
-SUB EDX, 4       ; EDX = &gMC.xm
-MOV EAX, [EDX]   ; EAX = *gMC.xm
-PUSH [EDX-2c]    ; push dir
- MOV EBX, -400    ; max (406569)
- MOV ECX, -200    ; momentum (40656E)
-CMP [EDX-2c], 0  ; direction right?
-JNZ :AddMomentum
-NEG EBX          ; flip direction
-NEG ECX
-XCHG EAX, EBX
-;FALLTHROUGH
+SUB CurMomP, 4        ; CurrMomP = &gMC.xm
+MOV ECX, [CurMomP-2c] ; ECX = gMC.dir
+PUSH ECX              ; push gMC.dir
+ MOV MaxMom, 400      ; max (406565)
+ MOV AddMom, 200      ; momentum (40656A)
+JECXZ 06 ;:AddMomentum
+NEG MaxMom
+NEG AddMom
+:FlipSign
+NEG Sign
 
-;EAX   = current xm/ym
-;EBX   = max momentum
-;ECX   = momentum to add
-;[EDX] = address of xm/ym
-;swapping EAX/EBX lets you flip comparison
 :AddMomentum
-CMP EAX, EBX   ; cap > cm
-JL :SpawnBullet
-ADD [EDX], ECX  ; *m += momentum
-ADD EAX, ECX
-CMP EAX, EBX  ; cap < *m
-JG :SpawnBullet
-MOV [EDX], EBX  ; m = cap
+MOV MaxMomB, MaxMom
+SUB MaxMom, [CurMomP]
+IMUL MaxMom, Sign      ; working = sign(MaxMom)*(MaxMom - CurrentMomentum)
+CMP MaxMom, 0          ; tfw IMUL doesn't update the zero flag
+JLE :SpawnBullet       ; if(working > 0) {
+ADD [CurMomP], AddMom  ; CurrentMomentum += AddMomentum
+IMUL AddMom, Sign
+SUB MaxMom, AddMom
+JGE :SpawnBullet       ; if(working - sign(MaxMom)*AddMomentum < 0) {
+MOV [CurMomP], MaxMomB ; CurrentMomentum = MaxMom }}
 
 :SpawnBullet
 SUB ESP, C ; restore the previously pushed stack values
 CALL SetBullet
 ADD ESP, 10 ; clear stack
-JMP FuncReturn
-NOP ; one byte to spare lol
+LEAVE
+RETN
+NOP
+NOP
+NOP
