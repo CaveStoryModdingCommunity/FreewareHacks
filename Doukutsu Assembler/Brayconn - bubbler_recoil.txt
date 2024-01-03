@@ -8,7 +8,6 @@
 PlaySoundObject=420640
 SetCaret=40AC90
 SetBullet=403F80
-FuncReturn=406893
 gMC.ym=49E670
 
 Sign=EAX
@@ -63,7 +62,7 @@ SUB CurMomP, 4        ; CurrMomP = &gMC.xm
 MOV ECX, [CurMomP-2c] ; ECX = gMC.dir
 PUSH ECX              ; push gMC.dir
  MOV MaxMom, 400      ; max (406565)
- MOV AddMom, 200      ; momentum (40656A)
+ MOV AddMom, 100      ; momentum (40656A)
 JECXZ 06 ;:AddMomentum
 NEG MaxMom
 NEG AddMom
@@ -85,9 +84,11 @@ MOV [CurMomP], MaxMomB ; CurrentMomentum = MaxMom }}
 :SpawnBullet
 SUB ESP, C ; restore the previously pushed stack values
 CALL SetBullet
-ADD ESP, 10 ; clear stack
 LEAVE
 RETN
+NOP
+NOP
+NOP
 NOP
 NOP
 NOP
