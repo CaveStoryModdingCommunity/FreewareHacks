@@ -1,4 +1,3 @@
-; This hack also had to be fixed because I messed up the momentum code
 #define
 gKeyShot=493614
 gArmsData=499BC8
@@ -129,33 +128,31 @@ ADD EBX, ECX
 ADD ECX, EAX     ; ECX = momentum, (level*0x80)+0x80, (1: 0x100, 2: 0x180, 3: 0x200)
 SUB EBX, EAX     ; EBX = max momentum, (level*0x180)-0x80, (1: 0x100, 2: 0x280, 3: 0x400)
 
-XOR EAX, EAX
-INC EAX      ; Sign = 1
+
+MOV EAX, [ESI]   ; EAX = current momentum
 
 TEST DL, 2      ; facing right/down?
-JZ :ADD_MOMENTUM
-NEG EBX    ; flip everything
+JZ :XCHG
+NEG EBX          ; flip signs
 NEG ECX
-NEG EAX
+JMP :ADD_MOMENTUM
+:XCHG
+XCHG EAX, EBX    ; otherwise flip comparison
 
 ; reusing this code from my bubbler hack
-; EAX = sign(max momentum)
-; EBX = max momentum
-; ECX = momentum to add
-; EDX = max momentum (backup)
-; ESI = current momentum (pointer)
+; EAX   = current xm/ym
+; EBX   = max momentum
+; ECX   = momentum to add
+; [ESI] = address of xm/ym
+; swapping EAX/EBX lets you flip comparison
 :ADD_MOMENTUM
-MOV EDX, EBX
-SUB EBX, [ESI]
-IMUL EBX, EAX     ; working = sign(MaxMom)*(MaxMom - CurrentMomentum)
-CMP EBX, 0        ; tfw IMUL doesn't update the zero flag
-JLE :SPAWN_BULLET ; if(working > 0) {
-ADD [ESI], ECX    ; CurrentMomentum += AddMomentum
-IMUL ECX, EAX
-SUB EBX, ECX
-JGE :SPAWN_BULLET ; if(working - sign(MaxMom)*AddMomentum < 0) {
-MOV [ESI], EDX    ; CurrentMomentum = MaxMom }}
-
+CMP EAX, EBX   ; cap > cm
+JL :SPAWN_BULLET
+ADD [ESI], ECX  ; *m += momentum
+ADD EAX, ECX
+CMP EAX, EBX  ; cap < *m
+JG :SPAWN_BULLET
+MOV [ESI], EBX  ; m = cap
 :SPAWN_BULLET
 CALL SetBullet
 
@@ -199,5 +196,3 @@ CALL ChargeArmsEnergy
 :END
 LEAVE
 RETN
-; this hack uses like half the space of the original machine gun hack
-; so I don't really feel like counting out the right number of NOPs to put here
