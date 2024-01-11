@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="timer coords" author="bobylev">
+	<panel>
+		<field type="info">
+		Change the coords of timer counter 
+		while in gameplay.
+		</field>
+		<panel>	
+			<field type="label">X coordinate:</field>
+			<field type="label">Y coordinate:</field>
+			<field type="text" size="1" offset="0x410822" col="1"/>
+			<field type="text" size="1" offset="0x410820"/>
+		</panel>
+	</panel>
+</hack>
