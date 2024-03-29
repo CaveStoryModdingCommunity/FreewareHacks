@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Fast text scrolling (CS+ Switch-style)" author="periwinkle">
+	<panel>
+	<field type="info">
+		Makes text scroll like CS+ Switch—the text will scroll fast by default, and
+		pushing Z/X makes the next chunk of text appear instantly.
+		This hack optionally can be customized to make text always appear instantly,
+		and/or make &lt;TUR use the same instant text method which allows for displaying
+		= characters as • symbols, or using commands in between the text without breaking
+		the text positioning.
+	</field>
+	</panel>
+	<panel title="Options">
+		<field type="check" name="Always display text instantly">
+		<checked>
+			<field type="data" offset="0x425567">
+			C6 45 D5 01 90
+			</field>
+		</checked>
+		<unchecked>
+			<field type="data" offset="0x425567">
+			90 90 90 90 90
+			</field>
+		</unchecked>
+		</field>
+		<field type="check" name="Use the instant display method for &lt;TUR text">
+		<checked>
+			<field type="data" offset="0x42530C">
+			C6 45 DB 01 C6 45 D6 01 E9 FB 00 00 00 90 90
+			</field>
+		</checked>
+		<unchecked>
+			<field type="data" offset="0x42530C">
+			8B 0D E0 5A 4A 00 89 4D F4 8B 15 D8 5A 4A 00
+			</field>
+		</unchecked>
+		</field>
+		<field type="label">This circumvents several limitations of &lt;TUR text, but affects the text spacing.</field>
+	</panel>
+	<panel>
+	<field type="data" offset="0x42253D">
+	31 C0 89 45 D4 F6 05 E8 E1 49 00 02 75 15 A1 28
+	36 49 00 0B 05 2C 36 49 00 85 05 14 E2 49 00 0F
+	95 45 DB 0F BE 15 DC 5A 4A 00 4A 83 FA 06 0F 87
+	C6 31 00 00 FF 24 95 71 57 42 00
+	</field>
+	<field type="data" offset="0x4254C1">
+	83 E1 03 C1 E1 06 81 C1 D0 58 4A 00 51 E8 3D BC
+	05 00 83 C4 08 90 90 90 90 F6 45 D6 01 75 0C
+	</field>
+	<field type="data" offset="0x425540">
+	7C 1A E8 39 C7 FF FF C7 05 E4 5A 4A 00 00 00 00
+	00 FF 05 E8 5A 4A 00 E8 24 C7 FF FF B8 01 00 01
+	00 8A 65 DB 89 45 D4
+	</field>
+	<field type="data" offset="0x4255C8" col="1">
+	75 0F C6 45 D5 00 90 90 90 90 C6 05 DC 5A 4A 00
+	01 83 FA F0 75 16 C6 45 D5 00 90 90 90 90
+	</field>
+	<field type="data" offset="0x425737">
+	8B 15 E8 E1 49 00 89 D0 83 C8 04 80 3D DC 5A 4A
+	00 00 75 05 89 D0 83 E0 FB A3 E8 E1 49 00 8A 4D
+	D5 84 C9 0F 85 00 CE FF FF
+	</field>
+	<field type="data" offset="0x425771">
+	BA
+	</field>
+	</panel>
+</hack>

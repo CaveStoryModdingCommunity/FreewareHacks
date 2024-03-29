@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="60 FPS" author="periwinkle">
+	<panel>
+	<field type="info">
+		Makes the game run at 60 FPS. As in, ACTUALLY 60 FPS, not 58.8 or 62.5 FPS.
+		Note, to ensure maximum compatibility, this hack does NOT patch the
+		Nikumaru Counter display! The timer will run too fast unless that is
+		patched separately.
+	</field>
+	</panel>
+	<panel>
+	<field type="data" offset="0x40B340">
+		55 89 e5 53 31 db b9 3c d4 49 00 8b 01 ff 01 31
+		d2 6a 03 59 f7 f1 85 d2 0f 95 c3 83 c3 10 eb 1c
+		ff 15 58 c2 48 00 89 c2 a1 38 d4 49 00 8d 0c 18
+		39 ca 73 19 6a 01 ff 15 20 c1 48 00 e8 ef 81 00
+		00 85 c0 75 db 31 c0 5b e9 bd 00 00 00 83 c0 64
+		39 c2 0f 43 ca 89 0d 38 d4 49 00 5b 90 90 90
+	</field>
+	</panel>
+</hack>

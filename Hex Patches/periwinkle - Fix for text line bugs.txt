@@ -1,0 +1,20 @@
+There is a bug in the game causing the last line of text in this example to not show up:
+<KEY<MSGText line 1<NOD
+Text line 2<NOD
+Text line 3<NOD
+<CLRThis text will not show up<NOD<END
+
+The same bug also causes wonkiness with this event (note, BL incorrectly strips the blank lines from this event, so use a different editor if you want to see this for yourself):
+<KEY<MSG[1] Some text<NOD
+
+[2] Two lines below line [1]<NOD
+
+This text never shows up<NOD
+This is drawn above line [2]!<NOD
+And this is drawn on top of [2] :)<NOD<END
+
+
+The following hex patch will fix this bug so that the text will display as you would expect:
+
+0x4252E3
+FF 05 E8 5A 4A 00 C7 45 D4 01 00 00 00 90 90

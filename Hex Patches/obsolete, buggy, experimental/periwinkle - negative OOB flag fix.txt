@@ -1,0 +1,20 @@
+Patches the issue with negative OOB flags where only every 8th flag is accessible. This makes all negative values behave as expected.
+
+(this only patches the issue for NPC flags; skipflags are unaffected by this)
+
+0x40E896
+31 D2 42 89 C1 83 E1 07 D3 E2 85 C0 78 05 C1 F8
+03 EB 0B 8D 48 08 40 0F 48 C1 C1 F8 03 48 08 90
+A0 DD 49 00 5D C3 90
+
+0x40E8E6
+BA FE FF FF FF 89 C1 83 E1 07 D3 C2 85 C0 78 05
+C1 F8 03 EB 0B 8D 48 08 40 0F 48 C1 C1 F8 03 48
+20 90 A0 DD 49 00 5D C3 90
+
+0x40E933
+8B 4D 08 85 C9 78 0A 89 C8 83 E1 07 C1 F8 03 EB
+10 89 CA 8D 41 08 42 0F 49 C2 83 E1 07 C1 F8 03
+48 0F B6 90 A0 DD 49 00 31 C0 40 D3 E0 85 D0 0F
+95 C0 0F B6 C0 5D C3
+

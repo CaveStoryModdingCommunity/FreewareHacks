@@ -1,0 +1,6 @@
+Two of the rects on the level 1 Snake bullet are incorrect (top and bottom were set to the same number, so the sprite doesn't show up at all). This patch fixes that:
+
+0x4042A7
+60
+0x40436B
+60
