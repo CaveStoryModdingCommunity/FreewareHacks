@@ -1,0 +1,284 @@
+offset 404b30
+
+#define
+var1=[ebp-34]
+level=[ebp+c]
+#enddefine
+
+enter ec,0
+
+setpointer
+
+inc bullet.distance
+mov eax,bullet.distance
+cmp eax,bullet.maxdistance
+jle :working
+mov bullet.inuse,0
+push 0
+push 3
+push bullet.y
+push bullet.x
+call 40ac90
+add esp,10
+jmp :end
+
+:working
+mov var1,0
+;up & down check?
+mov eax,bullet.collision
+and eax,2
+jz :check2
+mov eax,bullet.collision
+and eax,8
+jz :check2
+
+mov var1,1
+
+:check2 ;left & right check?
+mov eax,bullet.collision
+and eax,1
+jz :check3
+mov eax,bullet.collision
+and eax,4
+jz :check3
+
+mov var1,1
+
+:check3
+mov edx bullet.direction
+test edx,edx
+jnz :check4
+mov eax,bullet.collision
+and eax,1
+jz :check4
+mov bullet.direction,2 ;bounce right
+
+:check4
+mov eax,bullet.direction
+cmp eax,2
+jnz :checkafter
+
+mov eax,bullet.collision
+and eax,4
+jz :checkafter
+mov bullet.direction,0 ;bounce left
+
+:checkafter
+cmp var1,0
+je :working2
+
+mov bullet.inuse,0
+push 0
+push 2
+push bullet.y
+push bullet.x
+call 40ac90
+add esp,10
+push 1
+push 1c
+call 420640
+add esp,8
+jmp :end
+
+:working2
+cmp bullet.wassetup,0
+jnz :wasset
+mov bullet.wassetup,1
+mov eax,bullet.direction
+cmp eax,3
+ja :was
+jmp [eax*4+:StateTable]
+
+:LEFT
+mov bullet.movex,-400
+mov bullet.movey,400
+jmp :was
+
+:UP
+mov eax,Playerxvel
+mov bullet.movex,eax
+cmp dword playerxvel,0
+jge :ur
+;ul
+mov bullet.direction,0
+jmp :uc
+:ur
+mov bullet.direction,2
+:uc
+cmp directionfaced,0
+jnz :facur
+sub bullet.movex,80
+jmp :facuc
+:facur
+add bullet.movex,80
+:facuc
+mov bullet.movey,-5ff
+jmp :was
+
+:RIGHT
+mov bullet.movex,400
+mov bullet.movey,400
+jmp :was
+
+:DOWN
+mov eax,Playerxvel
+mov bullet.movex,eax
+cmp dword playerxvel,0
+jge :dr
+;ul
+mov bullet.direction,0
+jmp :dc
+:dr
+mov bullet.direction,2
+:dc
+cmp directionfaced,0
+jnz :facdr
+sub bullet.movex,80
+jmp :facdc
+:facdr
+add bullet.movex,80
+:facdc
+mov bullet.movey,5ff
+
+:was
+jmp :render
+
+:wasset
+mov eax,bullet.collision
+and eax,8
+jz :nobounce
+;bounce
+mov bullet.movey,-400
+jmp :gravity
+:nobounce
+mov eax,bullet.collision
+and eax,2
+jz :stillnobounce
+mov bullet.movey,400
+jmp :gravity
+:stillnobounce
+mov eax,bullet.collision
+and eax,1
+jz :noleftbounce
+;leftbounce
+mov bullet.movex,400
+jmp :gravity
+:noleftbounce
+mov eax,bullet.collision
+and eax,4
+jz :gravity
+;rightbounce
+mov bullet.movex,-400
+
+:gravity
+;add bullet.movey,55
+;cmp bullet.movey,3ff
+;jle :yvelok
+;mov bullet.movey,3ff
+;:yvelok
+mov eax,bullet.movex
+add bullet.x,eax
+mov eax,bullet.movey
+add bullet.y,eax
+
+mov eax,bullet.collision
+and eax,0f
+jz :render
+push 1
+push 22
+call 420640
+add esp,8
+setpointer
+
+:render
+inc bullet.framenum
+cmp level,1
+jnz :level23
+;level1render
+cmp bullet.framenum,3
+jle :finalrender1
+mov bullet.framenum,0
+:finalrender1
+
+mov eax,0
+cmp bullet.direction,0
+je :noadd1
+mov eax,10
+:noadd1
+mov bullet.displayu,eax
+add eax,10 ;wysokosc
+mov bullet.displayD,eax
+
+mov eax,bullet.framenum
+mov edx,10
+imul eax,edx
+add eax,80
+mov bullet.displayl,eax
+add eax,10 ;szerokosc
+mov bullet.displayr,eax
+jmp :end
+
+:level23
+cmp bullet.framenum,2
+jle :finalrender23
+mov bullet.framenum,0
+:finalrender23
+mov eax,10
+mov bullet.displayu,eax
+add eax,10 ;wysokosc
+mov bullet.displayD,eax
+
+mov eax,bullet.framenum
+mov edx,10
+imul eax,edx
+add eax,c0
+mov bullet.displayl,eax
+add eax,10 ;szerokosc
+mov bullet.displayr,eax
+
+;trails
+cmp level,2
+jnz :level3t
+;level2trail
+push 100
+push 0
+push bullet.framenum
+push -200
+push 0
+push bullet.y
+push bullet.x
+push 81
+call 46efd0
+add esp,20
+jmp :end
+:level3t ;level3trail
+push 100
+push 0
+mov eax,bullet.framenum
+add eax,3
+push eax
+push -200
+push 0
+push bullet.y
+push bullet.x
+push 81
+call 46efd0
+add esp,20
+
+:end
+leave
+retn
+
+:StateTable
+print :LEFT
+print :UP
+print :RIGHT
+print :DOWN
+
+
+
+
+
+
+
+
