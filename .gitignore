@@ -1,4 +1,4 @@
-# Catch all for files that should not never be found here
+# Catch all for files that should not ever be found here
 *.exe
 
 # Mac OSX folder metadata attributes
