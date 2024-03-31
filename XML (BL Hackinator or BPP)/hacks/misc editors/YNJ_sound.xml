@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="YNJ Sound" author="Brayconn">
+	<panel>
+		<field type="info">
+		Change the sounds that get played during YNJ
+		</field>
+		<panel>	
+            <field type="label">Box Appears:</field>
+			<field type="label">Make Selection:</field>
+			<field type="label">Hover Over Yes:</field>
+            <field type="label">Hover Over No:</field>
+			<field type="text" size="1" offset="0x423852" col="1"/>
+            <field type="text" size="1" offset="0x4256BE"/>
+			<field type="text" size="1" offset="0x42570C"/>
+            <field type="text" size="1" offset="0x42572E"/>
+		</panel>
+	</panel>
+</hack>
