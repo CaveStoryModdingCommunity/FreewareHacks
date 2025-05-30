@@ -1,0 +1,42 @@
+; MiseryAI, by EnlightenedOne
+;
+; Hi. These are Doukutsu Assembler files. You need to use Doukutsu Assembler.
+; I'm 95% sure the defines.txt included with modern linked versions of DouA should work (ones that say "EDI defines").
+; If it doesn't yell at me.
+;
+; Step 1: BACKUP YOUR MOD!!! Always always do this for any new hack.
+;
+; Step 2: Apply the three patches: https://www.youtube.com/watch?v=lPa3EF8Lvj4
+; Instructions if you never used DouA before:
+; Step 2a: Open Doukutsu Assembler, go to settings and select the .exe
+; Step 2b: Go to "One-file Assemble" tab, select the third option and the [Function] file. Use "Direct Assemble".
+; Step 2c: In the "One-file Assemble" tab, select the third option and [NPC-Inject] file. Use "Direct Assemble".
+; Step 2d: Select "File > Open File" and open the [NPC] file.
+; Step 2e: You will see a number of things you can customize underneath "#define". These are hexadecmial numbers.
+;          Feel free to change anything here, just make sure to read the comments. You can even change NPC326 to something else.
+; Step 2f: In the "One-file Assemble" tab, select the FIRST option and "Direct Assemble".
+;
+; Step 3: Place NPC326 (or whatever you set it to) in the map and when it's loaded she'll teleport to the player using the distance defined by _space and _lift.
+; This doesn't replace the Misery NPC but instead wraps around it, controlling it to do things while still allowing you to use a regular Misery NPC for things like cutscenes.
+; In other words with this hack NPC 326 spawns in an NPC 67 (the normal floating Misery) as a child NPC but then controls it to position itself to the player and handle casting.
+; NPC 67 is patched to handle this (communicate back) but it doesn't affect anything else, so one can still use NPC 67 like normal to have cutscenes and such.
+; Also the code doesn't actually fit 326 and overflows into 327 code so don't use either.
+; They're the Itoh/Sue sneezing credits npcs, but uniquely with DouA one can easily change this (You can't with Hex Patches nor XMLs)
+;
+; Step 4: For some reason floating Misery (npc 67) deals 1 damage so 99% sure you want to change that to zero in npc.tbl.
+;
+; Step 5: By default she uses Bullet 0x2B / 43 (Curly's Nemesis). Most bullets will get stuck in the ceiling when casted.
+;         To make it not stuck, you want to use /hacks/bullets/properties/misc_bullets_2.xml to make that bullet "ignore solid".
+;         You can also change the bullet to a Snake bullet, either with <ANPxxxx:0004:yyyy (yyyy being the bullet ID)
+;         Or by changing the default defined bullet at the top of the #defines in the [NPC] file.
+;         Additional ANPs can be found at the bottom of the [NPC] file.
+;
+; Step 6: Targeting works the same way as /hacks/NPCs/recoded vanilla/npc_improved_curlyai.xml
+;         Give entities the "unused" NPC flag checkbox 0x0400 to have them targetable. NPC.tbl editing will help with this.
+;         In vanilla MiseryAI will only loosely target the Core MapBosses. To make that more accurate and target additional
+;         MapBosses, you must apply the Improved CurlyAI MapBoss patches found in that hack. They use the same targeting.
+;         If your CurlyAI hack does not have MapBoss patching, you have an old version of that hack.
+;
+; Additional info: When MiseryAI finds a target she will start the casting animation, then confirm the target still exists.
+; If by the time the animation finishes all targets were killed/deleted, she instead spawns a heart.
+; She does not spawn hearts when there are no targets. She spawns hearts if you kill enemies faster than she can cast her bullets on them.

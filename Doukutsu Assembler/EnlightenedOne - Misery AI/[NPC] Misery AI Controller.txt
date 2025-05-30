@@ -1,0 +1,384 @@
+offset NPC326		; NPC326 is Sue/Itoh sneezing to turn human->mimiga in the credits. This hack dips into 327 so don't use either. Can replace this number with anything as long as it fits space-wise.
+
+#define
+
+; These three default values can be changed by ANP. See the StateTable near the bottom of this hack.
+ini_bullet=2B		;The default ID of the bullet she spawns. 2b = Curly's Nemesis. You may want to set it to ignore solid or use a Snake Bullet to have it not collide with the ceiling.
+ini_speed=3c		;How frequently she casts spells by default, lower numbers = faster.
+ini_range=20000		;The circular range she searches for an enemy to attack by default (2000 = 1 tile)
+
+_shootSidewaysMapOne=44	;Maps that she shoots sideways from the left instead of downwards. 0x44 = decimal 68 (Black Space aka Undead Core)
+_shootSidewaysMapTwo=57	;0x57 = decimal 87 (Seal Chamber aka Ballos' Eyes)
+_shootDownwardsDist=8000	;How far upwards that she spawns bullets above enemies. (2000 = 1 tile)
+_shootSidewaysDist=8000	;How far leftwards that she spawns bullets to the side of enemies (or in this case Undead Core and Ballos).
+
+_space=2000		;How far away from the player will it teleport/position IN FRONT of them. Use a negative number to position behind them. (2000 = 1 tile)
+_lift=2000		;How high off the ground will it teleport/position above the player (2000 = 1 tile)
+_horizontalspeed=10	;How fast horizontally she follows
+_horizontalcap=1a0	;The cap for how horizontally fast
+_spellspeed=05		;How fast a spell takes to cast (the effects and all that), lower numbers = faster. If the enemy being targeted is killed
+_effectdistance=1000	;How far from misery will the circle effects spawn (2000 = 1 tile radius)
+
+
+zero eax=data 31 C0	;The rest of these are from my defines but they might not be in older ones.
+zero ebx=data 31 DB
+setpointer=mov edi,[ebp+8]
+setparent=mov esi,[edi+a8]
+parent.inuse=[esi]
+parent.x=[esi+8]
+parent.y=[esi+C]
+parent.npcID=[esi+28]
+parent.direction=[esi+4C]
+parent.scriptstate=[esi+74]
+parent.CurlyMacro1=[esi+20]
+parent.CurlyMacro2=[esi+24]
+NPC326=468230
+PlayerXPos=[49E654]
+PlayerYPos=[49E658]
+DirectionFaced=[49E640]
+npc.x=[edi+8]
+npc.y=[edi+C]
+npc.parent=[edi+A8]
+npc.scriptstate=[edi+74]
+npc.directive=[edi+70]
+npc.altvelx=[edi+18]
+npc.altvely=[edi+1C]
+parent.flags=[esi+50]
+parent.movex=[esi+10]
+parent.movey=[esi+14]
+npc.scripttimer=[edi+78]
+JZ=JE
+npc.direction=[edi+4C]
+CurrentMapID=[4A57F0]
+npc.framenum=[edi+68]
+CreateNPC=46EFD0
+CreateEffect=40AC90
+CreateBullet=403F80
+
+gettarget=48BF7A
+getdistance=48BF4F
+boss.x=[4BBA20]
+boss.y=[4BBA24]
+
+#enddefine
+
+push ebp
+mov ebp,esp
+push edi			;Preserve registers
+push esi
+push ebx
+setpointer
+mov eax,PlayerXPos
+mov ebx,PlayerYPos
+sub ebx,_lift
+
+cmp DirectionFaced,0	;have _space account for player direction
+je :faceleft
+add eax,_space
+jmp :jumpoverdir
+:faceleft
+sub eax,_space
+
+:jumpoverdir
+mov npc.x,eax
+mov npc.y,ebx
+zero eax
+zero ebx
+setparent
+
+
+cmp npc.parent,0
+jne :checks		;Confirm we have a parent
+cmp npc.scriptstate,1
+jg :StateInitialize	;If our ANP says we should have a parent, but we don't, reinitialize
+jmp :read_anp_state
+
+:checks
+cmp parent.inuse,0
+je :StateInitialize	;If our parent is dead/deleted, reinitialize.
+cmp parent.npcID,43
+jne :StateInitialize	;Just in case our parent was overwritten, confirm it's a misery
+
+
+:read_anp_state
+mov ecx, npc.scriptstate
+jmp [ecx*4+:StateTable]
+
+;-------------------------------------------------
+
+:StateInitialize
+push 50			;Let's spawn Misery
+push edi
+push 4
+push 0
+push 0
+push npc.y
+push npc.x
+push 43
+call CreateNPC
+add esp,20
+
+mov npc.scriptstate,1
+mov npc.directive,ini_bullet
+mov npc.altvelx,ini_speed
+mov npc.altvely,ini_range
+jmp :end_noreset
+
+:StateWait
+cmp npc.parent,0
+je :end_noreset
+mov npc.scriptstate,2
+
+;-------------------------------------------------
+
+:StateIdle
+mov eax,npc.x
+mov ebx,npc.y
+mov parent.CurlyMacro1,eax
+mov parent.CurlyMacro2,ebx
+mov parent.flags,8
+mov eax,DirectionFaced
+mov parent.direction,eax
+
+mov edx,parent.CurlyMacro1
+mov ecx,parent.movex
+cmp edx,parent.x
+jge :idleleft
+sub ecx,_horizontalspeed
+jmp :horizontalfinish
+:idleleft
+add ecx,_horizontalspeed
+:horizontalfinish
+mov parent.movex,ecx
+inc npc.scripttimer
+
+cmp boss.x,0
+jz :notboss
+push boss.y		;Boss
+push boss.x
+push parent.y
+push parent.x
+call getdistance
+ADD ESP,10
+cmp eax,npc.altvely
+jg :notboss
+jmp :targetfound
+
+:notboss
+push parent.y
+push parent.x
+call gettarget
+ADD ESP,8
+setparent
+cmp ebx,0
+je :speedcap
+cmp ecx,npc.altvely
+jg :speedcap
+:targetfound
+mov edx,npc.altvelx
+cmp npc.scripttimer,edx
+jl :speedcap
+mov npc.scriptstate, 3
+mov npc.scripttimer,0
+mov npc.direction, 0
+
+:speedcap
+mov eax,_horizontalcap
+cmp parent.movex,eax
+jl :jumpovercap
+mov parent.movex,eax
+mov parent.direction,2
+:jumpovercap
+neg eax
+cmp parent.movex,eax
+jg :end_noreset
+mov parent.movex,eax
+mov parent.direction,0
+jmp :end_noreset
+
+;----------------------------------------------------
+
+:StateCasting
+inc npc.scripttimer
+cmp npc.scripttimer,_spellspeed
+jl :sparks
+cmp npc.direction,7
+jg :CastSpell
+mov edx,npc.direction
+mov esi,:EffectTable
+movsx eax,byte[edx*4+esi]
+inc esi
+movsx ebx,byte[edx*4+esi]
+inc esi
+movsx ecx,byte[edx*4+esi]
+inc esi
+movsx edx,byte[edx*4+esi]
+imul eax,eax,_effectdistance
+imul ebx,ebx,_effectdistance
+setparent
+add eax,parent.x
+add ebx,parent.y
+push edx
+push ecx
+push ebx
+push eax
+call CreateEffect
+add esp, 10
+mov npc.scripttimer,0
+inc npc.direction
+jmp :end_noreset
+
+:CastSpell
+cmp boss.x,0
+jz :notbosscast
+push boss.y		;Boss
+push boss.x
+push parent.y
+push parent.x
+call getdistance
+ADD ESP,10
+cmp eax,npc.altvely
+jg :notbosscast
+mov eax,boss.x
+mov ebx,boss.y
+jmp :createthebullet
+
+
+:notbosscast
+push parent.y
+push parent.x
+call gettarget
+ADD ESP,8
+setparent
+cmp ebx,0
+je :spawnheart
+cmp ecx,npc.altvely
+jg :spawnheart
+
+:createthebullet
+cmp CurrentMapID,_shootSidewaysMapOne
+je :sideways
+cmp CurrentMapID,_shootSidewaysMapTwo
+je :sideways
+push 3			;Creates the bullet
+sub ebx,_shootDownwardsDist
+push ebx
+push eax
+push npc.directive
+call CreateBullet
+add esp,10
+jmp :end_resetanp
+:sideways
+push 2			;Creates the bullet
+sub eax,_shootSidewaysDist
+push ebx
+push eax
+push npc.directive
+call CreateBullet
+add esp,10
+jmp :end_resetanp
+
+:sparks
+push 0
+push d
+push parent.y
+push parent.x
+call CreateEffect
+add esp, 10
+jmp :end_noreset
+
+:spawnheart
+push 50
+zero eax
+push eax			;Just pushing zero four times
+push eax
+push eax
+push eax
+push parent.y
+push parent.x
+push 57
+call CreateNPC
+add esp,20
+jmp :end_resetanp
+
+;----------------------------------------------------
+
+:StateBullet
+mov eax,npc.direction
+mov npc.directive,eax
+jmp :end_resetanp
+:StateSpeed
+mov eax,npc.direction
+mov npc.altvelx,eax
+jmp :end_resetanp
+:StateRange
+mov eax,npc.direction
+SHL EAX,12
+mov npc.altvely,eax
+jmp :end_resetanp
+
+;----------------------------------------------------
+
+:end_resetanp
+mov npc.framenum, 0
+mov npc.direction, 0
+mov npc.scripttimer,0
+mov npc.scriptstate, 2
+:end_noreset
+pop ebx			;Preserve registers
+pop esi
+pop edi
+leave
+retn
+     
+:StateTable
+print :StateInitialize	;ANP 0000 - Spawns a Misery and intializes variables
+print :StateWait		;ANP 0001 - Waits for a Misery to "handshake" back to start the rest of the states
+print :StateIdle		;ANP 0002 - Default state, she floats toward Quote and checks for targets
+print :StateCasting	;ANP 0003 - Starts casting a spell, if she fails to find a target she will instead spawn a heart
+print :StateBullet	;ANP 0004:xxxx - Sets the bullet ID spawned via the direction you specify
+print :StateSpeed		;ANP 0005:xxxx - Sets the speed of casting via the direction you specify
+print :StateRange		;ANP 0006:xxxx - Sets the target radius range via the direction you specify, in half tiles (2 = 1 tile. 10 = 5 tiles).
+
+:EffectTable
+data ff			;x
+data ff			;y
+data 02			;Effect Id
+data 00			;Effect Mode
+
+data 00
+data fe
+data 02
+data 02
+
+data 01
+data ff
+data 02
+data 00
+
+data 02
+data 00
+data 02
+data 02
+
+data 01
+data 01
+data 02
+data 00
+
+data 00
+data 02
+data 02
+data 02
+
+data ff
+data 01
+data 02
+data 00
+
+data fe
+data 00
+data 02
+data 02
+int3
+int3 ; MiseryAI Code by EnlightenedOne

@@ -1,120 +1,352 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <hack name="Improved Curly_AI" author="EnlightenedOne">
+<!--  0048BF33 is function for copying EDI+8 (X) and EDI+C (Y) to MapBoss target  -->
+<!--  00472FF0 is function to turn off MapBoss target (Setting memory X/Y to zero which they ignore) -->
 	<panel>
-		<field type="label">NPC 180</field>
-		<field type="info">
-		Acts just like vanilla, but now she will target any entity with the "unused"
-		NPC flag (0x0400). So either in the map or NPC.TBL you check that box and she will
-		attack those entities. There's some customizable things too.
-		Currently unable to attack map bosses just yet, except the core.
-		</field>
+	<panel><field type="label">NPC 180</field>
+	<panel>
 		<panel>
+			<field type="info">
+			Acts just like vanilla, but now she will target any entity with the "unused"
+			NPC flag (0x0400). So either in the map or NPC.TBL you check that box and she will
+			attack those entities. There's some customizable things too.
+			All MapBosses must be individually patched.
+			</field>
 			<panel>
-				<field type="data" offset="0x48BF4E">
-					CC 55 89 E5 83 EC 04 DB 45 08 DA 65 10 D8 C8 DB
-					45 0C DA 65 14 D8 C8 DE C1 D9 FA D9 FC DB 5D FC
-					8B 45 FC C9 C3 CC CC CC CC CC CC CC 55 89 E5 83
-					EC 0C 31 F6 89 75 FC 89 75 F8 89 75 F4 81 FE 00
-					02 00 00 7F 5C 69 DE AC 00 00 00 8A 83 20 62 4A
-					00 84 C0 75 03 46 EB E5 8B 83 70 62 4A 00 25 00
-					04 00 00 74 F0 FF B3 2C 62 4A 00 FF B3 28 62 4A
-					00 FF 75 0C FF 75 08 E8 85 FF FF FF 83 C4 10 83
-					7D F4 00 74 05 3B 45 F4 77 CB 89 45 F4 8B 83 2C
-					62 4A 00 89 45 FC 8B 83 28 62 4A 00 89 45 F8 EB
-					B4 8B 45 F8 8B 5D FC 8B 4D F4 C9 C3
-				</field>
-				<field type="data" offset="0x44B210">
-					55 8B EC 81 EC 74 01 00 00 31 C0 40 31 C9 83 F8
-					5A 7F 0E 6B D8 FC 8A 88 36 B2 44 00 89 0C 2B EB
-					EA E9 F3 02 00 00 CC 70 A0 60 90 70 40 60 30 70
-					60 60 50 70 40 60 30 70 50 60 40 70 40 60 30 70
-					10 60 00 70 30 60 20 70 10 60 00 70 20 60 10 70
-					10 60 00 00 00 80 A0 70 90 80 40 70 30 80 60 70
-					50 80 40 70 30 80 50 70 40 80 40 70 30 80 10 70
-					00 80 30 70 20 80 10 70 00 80 20 70 10 80 10 70
-					00 80 3D 2C BA 4B 00 00 75 31 FF 77 0C FF 77 08
-					FF 35 58 E6 49 00 FF 35 54 E6 49 00 E8 9E 0C 04
-					00 83 C4 10 3D 40 02 01 00 7F 4F 6A 32 6A 00 E8
-					8C 40 FC FF 83 C4 08 85 C0 75 3F FF 77 0C FF 77
-					08 E8 A4 0C 04 00 83 C4 08 85 C0 74 2D 81 F9 40
-					02 01 00 77 25 89 47 20 89 5F 24 80 3D 2C BA 4B
-					00 00 75 11 6A 64 6A 50 E8 53 40 FC FF 83 C4 08
-					A2 2C BA 4B 00 E9 A6 02 00 00 A1 54 E6 49 00 8B
-					1D 58 E6 49 00 89 47 20 89 5F 24 C6 05 2C BA 4B
-					00 00 EB E1 90 90 90 90 90 90 90 90 90 90 90 90
-					90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
-					90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
-					90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
-					90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
-					90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
-					90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
-					90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
-					90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
-					90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
-					90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
-					90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
-					90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
-					90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
-					90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
-					90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
-					90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
-					90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
-					90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
-					90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
-					90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
-					90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
-					90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
-					90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
-					90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
-					90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
-					90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
-					90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
-					90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
-					90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
-					90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
-					90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
-					90 90 90 90 90 90 90 90 90 A1 58 E6 49 00 2D 00
-					40 01 00 8B 7D 08 39 47 0C 7D 3C 8B 55 08 81 7A
-					0C 00 00 02 00 7D 18 8B 45 08 C7 40 20 00 00 28
-					00 8B 4D 08 8B 55 08 8B 42 0C 89 41 24 EB 16 8B
-					4D 08 C7 41 20 00 00 00 00 8B 55 08 8B 45 08 8B
-					48 0C 89 4A 24 EB 39 E9 15 FD FF FF 90 90 90 90
-					90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
-					90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
-					90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
-				</field>
-				<field type="data" offset="0x44B9AC">
-					80 3D 2C BA 4B 00 00 74 0F FE 0D 2C BA 4B 00 66
-					FF 0D 2E BA 4B 00 90 90 80 3D 2C BA 4B 00 46 75
-					0A 8B 55 08 C7 42 70 0A 00 00 00 80 3D 2C BA 4B
-					00 3C
-				</field>
-			</panel>
-			<panel col="1">
-				<field type="data" offset="0x449B7A">
-					90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
-					90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
-					90 90 90 90 90 90 90 90
-				</field>
-				<field type="data" offset="0x44A19B">
-					90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
-					90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
-					90 90 90 90 90 90 90 90
-				</field>
-				<field type="data" offset="0x44AB18">
-					90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
-					90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
-					90 90 90 90 90 90 90 90
-				</field>
+				<panel>
+					<field type="data" offset="0x48BF32">
+						<!--Targeting Functions including Mapboss X/Y function-->
+						CC 55 89 E5 8B 47 08 8B 5F 0C B9 20 BA 4B 00 89
+						01 89 59 04 C9 C3 CC 00 00 00 CC 00 CC 55 89 E5
+						83 EC 04 DB 45 08 DA 65 10 D8 C8 DB 45 0C DA 65
+						14 D8 C8 DE C1 D9 FA D9 FC DB 5D FC 8B 45 FC C9
+						C3 CC CC CC CC CC CC CC 55 89 E5 83 EC 0C 31 F6
+						89 75 FC 89 75 F8 89 75 F4 81 FE 00 02 00 00 7F
+						5C 69 DE AC 00 00 00 8A 83 20 62 4A 00 84 C0 75
+						03 46 EB E5 8B 83 70 62 4A 00 25 00 04 00 00 74
+						F0 FF B3 2C 62 4A 00 FF B3 28 62 4A 00 FF 75 0C
+						FF 75 08 E8 85 FF FF FF 83 C4 10 83 7D F4 00 74
+						05 3B 45 F4 77 CB 89 45 F4 8B 83 2C 62 4A 00 89
+						45 FC 8B 83 28 62 4A 00 89 45 F8 EB B4 8B 45 F8
+						8B 5D FC 8B 4D F4 C9 C3 00 00 00 00 00 00
+					</field>
+					<field type="data" offset="0x44B210">
+						<!--Curly AI Framerects and Targeting-->
+						55 8B EC 81 EC 74 01 00 00 31 C0 40 31 C9 83 F8
+						5A 7F 0E 6B D8 FC 8A 88 36 B2 44 00 89 0C 2B EB
+						EA E9 F3 02 00 00 CC 70 A0 60 90 70 40 60 30 70
+						60 60 50 70 40 60 30 70 50 60 40 70 40 60 30 70
+						10 60 00 70 30 60 20 70 10 60 00 70 20 60 10 70
+						10 60 00 00 00 80 A0 70 90 80 40 70 30 80 60 70
+						50 80 40 70 30 80 50 70 40 80 40 70 30 80 10 70
+						00 80 30 70 20 80 10 70 00 80 20 70 10 80 10 70
+						00 83 7F 44 00 75 6F FF 77 0C FF 77 08 FF 35 58
+						E6 49 00 FF 35 54 E6 49 00 E8 A1 0C 04 00 83 C4
+						10 3D 38 C1 01 00 7C 37 6A 02 FF 77 60 FF 77 0C
+						FF 77 08 E8 38 3F 02 00 83 C4 10 A1 54 E6 49 00
+						8B 1D 58 E6 49 00 89 47 08 89 5F 0C 6A 02 FF 77
+						60 FF 77 0C FF 77 08 E8 14 3F 02 00 83 C4 10 3D
+						E8 FD 00 00 7F 7E 6A 32 6A 00 E8 51 40 FC FF 83
+						C4 08 85 C0 75 6E 83 3D 20 BA 4B 00 00 74 2E FF
+						35 24 BA 4B 00 FF 35 20 BA 4B 00 FF 77 0C FF 77
+						08 E8 29 0C 04 00 83 C4 10 3D E8 FD 00 00 7F 0D
+						A1 20 BA 4B 00 8B 1D 24 BA 4B 00 EB 1A FF 77 0C
+						FF 77 08 E8 32 0C 04 00 83 C4 08 85 C0 74 25 81
+						F9 E8 FD 00 00 77 1D 89 47 20 89 5F 24 83 7F 44
+						00 75 30 6A 64 6A 50 E8 E4 3F FC FF 83 C4 08 89
+						47 44 EB 1F A1 54 E6 49 00 8B 1D 58 E6 49 00 89
+						47 20 89 5F 24 C7 47 44 00 00 00 00 C7 47 70 00
+						00 00 00 E9 18 02 00 00 90 90 90 90 90 90 90 90
+						90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
+						90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
+						90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
+						90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
+						90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
+						90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
+						90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
+						90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
+						90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
+						90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
+						90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
+						90 90 90 40 90 90 90 90 90 90 90 90 90 90 90 90
+						90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
+						90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
+						90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
+						90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
+						90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
+						90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
+						90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
+						90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
+						90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
+						90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
+						90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
+						90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
+						90 90 90 90 90 90 90 90 90 A1 58 E6 49 00 2D 00
+						00 02 00 8B 7D 08 39 47 0C 7D 3C 8B 55 08 81 7A
+						0C 00 00 02 00 7D 18 8B 45 08 C7 40 20 00 00 28
+						00 8B 4D 08 8B 55 08 8B 42 0C 89 41 24 EB 16 8B
+						4D 08 C7 41 20 00 00 00 00 8B 55 08 8B 45 08 8B
+						48 0C 89 4A 24 EB 39 E9 15 FD FF FF 90 90 90 90
+						90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
+						90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
+						90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
+					</field>
+					<field type="data" offset="0x44B9AC">
+					<!--Use "EXP Dropped" as targeting timer-->
+						83 7F 44 00 90 90 90 74 0F FF 4F 44 90 90 90 90
+						90 90 90 90 90 90 90 90 83 7F 44 46 90 90 90 75
+						0A C7 47 70 0A 00 00 00 90 90 90 83 7F 44 3C 90
+						90 90
+					</field>
+					<field type="data" offset="0x472FE9">
+					<!--Function to reset Map Boss targets to X/Y zero zero (turns off target)-->
+						89 43 04 C9 C3 CC CC 55 8B EC 31 C0 BB 20 BA 4B
+						00 89 03 EB EB
+					</field>
+				</panel>
+				<panel col="1">
+					<!--Disable vanilla targeting in labyrinth enemies-->
+					<field type="data" offset="0x449B7A">
+						90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
+						90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
+						90 90 90 90 90 90 90 90
+					</field>
+					<field type="data" offset="0x44A19B">
+						90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
+						90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
+						90 90 90 90 90 90 90 90
+					</field>
+					<field type="data" offset="0x44AB18">
+						90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
+						90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90
+						90 90 90 90 90 90 90 90
+					</field>
+				</panel>
 			</panel>
 		</panel>
-		<panel>
-			<field type="label">Aggressiveness (Default: 40, lower = trigger happy)</field>
-			<field type="text" offset="0x44B2BC" size="1"/>
-			<field type="label">Player Range, she tries to stay in it. (Default: 65,000)</field>
-			<field type="text" offset="0x44B2B5" size="4"/>
-			<field type="label">Enemy Range, she tries to kill things in it. (Default: 65,000)</field>
-			<field type="text" offset="0x44B2DF" size="4"/>
+		<panel col="1">
+			<panel>
+				<field type="label">1 Tile = 8192 Units. A range of 10 tiles is 81920.</field>
+			</panel>
+			<panel>
+				<field type="label">Teleport Range. She teleports when she gets too far. (Default: 115000)</field>
+				<field type="label">(Set the range to like 1,000 tiles (8192000) to "disable").</field>
+				<field type="text" offset="0x44B2B2" size="4"/>
+				<field type="label">Player Range. She'll stop attacking and will run to catch up. (Default: 65000)</field>
+				<field type="text" offset="0x44B2F0" size="4"/>
+				<field type="label">Aggressiveness (Default: 50, lower = trigger happy)</field>
+				<field type="text" offset="0x44B2F7" size="1"/>
+				<field type="label">Enemy Range. She can only see enemies from this distance. (Default: 65000)</field>
+				<field type="text" offset="0x44B351" size="4"/>
+				<field type="label">Mapboss Range. Same purpose as above but prioritized first. (Default: 65000)</field>
+				<field type="text" offset="0x44B32A" size="4"/>
+			</panel>
+			<panel title="Target these Bosses. Once Patched you can't unpatch.">
+				<field type="check" name="Omega">
+					<checked>
+						<field type="data" offset="0x47B7AA">86</field>
+						<field type="data" offset="0x47BACB">
+							BF 58 BA 4B 00 FF 47 78 E8 5B 04 01 00 90 90 90
+							90 90 83 7F 78 14
+						</field>
+						<field type="data" offset="0x47BC99">
+							FF 05 D0 BA 4B 00 BF 58 BA 4B 00 E8 47 73 FF FF
+							83 7F 78 30
+						</field>
+						<field type="data" offset="0x47BD8D">
+							BF 58 BA 4B 00 FF 47 64 E8 99 01 01 00 90 90 90
+							83 7F 64 02
+						</field>
+						<field type="data" offset="0x47BEAB">
+							BF 58 BA 4B 00 FF 47 64 E8 38 71 FF FF 90 90 90
+							90 90 83 7F 64 02
+						</field>
+					</checked>
+					<unchecked>
+						<!-- No Patching -->
+					</unchecked>
+				</field>
+				<field type="check" name="Balfrog">
+					<checked>
+						<field type="data" offset="0x004793D1">86</field>
+						<field type="data" offset="0x47A7A6">
+							8B 7D F8 89 4F 0C EB 44
+						</field>
+						<field type="data" offset="0x47A7D5">
+							EB 22 CC CC
+						</field>
+						<field type="data" offset="0x47A7F2">
+							E8 3C 17 01 00 C9 C3 E8 F2 87 FF FF C9 C3
+						</field>
+					</checked>
+					<unchecked>
+						<!-- No Patching -->
+					</unchecked>
+				</field>
+				<field type="check" name="Monster X">
+					<checked>
+						<field type="data" offset="0x0047E885">86</field>
+						<field type="data" offset="0x47E6FF">
+							8B 7D F8 8B 4F 74
+						</field>
+						<field type="data" offset="0x47E749">
+							81 6D F4 C8 00 00 00 E8 9B 48 FF FF
+						</field>
+						<field type="data" offset="0x47ED85">
+							FF 47 78 90 E8 62 42 FF FF 90 90 90 90 90 90
+						</field>
+						<field type="data" offset="0x47F1A2">
+							FF 47 78 E8 89 CD 00 00 90 90 90 90 90 90 90
+						</field>
+						<field type="data" offset="0x48063F">
+							8B 7D 08 8B 4F 74
+						</field>
+						<field type="data" offset="0x48066B">
+							0F B7 47 50 83 E0 DF 66 89 47 50 E8 75 29 FF FF
+							90
+						</field>
+						<field type="data" offset="0x48068B">
+							C7 47 74 0B 00 00 00 E8 9C B8 00 00 90 8B 57 20
+						</field>
+					</checked>
+					<unchecked>
+						<!-- No Patching -->
+					</unchecked>
+				</field>
+				<field type="check" name="Core">
+					<checked>
+						<field type="data" offset="0x004744C9">84</field>
+						<field type="data" offset="0x474416">
+							8B 7D EC 8B 4F 74
+						</field>
+						<field type="data" offset="0x4747D1">
+							90 90 90 E8 17 E8 FF FF 90 8B 0D 54 E6 49 00 89
+							4F 20 A1 58 E6 49 00 89 47 24 8B 57 78
+						</field>
+						<field type="data" offset="0x4748B3">
+							90 90 90 90 90 90 90 90 90 8B 0D 54 E6 49 00 89
+							4F 20 A1 58 E6 49 00 89 47 24 0F B6 97 9C 00 00
+							00
+						</field>
+						<!--These next two are converting old vanilla CORE targeting -->
+						<field type="data" offset="0x474960">
+							90 90
+						</field>
+						<field type="data" offset="0x474979">
+							89 15 20 BA 4B 00 A1 C8 C1 4B 00 A3 24 BA 4B 00
+						</field>
+					</checked>
+					<unchecked>
+						<!-- No Patching -->
+					</unchecked>
+				</field>
+				<field type="check" name="Ironhead">
+					<checked>
+						<field type="data" offset="0x0047AA1A">86</field>
+						<field type="data" offset="0x47A8B3">
+							8B BD D8 FE FF FF 8B 4F 74
+						</field>
+						<field type="data" offset="0x47AA88">
+							E8 63 85 FF FF 90 FF 47 78 90 90 90 90 90 90 90
+							90 90 90 90 90
+						</field>
+						<field type="data" offset="0x47ABE8">
+							E8 46 13 01 00 90 83 7F 4C 02
+						</field>
+					</checked>
+					<unchecked>
+						<!-- No Patching -->
+					</unchecked>
+				</field>
+				<field type="check" name="The Sisters" col="1">
+					<checked>
+						<field type="data" offset="0x0047D2C0">06</field>
+						<field type="data" offset="0x47E005">
+							8B 7D 08 8B 4F 74
+						</field>
+						<field type="data" offset="0x47E110">
+							FF 4F 6C 90 90 90 90 90 90 90 90 90
+						</field>
+						<field type="data" offset="0x47E144">
+							FF 47 78 E8 E7 DD 00 00 90 90 90 90
+						</field>
+						<field type="data" offset="0x47E3C1">
+							FF 47 78 90 E8 69 DB 00 00 90 90 90
+						</field>
+					</checked>
+					<unchecked>
+						<!-- No Patching -->
+					</unchecked>
+				</field>
+				<field type="check" name="Undead Core">
+					<checked>
+						<field type="data" offset="0x004754BC">84</field>
+						<field type="data" offset="0x476C22"> <!-- Core Mouth -->
+							8B 7D 08 8B 57 74 89 55 AC 83 7D AC 1F 0F 87 5A
+							01 00 00 E8 F9 52 01 00 90 0F B6 82 26 6E 47 00
+							FF 24 85 0E 6E 47 00 C7 47 68 00 00 00 00
+						</field>
+						<field type="data" offset="0x476E0E">
+							49 6C 47 00
+						</field>
+						<!-- Maintaining Vanilla Undead Core broadcasting X/Y -->
+						<field type="data" offset="0x4759CD">
+							89 15 20 BA 4B 00 A1 C8 C1 4B 00 A3 24 BA 4B 00
+						</field>
+						<field type="data" offset="0x475EE7">
+							89 15 20 BA 4B 00 A1 C8 C1 4B 00 A3 24 BA 4B 00
+						</field>
+					</checked>
+					<unchecked>
+						<!-- No Patching -->
+					</unchecked>
+				</field>
+				<field type="check" name="Heavy Press">
+					<checked>
+						<field type="data" offset="0x0047C960">86</field>
+						<field type="data" offset="0x47C82F">
+							8B 7D 94 8B 4F 74
+						</field>
+						<field type="data" offset="0x47CCCA">
+							FF 47 78 E8 61 F2 00 00 81 05 24 BA 4B 00 00 40
+							00 00 83 7F 78 51
+						</field>
+					</checked>
+					<unchecked>
+						<!-- No Patching -->
+					</unchecked>
+				</field>
+				<field type="check" name="Ballos Ball">
+					<checked>
+						<field type="data" offset="0x0047749F">86</field>
+						<field type="data" offset="0x4772FF">
+							8B 7D F0 8B 4F 74
+						</field>
+						<field type="data" offset="0x478BD9"><!--Ballos Eye Hitbox-->
+							8B 7D 08 8B 4F 74 89 8D 5C FF FF FF 83 AD 5C FF
+							FF FF 64 E8 42 33 01 00 90 90 90
+						</field>
+					</checked>
+					<unchecked>
+						<!-- No Patching -->
+					</unchecked>
+				</field>
+				<field type="label">(Ballos' Spike Eyeballs are NPC 342)</field>
+			</panel>
 		</panel>
+	</panel>
+	<field type="check" name="DEBUGGING: Have Npc 100 (Grate) with ALT DIRECTION Bind to MapBoss X/Y Target for Visual Testing">
+		<checked>
+			<field type="data" offset="0x43B3E2">
+				A1 20 BA 4B 00 8B 1D 24 BA 4B 00 8B 7D 08 89 47
+				08 89 5F 0C 90 90 90 90 90 90 90 EB C4
+			</field>
+		</checked>
+		<unchecked>
+			<!-- No Patching -->
+		</unchecked>
+	</field>
+	<field type="label">AIs already target vanilla Core and Undead Core, but patching makes it more accurate.</field>
+	</panel>
 	</panel>
 </hack>
