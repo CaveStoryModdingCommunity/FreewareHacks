@@ -1,0 +1,15 @@
+replace 320x240 resolution with 960x720 in freeware cavestory
+
+font function
+0x40cd50
+C8 08 00 00 A1 14 F9 48 00 6B F0 0A 6B F8 05 31 C0 FF 75 08 6A 01 50 50 6A 04 6A 01 50 50 50 68
+90 01 00 00 50 50 57 56 FF 15 34 C0 48 00 A3 68 D3 49 00 85 C0 75 25 50 6A 01 6A 00 6A 00 6A 04
+6A 01 6A 00 6A 00 68 90 01 00 00 6A 00 6A 00 57 56 FF 15 34 C0 48 00 A3 68 D3 49 00 C9 C3
+
+window width & height change
+0x4127bc
+C7 05 50 E4 49 00 C0 03 00 00 C7 05 54 E4 49 00 D0 02 00 00
+
+window magnification 1x -> 3x
+0x40b4a6
+03
