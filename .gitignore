@@ -1,5 +1,6 @@
 # Catch all for files that should not ever be found here
 *.exe
+*.zip
 
 # Mac OSX folder metadata attributes
 *.DS_Store
