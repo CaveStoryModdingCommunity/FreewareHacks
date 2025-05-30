@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="NPC Limit (for .pxe loading)" author="EnlightenedOne">
+	<!-- Credit to Periwinkle for telling me about this limit, which I didn't know existed prior. -->
+	<panel>
+		<field type="info">
+			Cave Story has a limit of 512 entities. Unfortunately to change this you need a hundred
+			tiny patches, so you basically need to start with a different exe (which exists it's called
+			"Chocolate CS").
+		</field>
+		<field type="info">
+			.pxe files (the enemies placed in maps) for some reason start loading at
+			position 170, and 90% of spawned NPCs start at index 256. So for the most part 170 entity
+			slots are reserved for... a few instances? Yeah maybe change this to 10 (or even zero) so you can
+			actually use closer to the actual hard 512 limit instead of the soft 342 limit.
+		</field>
+		<panel col="0">
+			<field type="label">PXE starting Index (Set to like 10. Default 170. No higher than 512):</field>
+			<field type="text" size="4" offset="0x46EC01"/>
+		</panel>
+	</panel>
+</hack>

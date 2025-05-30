@@ -1,0 +1,11 @@
+Makes the Blade weapon consume ammo, and plays an SFX and spawns the "Empty!" Caret special effect if you ""fire"" it while at zero ammo.
+
+Uses the space for NPC 358 (Misery, tall, wind) used in Vanilla credits so don't spawn that.
+
+0x46E870
+90 90 90 74 32 6A 01 E8 24 37 F9 FF 83 C4 04 85
+C0 75 26 6A 01 6A 25 E8 B4 1D FB FF 83 C4 08 6A
+00 6A 10 FF 35 58 E6 49 00 FF 35 54 E6 49 00 E8
+EC C3 F9 FF 83 C4 10 C9 C3 E9 30 0D FB FF CC 90
+0x41F5D8
+E9 93 F2 04 00 90

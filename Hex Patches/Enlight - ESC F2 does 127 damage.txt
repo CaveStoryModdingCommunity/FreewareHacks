@@ -1,0 +1,8 @@
+Have you ever found yourself in the hyper-specific scenario of having a mod that uses the 290 timer persisting through deaths/loading, so to manage that you have skip flags to disable the timer if you close the game instead of doing a single session, but ESC F2 gets in the way of that but it's still useful to the player to instantly reload a bad jump so it'd be better if instead of resetting the game it instead did 127 damage instantly even during cutscenes?
+
+.....no????????
+
+Well I did so I made this hack that kills you on the spot if you ESC F2. Getting a Transmission from Kazuma? Flying away on Balrog while the credits roll? Doesn't matter Quote self destructs with two key presses. Also surprisingly this still resets normally during the intro cutscene and titlescreen probably because they use different loops then what this patches.
+
+0x410508
+6A 7F E8 01 94 00 00 83 C4 04
