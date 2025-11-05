@@ -1,0 +1,29 @@
+<hack name="Misery (Floating) [#67] editor" author="Brayconn">
+    <panel title="Info">
+        <field type = "info">
+            Lets you edit Misery (Floating)'s hardcoded values.
+			Note: ANPs given are the ones that include the values,
+			not the ones you as a modder should be using to cause Misery to do the thing.
+			Follow the instructions of your local ANP documentation!
+        </field>
+    </panel>
+    <panel title="ANP 0">
+		<field type="label" col="0">Spawning Sound</field>
+		<field type="text" size="1" offset="0x434645" col="1"></field>
+	</panel>
+    <panel title="ANP 13">	
+		<field type="label" col="0">Landing Sound</field>
+		<field type="text" size="1" offset="0x434760" col="1"></field>
+	</panel>
+    <panel title="ANP 16">
+		<field type="label" col="0">Bubble Summoning Sound</field>
+		<field type="text" size="1" offset="0x4347D6" col="1"></field>
+		
+		<field type="label" col="0">Bubble Summoning NPC</field>
+		<field type="text" size="1" offset="0x4347FF" col="1"></field>
+	</panel>
+    <panel title="ANP 26">	
+		<field type="label" col="0">Lightning Sound</field>
+		<field type="text" size="1" offset="0x4348DA" col="1"></field>
+    </panel>
+</hack>
