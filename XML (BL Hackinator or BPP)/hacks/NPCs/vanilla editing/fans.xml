@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Fans [#96 - #99]" author="Enlight">
+    <panel>
+		<panel>
+			<field type="info">
+				This patch allows you to modify the Fans found in Grasstown. Entities 96 through 99.
+				REMINDER: They need to have "alternate direction" set to spawn activated (aka direction 0002).
+				The default force value is "136". Negative numbers work.
+				Setting it to zero has some weird frictionless behavior when quote is on the floor.
+			</field>
+			<field type="label">Another note: Fans can't override player max speed, which is editable with the hack:</field>
+			<field type="label">"/player properties/boosteracceleration_and_maxspeed.xml"</field>
+		</panel>
+		<panel>
+			<panel title="Fan(Up) #97">
+				<field type="label">Force on Quote:</field>
+				<field type="text" size="4" offset="0x43AEE8" />
+			</panel>
+		</panel>
+		<panel>
+			<panel>
+				<panel title="Fan(Left) #96">
+					<field type="label">Force on Quote:</field>
+					<field type="text" size="4" offset="0x43ACC6" />
+				</panel>
+			</panel>
+			<panel col="1">
+				<panel title="Fan(Right) #98">
+					<field type="label">Force on Quote:</field>
+					<field type="text" size="4" offset="0x43B0F6" />
+				</panel>
+			</panel>
+		</panel>
+		<panel>
+			<panel title="Fan(Down) #99">
+				<field type="label">Force on Quote:</field>
+				<field type="text" size="4" offset="0x43B318" />
+			</panel>
+		</panel>
+	</panel>
+</hack>
