@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Loading Bitmap" author="Enlight, Periwinkle">
+	<panel>
+		<panel>
+			<panel title="Framerects and Rendering for Loading.bmp">
+				<panel>
+					<field  type="label">Top-left X Framerect</field>
+					<field type="text" offset="0x412A37" size="4"/>
+					
+					<field type="label">Top-left Y Framerect</field>
+					<field type="text" offset="0x412A41" size="4"/>
+					
+					<field type="label">Bottom-right X Framerect</field>
+					<field type="text" offset="0x412A4B" size="4"/>
+					
+					<field type="label">Bottom-right Y Framerect</field>
+					<field type="text" offset="0x412A55" size="4"/>
+				</panel>
+				<panel col="1">
+					<field  type="label">NOTE: X Render Posn below</field>
+					<field  type="label">is capped at 127 because reasons</field>
+					<field  type="label">   ‍   </field>
+					<field  type="label">X Render Position</field>
+					<field type="text" offset="0x412AC5" size="1"/>
+					
+					<field type="label">Y Render Position</field>
+					<field type="text" offset="0x412AC7" size="4"/>
+				</panel>
+			</panel>
+			<panel>
+				<field type = "label">For a fullscreen loading.bmp:</field>
+				<field type = "label">Set the framerects to {0,0,320,240} and the render position to {0,0}.</field>
+				<field type = "label">Background color won't matter because it's covered.</field>
+				<field type = "label">   ‍   </field>
+				<field type = "label">To revert to the vanilla loading graphic:</field>
+				<field type = "label">Set the framerects to {0,0,64,8} and the render position to {116,128}.</field>
+				<field type = "label">And background color is by default zero (0).</field>
+			</panel>
+		</panel>
+		<panel col="1">
+			<field type="data" offset="0x412A59">
+				89 E8 2D 24 01 00 00 C7 00 00 00 00 00 C7 40 04
+				00 00 00 00 C7 40 08 40 01 00 00 C7 40 0C F0 00
+				00 00 90 BF 00 00 00 00 EB 12 90 90 90 90 90 90
+				90 90 90 90 90 90 90 90 90 90 90 90 6A 0F 68 FC
+				C5 48 00 E8 1F 90 FF FF 83 C4 08 89 85 FC FE FF
+				FF 57 90
+			</field>
+			<field type="label">Background Color</field>
+			<field type="text" offset="0x412A7D" size="4"/>
+			<field type = "label">Find the "hex code" of the color you want,</field>
+			<field type = "label">then convert it from hex to decimal.</field>
+		</panel>
+	</panel>
+</hack>
