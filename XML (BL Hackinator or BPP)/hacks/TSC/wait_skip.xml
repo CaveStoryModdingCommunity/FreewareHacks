@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="WAI skip" author="txin">
+	<panel>
+		<panel title="Description">
+		</panel>
+		<field type="info">
+			Recommended to be used in conjunction with text_skip/SpeedText.
+			Pressing X and Z simultaneously now skips &lt;WAI after the mandatory 4-frame delay.
+		</field>
+		<panel title="Data">
+		</panel>
+		<panel>
+			<field type="data" offset="0x4255fb" col="0">
+				BB 00 5B 4A 00 FF 43 FC A0 10 E2 49 00 24 60 3C 60 75 05 8B 03 
+				89 43 FC 8B 43 FC 3B 03 90 90 90 90 90 90 90 90 90 90 90 90 90 
+				90 90 90 90 90 90 90 90 90 90 90 90 90 90
+			</field>
+		</panel>
+	</panel>
+</hack>
