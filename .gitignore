@@ -14,6 +14,7 @@ editor.rect
 XML (BL Hackinator or BPP)/README.md
 XML (BL Hackinator or BPP)/*.txt
 *.bat
+nofun
 
 # Allow a private subfolder for hacks
 XML (BL Hackinator or BPP)/hacks/_PRIVATE/
