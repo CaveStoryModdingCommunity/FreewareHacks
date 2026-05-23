@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hack name="Special Hardcoded Events" author="Enlight">
+   	<panel>
+		<field type="info">
+			Several event numbers are hardcoded to run in specific circumstances, and two flags have special behavior.
+			Here you can change those event and flag numbers.
+		</field>
+		
+		<panel title="Events">
+			<field type="label">On player death run event</field>
+			<field col="1" type="text" size="1" offset="0x419B3F"/>
+			<field col="0" type="label">On player drown run event</field>
+			<field col="1" type="text" size="1" offset="0x416A0C"/>
+			<field col="0" type="label">ArmsItem.tsc no weapons</field>
+			<field col="1" type="text" size="4" offset="0x40169B"/>
+			<field col="0" type="label">ArmsItem.tsc no items (unused?)</field>
+			<field col="1" type="text" size="4" offset="0x4016DA"/>
+		</panel>
+		
+		<panel title="Special Drowning Behavior">
+			<field type="label">When this flag is set</field>
+			<field col="1" type="text" size="4" offset="0x4169EC"/>
+			<field col="0" type="label">INSTEAD of drowning, run this event</field>
+			<field col="1" type="text" size="4" offset="0x4169FD"/>
+		</panel>
+		
+		<panel title="The other special flag">
+			<panel>
+				<field type="label">CurlyAI (180) uses Polar Star instead of MachineGun</field>
+				<field type="label">when this flag is set. You likely want these as the same number!!</field>
+			</panel>
+			<panel>
+				<field col="0" type="label">Flag checked during ANP 20</field>
+				<field col="1" type="text" size="4" offset="0x44B6C5"/>
+				<field col="0" type="label">Flag checked during ANP 40</field>
+				<field col="1" type="text" size="4" offset="0x44B7B8"/>
+			</panel>
+		</panel>
+	</panel>
+</hack>
