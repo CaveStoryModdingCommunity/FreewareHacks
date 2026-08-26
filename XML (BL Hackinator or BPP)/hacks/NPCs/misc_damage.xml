@@ -15,6 +15,13 @@
 			<field type="text" size="4" offset="0x42B009" col="1"/>
 			<field type="label" col="0">[#58] Basu Contact Damage:</field><!--periwinkle-->
 			<field type="text" size="4" offset="0x431D81" col="1"/>
+			
+			<field type="label" col="0">[#68] Balrog Run Grab:</field><!--Enlight-->
+			<field type="text" size="1" offset="0x434EF7" col="1"/>
+			<field type="label" col="0">[#169] Balrog Missile Floor Grab:</field><!--Enlight-->
+			<field type="text" size="1" offset="0x448DC7" col="1"/>
+			<field type="label" col="0">[#169] Balrog Missile Jump Grab:</field><!--Enlight-->
+			<field type="text" size="1" offset="0x448FEA" col="1"/>
 		</panel>
 		<panel title="[#310] Bute (Sword)" col="1"><!--BLink-->
 			<field type = "label" col="0">Standing Damage:</field>
